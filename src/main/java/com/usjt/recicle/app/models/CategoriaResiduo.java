@@ -1,18 +1,20 @@
-package com.usjt.recicle.app.model;
+package com.usjt.recicle.app.models;
 
-public class Residuo {
+import java.util.List;
+
+public class CategoriaResiduo {
 
     private String nome;
     private String descricao;
-    private String categoria;
+    private List<Residuo> residuos;
 
-    public Residuo() {
+    public CategoriaResiduo() {
     }
-    
-    public Residuo(String nome, String descricao, String categoria) {
+
+    public CategoriaResiduo(String nome, String descricao, List<Residuo> residuos) {
         this.nome = nome;
         this.descricao = descricao;
-        this.categoria = categoria;
+        this.residuos = residuos;
     }
 
     public String getNome() {
@@ -31,11 +33,11 @@ public class Residuo {
         this.descricao = descricao;
     }
 
-    public String getCategoria() {
-        return categoria;
+    public List<Residuo> getResiduos() {
+        return residuos;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setResiduos(List<Residuo> residuos) {
+        this.residuos = residuos;
     }
 }

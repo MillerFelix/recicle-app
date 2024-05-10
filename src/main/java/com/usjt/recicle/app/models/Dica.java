@@ -1,15 +1,15 @@
-package com.usjt.recicle.app.model;
+package com.usjt.recicle.app.models;
 
 public class Dica {
 
     private String titulo;
     private String descricao;
-    private String categoriaResiduo;
+    private CategoriaResiduo categoriaResiduo;
 
     public Dica() {
     }
 
-    public Dica(String titulo, String descricao, String categoriaResiduo) {
+    public Dica(String titulo, String descricao, CategoriaResiduo categoriaResiduo) {
         this.titulo = titulo;
         this.descricao = descricao;
         this.categoriaResiduo = categoriaResiduo;
@@ -31,11 +31,11 @@ public class Dica {
         this.descricao = descricao;
     }
 
-    public String getCategoriaResiduo() {
+    public CategoriaResiduo getCategoriaResiduo() {
         return categoriaResiduo;
     }
 
-    public void setCategoriaResiduo(String categoriaResiduo) {
+    public void setCategoriaResiduo(CategoriaResiduo categoriaResiduo) {
         this.categoriaResiduo = categoriaResiduo;
     }
 }

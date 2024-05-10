@@ -1,15 +1,15 @@
-package com.usjt.recicle.app.model;
+package com.usjt.recicle.app.models;
 
-public class Anotação {
+public class Usuario {
 
     private String nome;
     private String email;
     private String senha;
 
-    public Anotação() {
+    public Usuario() {
     }
 
-    public Anotação(String nome, String email, String senha) {
+    public Usuario(String nome, String email, String senha) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
