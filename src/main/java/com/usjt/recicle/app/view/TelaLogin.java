@@ -1,9 +1,13 @@
 package com.usjt.recicle.app.view;
 
+import java.net.URL;
+import javax.swing.ImageIcon;
+
 public class TelaLogin extends javax.swing.JFrame {
 
     public TelaLogin() {
         initComponents();
+        configurarImagem();
     }
 
     @SuppressWarnings("unchecked")
@@ -14,11 +18,11 @@ public class TelaLogin extends javax.swing.JFrame {
         painelFormularios = new javax.swing.JPanel();
         textoEmail = new javax.swing.JTextField();
         botaoEntrar = new javax.swing.JButton();
-        botaoCadastrar = new javax.swing.JButton();
         labelImagem = new javax.swing.JLabel();
         textoSenha = new javax.swing.JPasswordField();
         LabelEmail = new javax.swing.JLabel();
         labelSenha = new javax.swing.JLabel();
+        botaoCadastrar = new javax.swing.JButton();
         labelTitulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -53,22 +57,6 @@ public class TelaLogin extends javax.swing.JFrame {
         botaoEntrar.setFocusable(false);
         botaoEntrar.setOpaque(true);
 
-        botaoCadastrar.setBackground(new java.awt.Color(0, 153, 0));
-        botaoCadastrar.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        botaoCadastrar.setForeground(new java.awt.Color(204, 255, 204));
-        botaoCadastrar.setText("Cadastre-se");
-        botaoCadastrar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(35, 184, 35), 4));
-        botaoCadastrar.setContentAreaFilled(false);
-        botaoCadastrar.setFocusPainted(false);
-        botaoCadastrar.setFocusable(false);
-        botaoCadastrar.setOpaque(true);
-        botaoCadastrar.setPreferredSize(new java.awt.Dimension(115, 34));
-        botaoCadastrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoCadastrarActionPerformed(evt);
-            }
-        });
-
         labelImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logo-recicle.png"))); // NOI18N
 
         textoSenha.setBackground(new java.awt.Color(153, 255, 153));
@@ -84,11 +72,27 @@ public class TelaLogin extends javax.swing.JFrame {
         labelSenha.setForeground(new java.awt.Color(0, 153, 0));
         labelSenha.setText("Senha:");
 
+        botaoCadastrar.setBackground(new java.awt.Color(204, 255, 204));
+        botaoCadastrar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        botaoCadastrar.setForeground(new java.awt.Color(0, 153, 0));
+        botaoCadastrar.setText("Não tem cadastro? Cadastre-se aqui!");
+        botaoCadastrar.setBorder(null);
+        botaoCadastrar.setContentAreaFilled(false);
+        botaoCadastrar.setFocusPainted(false);
+        botaoCadastrar.setFocusable(false);
+        botaoCadastrar.setOpaque(true);
+        botaoCadastrar.setPreferredSize(new java.awt.Dimension(115, 34));
+        botaoCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoCadastrarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout painelFormulariosLayout = new javax.swing.GroupLayout(painelFormularios);
         painelFormularios.setLayout(painelFormulariosLayout);
         painelFormulariosLayout.setHorizontalGroup(
             painelFormulariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelFormulariosLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFormulariosLayout.createSequentialGroup()
                 .addContainerGap(85, Short.MAX_VALUE)
                 .addGroup(painelFormulariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFormulariosLayout.createSequentialGroup()
@@ -100,12 +104,15 @@ public class TelaLogin extends javax.swing.JFrame {
                             .addComponent(textoEmail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(LabelEmail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(labelSenha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(79, 79, 79))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFormulariosLayout.createSequentialGroup()
-                        .addGroup(painelFormulariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(botaoEntrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(botaoCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(165, 165, 165))))
+                        .addGap(79, 79, 79))))
+            .addGroup(painelFormulariosLayout.createSequentialGroup()
+                .addGap(174, 174, 174)
+                .addComponent(botaoEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(painelFormulariosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(botaoCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         painelFormulariosLayout.setVerticalGroup(
             painelFormulariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,16 +121,16 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LabelEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(textoEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(textoEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(labelSenha)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(textoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(botaoEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(botaoCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43))
+                .addGap(52, 52, 52))
         );
 
         labelTitulo.setFont(new java.awt.Font("Arial Black", 1, 36)); // NOI18N
@@ -174,9 +181,19 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_textoEmailActionPerformed
 
     private void botaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarActionPerformed
-
+        TelaCadastro telaCadastro = new TelaCadastro();
+        telaCadastro.setVisible(true);
     }//GEN-LAST:event_botaoCadastrarActionPerformed
- 
+
+    private void configurarImagem() {
+        URL imgURL = getClass().getResource("/imagens/logo-recicle.png");
+        if (imgURL != null) {
+            labelImagem.setIcon(new ImageIcon(imgURL));
+        } else {
+            System.err.println("Não foi possível encontrar o arquivo de imagem.");
+        }
+    }
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
