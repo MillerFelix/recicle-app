@@ -1,7 +1,8 @@
-package com.usjt.recicle.app.models;
+package com.usjt.recicle.app.model;
 
 public class Dica {
 
+    private Long id;
     private String titulo;
     private String descricao;
     private CategoriaResiduo categoriaResiduo;

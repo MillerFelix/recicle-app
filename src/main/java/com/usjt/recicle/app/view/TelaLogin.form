@@ -37,7 +37,7 @@
     <Container class="javax.swing.JPanel" name="painelConteudoLogin">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="8b" green="f3" red="3c" type="rgb"/>
+          <Color blue="cc" green="ff" red="cc" type="rgb"/>
         </Property>
       </Properties>
 
@@ -53,7 +53,7 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="painelFormularios" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="162" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -102,8 +102,8 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="textoSenha" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
-                                  <Component id="textoNomeUsuario" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
-                                  <Component id="LabelUsuario" alignment="0" min="-2" pref="65" max="-2" attributes="0"/>
+                                  <Component id="textoEmail" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="LabelEmail" alignment="0" min="-2" pref="65" max="-2" attributes="0"/>
                                   <Component id="labelSenha" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
@@ -124,9 +124,9 @@
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="labelImagem" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="LabelUsuario" max="32767" attributes="0"/>
+                      <Component id="LabelEmail" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="textoNomeUsuario" min="-2" pref="47" max="-2" attributes="0"/>
+                      <Component id="textoEmail" min="-2" pref="47" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="labelSenha" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -141,7 +141,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JTextField" name="textoNomeUsuario">
+            <Component class="javax.swing.JTextField" name="textoEmail">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="ff" red="99" type="rgb"/>
@@ -166,7 +166,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textoNomeUsuarioActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textoEmailActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="botaoEntrar">
@@ -254,12 +254,12 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="LabelUsuario">
+            <Component class="javax.swing.JLabel" name="LabelEmail">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="99" red="0" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Usu&#xe1;rio:"/>
+                <Property name="text" type="java.lang.String" value="Email:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="labelSenha">

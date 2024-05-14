@@ -1,9 +1,10 @@
-package com.usjt.recicle.app.models;
+package com.usjt.recicle.app.model;
 
 import java.util.List;
 
 public class CategoriaResiduo {
 
+    private Long id;
     private String nome;
     private String descricao;
     private List<Residuo> residuos;

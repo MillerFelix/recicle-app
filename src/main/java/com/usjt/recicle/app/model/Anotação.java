@@ -1,9 +1,10 @@
-package com.usjt.recicle.app.models;
+package com.usjt.recicle.app.model;
 
 import java.time.LocalDateTime;
 
 public class Anotação {
 
+    private Long id;
     private String descricao;
     private CategoriaResiduo categoriaResiduo;
     private LocalDateTime dataCriacao;

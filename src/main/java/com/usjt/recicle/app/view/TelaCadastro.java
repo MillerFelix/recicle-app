@@ -1,8 +1,8 @@
-package com.usjt.recicle.app.views;
+package com.usjt.recicle.app.view;
 
-public class TelaLogin extends javax.swing.JFrame {
+public class TelaCadastro extends javax.swing.JFrame {
 
-    public TelaLogin() {
+    public TelaCadastro() {
         initComponents();
     }
 
@@ -13,18 +13,19 @@ public class TelaLogin extends javax.swing.JFrame {
         painelConteudoLogin = new javax.swing.JPanel();
         painelFormularios = new javax.swing.JPanel();
         textoNomeUsuario = new javax.swing.JTextField();
-        botaoEntrar = new javax.swing.JButton();
-        botaoCadastrar = new javax.swing.JButton();
+        botaoSalvar = new javax.swing.JButton();
         labelImagem = new javax.swing.JLabel();
         textoSenha = new javax.swing.JPasswordField();
-        LabelUsuario = new javax.swing.JLabel();
+        LabelNomeUsuario = new javax.swing.JLabel();
         labelSenha = new javax.swing.JLabel();
+        textoEmail = new javax.swing.JTextField();
+        LabelEmail = new javax.swing.JLabel();
         labelTitulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        painelConteudoLogin.setBackground(new java.awt.Color(60, 243, 139));
+        painelConteudoLogin.setBackground(new java.awt.Color(204, 255, 204));
 
         painelFormularios.setBackground(new java.awt.Color(204, 255, 204));
         painelFormularios.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 8, true));
@@ -43,29 +44,19 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
 
-        botaoEntrar.setBackground(new java.awt.Color(0, 153, 0));
-        botaoEntrar.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        botaoEntrar.setForeground(new java.awt.Color(204, 255, 204));
-        botaoEntrar.setText("Entrar");
-        botaoEntrar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(35, 184, 35), 4));
-        botaoEntrar.setContentAreaFilled(false);
-        botaoEntrar.setFocusPainted(false);
-        botaoEntrar.setFocusable(false);
-        botaoEntrar.setOpaque(true);
-
-        botaoCadastrar.setBackground(new java.awt.Color(0, 153, 0));
-        botaoCadastrar.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        botaoCadastrar.setForeground(new java.awt.Color(204, 255, 204));
-        botaoCadastrar.setText("Cadastre-se");
-        botaoCadastrar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(35, 184, 35), 4));
-        botaoCadastrar.setContentAreaFilled(false);
-        botaoCadastrar.setFocusPainted(false);
-        botaoCadastrar.setFocusable(false);
-        botaoCadastrar.setOpaque(true);
-        botaoCadastrar.setPreferredSize(new java.awt.Dimension(115, 34));
-        botaoCadastrar.addActionListener(new java.awt.event.ActionListener() {
+        botaoSalvar.setBackground(new java.awt.Color(0, 153, 0));
+        botaoSalvar.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        botaoSalvar.setForeground(new java.awt.Color(204, 255, 204));
+        botaoSalvar.setText("Salvar");
+        botaoSalvar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(35, 184, 35), 4));
+        botaoSalvar.setContentAreaFilled(false);
+        botaoSalvar.setFocusPainted(false);
+        botaoSalvar.setFocusable(false);
+        botaoSalvar.setOpaque(true);
+        botaoSalvar.setPreferredSize(new java.awt.Dimension(115, 34));
+        botaoSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoCadastrarActionPerformed(evt);
+                botaoSalvarActionPerformed(evt);
             }
         });
 
@@ -78,11 +69,27 @@ public class TelaLogin extends javax.swing.JFrame {
         textoSenha.setToolTipText("Digite a Senha");
         textoSenha.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 4, true));
 
-        LabelUsuario.setForeground(new java.awt.Color(0, 153, 0));
-        LabelUsuario.setText("Usuário:");
+        LabelNomeUsuario.setForeground(new java.awt.Color(0, 153, 0));
+        LabelNomeUsuario.setText("Nome:");
 
         labelSenha.setForeground(new java.awt.Color(0, 153, 0));
         labelSenha.setText("Senha:");
+
+        textoEmail.setBackground(new java.awt.Color(153, 255, 153));
+        textoEmail.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        textoEmail.setForeground(new java.awt.Color(0, 153, 0));
+        textoEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textoEmail.setToolTipText("Digite o nome de Usuário");
+        textoEmail.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 4, true));
+        textoEmail.setSelectedTextColor(new java.awt.Color(0, 0, 0));
+        textoEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textoEmailActionPerformed(evt);
+            }
+        });
+
+        LabelEmail.setForeground(new java.awt.Color(0, 153, 0));
+        LabelEmail.setText("Email:");
 
         javax.swing.GroupLayout painelFormulariosLayout = new javax.swing.GroupLayout(painelFormularios);
         painelFormularios.setLayout(painelFormulariosLayout);
@@ -98,37 +105,39 @@ public class TelaLogin extends javax.swing.JFrame {
                         .addGroup(painelFormulariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(textoSenha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(textoNomeUsuario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LabelUsuario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelSenha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(LabelNomeUsuario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelSenha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textoEmail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LabelEmail, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(79, 79, 79))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFormulariosLayout.createSequentialGroup()
-                        .addGroup(painelFormulariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(botaoEntrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(botaoCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(165, 165, 165))))
+                        .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(169, 169, 169))))
         );
         painelFormulariosLayout.setVerticalGroup(
             painelFormulariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFormulariosLayout.createSequentialGroup()
                 .addComponent(labelImagem)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(LabelUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LabelNomeUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textoNomeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
+                .addComponent(LabelEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(textoEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
                 .addComponent(labelSenha)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(5, 5, 5)
                 .addComponent(textoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(botaoEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(botaoCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43))
+                .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
         );
 
         labelTitulo.setFont(new java.awt.Font("Arial Black", 1, 36)); // NOI18N
         labelTitulo.setForeground(new java.awt.Color(0, 153, 0));
-        labelTitulo.setText("Recicle");
+        labelTitulo.setText("Cadastre-se");
 
         javax.swing.GroupLayout painelConteudoLoginLayout = new javax.swing.GroupLayout(painelConteudoLogin);
         painelConteudoLogin.setLayout(painelConteudoLoginLayout);
@@ -138,18 +147,18 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addContainerGap(173, Short.MAX_VALUE)
                 .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelConteudoLoginLayout.createSequentialGroup()
-                        .addComponent(labelTitulo)
-                        .addGap(317, 317, 317))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelConteudoLoginLayout.createSequentialGroup()
                         .addComponent(painelFormularios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(162, 162, 162))))
+                        .addGap(165, 165, 165))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelConteudoLoginLayout.createSequentialGroup()
+                        .addComponent(labelTitulo)
+                        .addGap(280, 280, 280))))
         );
         painelConteudoLoginLayout.setVerticalGroup(
             painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(20, 20, 20)
                 .addComponent(labelTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(painelFormularios, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(26, Short.MAX_VALUE))
         );
@@ -170,30 +179,35 @@ public class TelaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void textoNomeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoNomeUsuarioActionPerformed
-
+        
     }//GEN-LAST:event_textoNomeUsuarioActionPerformed
 
-    private void botaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarActionPerformed
+    private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
 
-    }//GEN-LAST:event_botaoCadastrarActionPerformed
+    }//GEN-LAST:event_botaoSalvarActionPerformed
+
+    private void textoEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoEmailActionPerformed
+
+    }//GEN-LAST:event_textoEmailActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaLogin().setVisible(true);
+                new TelaCadastro().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel LabelUsuario;
-    private javax.swing.JButton botaoCadastrar;
-    private javax.swing.JButton botaoEntrar;
+    private javax.swing.JLabel LabelEmail;
+    private javax.swing.JLabel LabelNomeUsuario;
+    private javax.swing.JButton botaoSalvar;
     private javax.swing.JLabel labelImagem;
     private javax.swing.JLabel labelSenha;
     private javax.swing.JLabel labelTitulo;
     private javax.swing.JPanel painelConteudoLogin;
     private javax.swing.JPanel painelFormularios;
+    private javax.swing.JTextField textoEmail;
     private javax.swing.JTextField textoNomeUsuario;
     private javax.swing.JPasswordField textoSenha;
     // End of variables declaration//GEN-END:variables

@@ -1,7 +1,8 @@
-package com.usjt.recicle.app.models;
+package com.usjt.recicle.app.model;
 
 public class Residuo {
-
+    
+    private Long id;
     private String nome;
     private String descricao;
     private String categoria;
