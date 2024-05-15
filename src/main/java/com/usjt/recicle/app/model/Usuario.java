@@ -3,7 +3,7 @@ package com.usjt.recicle.app.model;
 import com.usjt.recicle.app.dao.UsuarioDAO;
 
 public class Usuario {
-    
+
     private Long id;
     private String nome;
     private String email;
@@ -41,9 +41,8 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    
-    public void cadastrarUsuario(Usuario usuario) throws ExceptionDAO{
-    new UsuarioDAO().cadastrarUsuario(usuario);
-    
+
+    public void cadastrarUsuario(Usuario usuario) {
+        new UsuarioDAO().cadastrarUsuario(usuario);
     }
 }
