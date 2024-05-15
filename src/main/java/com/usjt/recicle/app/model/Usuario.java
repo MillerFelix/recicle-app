@@ -1,5 +1,7 @@
 package com.usjt.recicle.app.model;
 
+import com.usjt.recicle.app.dao.UsuarioDAO;
+
 public class Usuario {
     
     private Long id;
@@ -40,5 +42,8 @@ public class Usuario {
         this.senha = senha;
     }
     
-    public void cadastrarUsuario(Usuario usuario) {}
+    public void cadastrarUsuario(Usuario usuario) throws ExceptionDAO{
+    new UsuarioDAO().cadastrarUsuario(usuario);
+    
+    }
 }
