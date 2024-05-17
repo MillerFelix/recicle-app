@@ -1,4 +1,5 @@
 com\usjt\recicle\app\view\TelaCadastro$4.class
+com\usjt\recicle\app\view\TelaInformacoes$1.class
 com\usjt\recicle\app\view\TelaLogin$4.class
 com\usjt\recicle\app\view\TelaCadastro.class
 com\usjt\recicle\app\controller\UsuarioController.class
@@ -6,6 +7,7 @@ com\usjt\recicle\app\view\TelaResiduos$1.class
 com\usjt\recicle\app\RecicleApp$1.class
 com\usjt\recicle\app\view\TelaCadastro$1.class
 com\usjt\recicle\app\model\Anotação.class
+com\usjt\recicle\app\view\TelaInformacoes$2.class
 com\usjt\recicle\app\view\TelaCadastro$3.class
 com\usjt\recicle\app\view\TelaLogin$2.class
 com\usjt\recicle\app\view\TelaLogin$3.class
@@ -17,6 +19,7 @@ com\usjt\recicle\app\view\TelaCadastro$5.class
 com\usjt\recicle\app\model\Dica.class
 com\usjt\recicle\app\model\CategoriaResiduo.class
 com\usjt\recicle\app\model\Residuo.class
+com\usjt\recicle\app\view\TelaInformacoes.class
 com\usjt\recicle\app\dao\UsuarioDAO.class
 com\usjt\recicle\app\RecicleApp.class
 com\usjt\recicle\app\view\TelaLogin$1.class
