@@ -95,13 +95,13 @@
                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="labelTitulo1" min="-2" pref="189" max="-2" attributes="0"/>
+                          <Component id="labelTitulo" min="-2" pref="189" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="imagemResiduo" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="labelAnotacoes1" min="-2" pref="189" max="-2" attributes="0"/>
+                          <Component id="labelAnotacoes" min="-2" pref="189" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="labelDicas" min="-2" pref="189" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
@@ -134,14 +134,14 @@
                   <Component id="jPanel1" min="-2" pref="64" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="labelTitulo1" min="-2" pref="46" max="-2" attributes="0"/>
+                      <Component id="labelTitulo" min="-2" pref="46" max="-2" attributes="0"/>
                       <Component id="imagemResiduo" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="informacoesResiduo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="178" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="labelAnotacoes1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="labelAnotacoes" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="labelDicas" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -249,7 +249,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="labelTitulo1">
+        <Component class="javax.swing.JLabel" name="labelTitulo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial Black" size="24" style="1"/>
@@ -260,7 +260,7 @@
             <Property name="text" type="java.lang.String" value="Res&#xed;duo"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="labelAnotacoes1">
+        <Component class="javax.swing.JLabel" name="labelAnotacoes">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial Black" size="16" style="1"/>

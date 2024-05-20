@@ -22,19 +22,19 @@ public class TelaResiduos extends javax.swing.JFrame {
         botaoResiduoPapelCartao9 = new javax.swing.JButton();
         painelConteudoLogin = new javax.swing.JPanel();
         labelTitulo = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        comboResiduos = new javax.swing.JComboBox<>();
         painelScroll = new javax.swing.JScrollPane();
         painelResiduos = new javax.swing.JPanel();
         botaoResiduoVidro = new javax.swing.JButton();
         botaoResiduoPapelCartao = new javax.swing.JButton();
-        botaoResiduoPapelCartao1 = new javax.swing.JButton();
-        botaoResiduoPapelCartao2 = new javax.swing.JButton();
-        botaoResiduoPapelCartao4 = new javax.swing.JButton();
-        botaoResiduoPapelCartao5 = new javax.swing.JButton();
-        botaoResiduoPapelCartao7 = new javax.swing.JButton();
-        botaoResiduoPapelCartao8 = new javax.swing.JButton();
-        botaoResiduoPapelCartao10 = new javax.swing.JButton();
-        botaoResiduoPapelCartao11 = new javax.swing.JButton();
+        botaoResiduoPlastico = new javax.swing.JButton();
+        botaoResiduoMetal = new javax.swing.JButton();
+        botaoResiduoOrganico = new javax.swing.JButton();
+        botaoResiduoEletronicos = new javax.swing.JButton();
+        botaoResiduoPilhasBaterias = new javax.swing.JButton();
+        botaoResiduoTetraPak = new javax.swing.JButton();
+        botaoResiduoPerigosos = new javax.swing.JButton();
+        botaoResiduoMadeira = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         labelSaudacao = new javax.swing.JLabel();
         labelSair = new javax.swing.JLabel();
@@ -109,14 +109,14 @@ public class TelaResiduos extends javax.swing.JFrame {
         labelTitulo.setForeground(new java.awt.Color(0, 153, 0));
         labelTitulo.setText("Resíduos");
 
-        jComboBox1.setBackground(new java.awt.Color(153, 255, 153));
-        jComboBox1.setForeground(new java.awt.Color(0, 153, 0));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
-        jComboBox1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 4, true));
-        jComboBox1.setFocusable(false);
-        jComboBox1.setLightWeightPopupEnabled(false);
-        jComboBox1.setRequestFocusEnabled(false);
-        jComboBox1.setVerifyInputWhenFocusTarget(false);
+        comboResiduos.setBackground(new java.awt.Color(153, 255, 153));
+        comboResiduos.setForeground(new java.awt.Color(0, 153, 0));
+        comboResiduos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+        comboResiduos.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 4, true));
+        comboResiduos.setFocusable(false);
+        comboResiduos.setLightWeightPopupEnabled(false);
+        comboResiduos.setRequestFocusEnabled(false);
+        comboResiduos.setVerifyInputWhenFocusTarget(false);
 
         painelScroll.setBackground(new java.awt.Color(153, 255, 153));
         painelScroll.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 8, true));
@@ -159,123 +159,123 @@ public class TelaResiduos extends javax.swing.JFrame {
             }
         });
 
-        botaoResiduoPapelCartao1.setBackground(new java.awt.Color(186, 16, 16));
-        botaoResiduoPapelCartao1.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        botaoResiduoPapelCartao1.setForeground(new java.awt.Color(255, 255, 255));
-        botaoResiduoPapelCartao1.setText("Plástico");
-        botaoResiduoPapelCartao1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 0), 4));
-        botaoResiduoPapelCartao1.setContentAreaFilled(false);
-        botaoResiduoPapelCartao1.setFocusPainted(false);
-        botaoResiduoPapelCartao1.setFocusable(false);
-        botaoResiduoPapelCartao1.setOpaque(true);
-        botaoResiduoPapelCartao1.addActionListener(new java.awt.event.ActionListener() {
+        botaoResiduoPlastico.setBackground(new java.awt.Color(186, 16, 16));
+        botaoResiduoPlastico.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        botaoResiduoPlastico.setForeground(new java.awt.Color(255, 255, 255));
+        botaoResiduoPlastico.setText("Plástico");
+        botaoResiduoPlastico.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 0), 4));
+        botaoResiduoPlastico.setContentAreaFilled(false);
+        botaoResiduoPlastico.setFocusPainted(false);
+        botaoResiduoPlastico.setFocusable(false);
+        botaoResiduoPlastico.setOpaque(true);
+        botaoResiduoPlastico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoResiduoPapelCartao1ActionPerformed(evt);
+                botaoResiduoPlasticoActionPerformed(evt);
             }
         });
 
-        botaoResiduoPapelCartao2.setBackground(new java.awt.Color(186, 237, 13));
-        botaoResiduoPapelCartao2.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        botaoResiduoPapelCartao2.setForeground(new java.awt.Color(255, 255, 255));
-        botaoResiduoPapelCartao2.setText("Metal");
-        botaoResiduoPapelCartao2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 0), 4));
-        botaoResiduoPapelCartao2.setContentAreaFilled(false);
-        botaoResiduoPapelCartao2.setFocusPainted(false);
-        botaoResiduoPapelCartao2.setFocusable(false);
-        botaoResiduoPapelCartao2.setOpaque(true);
-        botaoResiduoPapelCartao2.addActionListener(new java.awt.event.ActionListener() {
+        botaoResiduoMetal.setBackground(new java.awt.Color(186, 237, 13));
+        botaoResiduoMetal.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        botaoResiduoMetal.setForeground(new java.awt.Color(255, 255, 255));
+        botaoResiduoMetal.setText("Metal");
+        botaoResiduoMetal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 0), 4));
+        botaoResiduoMetal.setContentAreaFilled(false);
+        botaoResiduoMetal.setFocusPainted(false);
+        botaoResiduoMetal.setFocusable(false);
+        botaoResiduoMetal.setOpaque(true);
+        botaoResiduoMetal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoResiduoPapelCartao2ActionPerformed(evt);
+                botaoResiduoMetalActionPerformed(evt);
             }
         });
 
-        botaoResiduoPapelCartao4.setBackground(new java.awt.Color(118, 81, 32));
-        botaoResiduoPapelCartao4.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        botaoResiduoPapelCartao4.setForeground(new java.awt.Color(255, 255, 255));
-        botaoResiduoPapelCartao4.setText("Orgânico");
-        botaoResiduoPapelCartao4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(48, 45, 20), 4));
-        botaoResiduoPapelCartao4.setContentAreaFilled(false);
-        botaoResiduoPapelCartao4.setFocusPainted(false);
-        botaoResiduoPapelCartao4.setFocusable(false);
-        botaoResiduoPapelCartao4.setOpaque(true);
-        botaoResiduoPapelCartao4.addActionListener(new java.awt.event.ActionListener() {
+        botaoResiduoOrganico.setBackground(new java.awt.Color(118, 81, 32));
+        botaoResiduoOrganico.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        botaoResiduoOrganico.setForeground(new java.awt.Color(255, 255, 255));
+        botaoResiduoOrganico.setText("Orgânico");
+        botaoResiduoOrganico.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(48, 45, 20), 4));
+        botaoResiduoOrganico.setContentAreaFilled(false);
+        botaoResiduoOrganico.setFocusPainted(false);
+        botaoResiduoOrganico.setFocusable(false);
+        botaoResiduoOrganico.setOpaque(true);
+        botaoResiduoOrganico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoResiduoPapelCartao4ActionPerformed(evt);
+                botaoResiduoOrganicoActionPerformed(evt);
             }
         });
 
-        botaoResiduoPapelCartao5.setBackground(new java.awt.Color(234, 83, 18));
-        botaoResiduoPapelCartao5.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        botaoResiduoPapelCartao5.setForeground(new java.awt.Color(255, 255, 255));
-        botaoResiduoPapelCartao5.setText("Eletrônicos (e-lixo)");
-        botaoResiduoPapelCartao5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 71, 2), 4));
-        botaoResiduoPapelCartao5.setContentAreaFilled(false);
-        botaoResiduoPapelCartao5.setFocusPainted(false);
-        botaoResiduoPapelCartao5.setFocusable(false);
-        botaoResiduoPapelCartao5.setOpaque(true);
-        botaoResiduoPapelCartao5.addActionListener(new java.awt.event.ActionListener() {
+        botaoResiduoEletronicos.setBackground(new java.awt.Color(234, 83, 18));
+        botaoResiduoEletronicos.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        botaoResiduoEletronicos.setForeground(new java.awt.Color(255, 255, 255));
+        botaoResiduoEletronicos.setText("Eletrônicos (e-lixo)");
+        botaoResiduoEletronicos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(139, 71, 2), 4));
+        botaoResiduoEletronicos.setContentAreaFilled(false);
+        botaoResiduoEletronicos.setFocusPainted(false);
+        botaoResiduoEletronicos.setFocusable(false);
+        botaoResiduoEletronicos.setOpaque(true);
+        botaoResiduoEletronicos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoResiduoPapelCartao5ActionPerformed(evt);
+                botaoResiduoEletronicosActionPerformed(evt);
             }
         });
 
-        botaoResiduoPapelCartao7.setBackground(new java.awt.Color(102, 102, 102));
-        botaoResiduoPapelCartao7.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        botaoResiduoPapelCartao7.setForeground(new java.awt.Color(255, 255, 255));
-        botaoResiduoPapelCartao7.setText("Pilhas e Baterias");
-        botaoResiduoPapelCartao7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51), 4));
-        botaoResiduoPapelCartao7.setContentAreaFilled(false);
-        botaoResiduoPapelCartao7.setFocusPainted(false);
-        botaoResiduoPapelCartao7.setFocusable(false);
-        botaoResiduoPapelCartao7.setOpaque(true);
-        botaoResiduoPapelCartao7.addActionListener(new java.awt.event.ActionListener() {
+        botaoResiduoPilhasBaterias.setBackground(new java.awt.Color(102, 102, 102));
+        botaoResiduoPilhasBaterias.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        botaoResiduoPilhasBaterias.setForeground(new java.awt.Color(255, 255, 255));
+        botaoResiduoPilhasBaterias.setText("Pilhas e Baterias");
+        botaoResiduoPilhasBaterias.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51), 4));
+        botaoResiduoPilhasBaterias.setContentAreaFilled(false);
+        botaoResiduoPilhasBaterias.setFocusPainted(false);
+        botaoResiduoPilhasBaterias.setFocusable(false);
+        botaoResiduoPilhasBaterias.setOpaque(true);
+        botaoResiduoPilhasBaterias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoResiduoPapelCartao7ActionPerformed(evt);
+                botaoResiduoPilhasBateriasActionPerformed(evt);
             }
         });
 
-        botaoResiduoPapelCartao8.setBackground(new java.awt.Color(68, 134, 184));
-        botaoResiduoPapelCartao8.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        botaoResiduoPapelCartao8.setForeground(new java.awt.Color(255, 255, 255));
-        botaoResiduoPapelCartao8.setText("Tetra Pak (embalagens cartonadas)");
-        botaoResiduoPapelCartao8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(60, 83, 205), 4));
-        botaoResiduoPapelCartao8.setContentAreaFilled(false);
-        botaoResiduoPapelCartao8.setFocusPainted(false);
-        botaoResiduoPapelCartao8.setFocusable(false);
-        botaoResiduoPapelCartao8.setOpaque(true);
-        botaoResiduoPapelCartao8.addActionListener(new java.awt.event.ActionListener() {
+        botaoResiduoTetraPak.setBackground(new java.awt.Color(68, 134, 184));
+        botaoResiduoTetraPak.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        botaoResiduoTetraPak.setForeground(new java.awt.Color(255, 255, 255));
+        botaoResiduoTetraPak.setText("Tetra Pak (embalagens cartonadas)");
+        botaoResiduoTetraPak.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(60, 83, 205), 4));
+        botaoResiduoTetraPak.setContentAreaFilled(false);
+        botaoResiduoTetraPak.setFocusPainted(false);
+        botaoResiduoTetraPak.setFocusable(false);
+        botaoResiduoTetraPak.setOpaque(true);
+        botaoResiduoTetraPak.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoResiduoPapelCartao8ActionPerformed(evt);
+                botaoResiduoTetraPakActionPerformed(evt);
             }
         });
 
-        botaoResiduoPapelCartao10.setBackground(new java.awt.Color(30, 29, 29));
-        botaoResiduoPapelCartao10.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        botaoResiduoPapelCartao10.setForeground(new java.awt.Color(255, 255, 255));
-        botaoResiduoPapelCartao10.setText("Perigosos");
-        botaoResiduoPapelCartao10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
-        botaoResiduoPapelCartao10.setContentAreaFilled(false);
-        botaoResiduoPapelCartao10.setFocusPainted(false);
-        botaoResiduoPapelCartao10.setFocusable(false);
-        botaoResiduoPapelCartao10.setOpaque(true);
-        botaoResiduoPapelCartao10.addActionListener(new java.awt.event.ActionListener() {
+        botaoResiduoPerigosos.setBackground(new java.awt.Color(30, 29, 29));
+        botaoResiduoPerigosos.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        botaoResiduoPerigosos.setForeground(new java.awt.Color(255, 255, 255));
+        botaoResiduoPerigosos.setText("Perigosos");
+        botaoResiduoPerigosos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
+        botaoResiduoPerigosos.setContentAreaFilled(false);
+        botaoResiduoPerigosos.setFocusPainted(false);
+        botaoResiduoPerigosos.setFocusable(false);
+        botaoResiduoPerigosos.setOpaque(true);
+        botaoResiduoPerigosos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoResiduoPapelCartao10ActionPerformed(evt);
+                botaoResiduoPerigososActionPerformed(evt);
             }
         });
 
-        botaoResiduoPapelCartao11.setBackground(new java.awt.Color(35, 30, 9));
-        botaoResiduoPapelCartao11.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        botaoResiduoPapelCartao11.setForeground(new java.awt.Color(255, 255, 255));
-        botaoResiduoPapelCartao11.setText("Madeira");
-        botaoResiduoPapelCartao11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 18, 0), 4));
-        botaoResiduoPapelCartao11.setContentAreaFilled(false);
-        botaoResiduoPapelCartao11.setFocusPainted(false);
-        botaoResiduoPapelCartao11.setFocusable(false);
-        botaoResiduoPapelCartao11.setOpaque(true);
-        botaoResiduoPapelCartao11.addActionListener(new java.awt.event.ActionListener() {
+        botaoResiduoMadeira.setBackground(new java.awt.Color(35, 30, 9));
+        botaoResiduoMadeira.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        botaoResiduoMadeira.setForeground(new java.awt.Color(255, 255, 255));
+        botaoResiduoMadeira.setText("Madeira");
+        botaoResiduoMadeira.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(40, 18, 0), 4));
+        botaoResiduoMadeira.setContentAreaFilled(false);
+        botaoResiduoMadeira.setFocusPainted(false);
+        botaoResiduoMadeira.setFocusable(false);
+        botaoResiduoMadeira.setOpaque(true);
+        botaoResiduoMadeira.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoResiduoPapelCartao11ActionPerformed(evt);
+                botaoResiduoMadeiraActionPerformed(evt);
             }
         });
 
@@ -287,21 +287,21 @@ public class TelaResiduos extends javax.swing.JFrame {
                 .addContainerGap(33, Short.MAX_VALUE)
                 .addGroup(painelResiduosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelResiduosLayout.createSequentialGroup()
-                        .addComponent(botaoResiduoPapelCartao10, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botaoResiduoPerigosos, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(botaoResiduoPapelCartao11, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(botaoResiduoMadeira, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(painelResiduosLayout.createSequentialGroup()
-                        .addComponent(botaoResiduoPapelCartao7, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botaoResiduoPilhasBaterias, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(botaoResiduoPapelCartao8, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(botaoResiduoTetraPak, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(painelResiduosLayout.createSequentialGroup()
-                        .addComponent(botaoResiduoPapelCartao4, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botaoResiduoOrganico, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(botaoResiduoPapelCartao5, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(botaoResiduoEletronicos, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(painelResiduosLayout.createSequentialGroup()
-                        .addComponent(botaoResiduoPapelCartao1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botaoResiduoPlastico, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(botaoResiduoPapelCartao2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(botaoResiduoMetal, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(painelResiduosLayout.createSequentialGroup()
                         .addComponent(botaoResiduoPapelCartao, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -317,20 +317,20 @@ public class TelaResiduos extends javax.swing.JFrame {
                     .addComponent(botaoResiduoVidro, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(painelResiduosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botaoResiduoPapelCartao1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoResiduoPapelCartao2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botaoResiduoPlastico, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoResiduoMetal, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(painelResiduosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botaoResiduoPapelCartao4, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoResiduoPapelCartao5, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botaoResiduoOrganico, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoResiduoEletronicos, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(painelResiduosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botaoResiduoPapelCartao7, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoResiduoPapelCartao8, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botaoResiduoPilhasBaterias, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoResiduoTetraPak, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addGroup(painelResiduosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botaoResiduoPapelCartao10, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoResiduoPapelCartao11, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botaoResiduoPerigosos, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoResiduoMadeira, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(338, Short.MAX_VALUE))
         );
 
@@ -413,7 +413,7 @@ public class TelaResiduos extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelConteudoLoginLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(comboResiduos, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(272, 272, 272))
         );
         painelConteudoLoginLayout.setVerticalGroup(
@@ -423,7 +423,7 @@ public class TelaResiduos extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(labelTitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(comboResiduos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(painelScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(40, Short.MAX_VALUE))
@@ -478,37 +478,37 @@ public class TelaResiduos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_botaoResiduoPapelCartao9ActionPerformed
 
-    private void botaoResiduoPapelCartao11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoResiduoPapelCartao11ActionPerformed
+    private void botaoResiduoMadeiraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoResiduoMadeiraActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botaoResiduoPapelCartao11ActionPerformed
+    }//GEN-LAST:event_botaoResiduoMadeiraActionPerformed
 
-    private void botaoResiduoPapelCartao10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoResiduoPapelCartao10ActionPerformed
+    private void botaoResiduoPerigososActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoResiduoPerigososActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botaoResiduoPapelCartao10ActionPerformed
+    }//GEN-LAST:event_botaoResiduoPerigososActionPerformed
 
-    private void botaoResiduoPapelCartao8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoResiduoPapelCartao8ActionPerformed
+    private void botaoResiduoTetraPakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoResiduoTetraPakActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botaoResiduoPapelCartao8ActionPerformed
+    }//GEN-LAST:event_botaoResiduoTetraPakActionPerformed
 
-    private void botaoResiduoPapelCartao7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoResiduoPapelCartao7ActionPerformed
+    private void botaoResiduoPilhasBateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoResiduoPilhasBateriasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botaoResiduoPapelCartao7ActionPerformed
+    }//GEN-LAST:event_botaoResiduoPilhasBateriasActionPerformed
 
-    private void botaoResiduoPapelCartao5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoResiduoPapelCartao5ActionPerformed
+    private void botaoResiduoEletronicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoResiduoEletronicosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botaoResiduoPapelCartao5ActionPerformed
+    }//GEN-LAST:event_botaoResiduoEletronicosActionPerformed
 
-    private void botaoResiduoPapelCartao4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoResiduoPapelCartao4ActionPerformed
+    private void botaoResiduoOrganicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoResiduoOrganicoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botaoResiduoPapelCartao4ActionPerformed
+    }//GEN-LAST:event_botaoResiduoOrganicoActionPerformed
 
-    private void botaoResiduoPapelCartao2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoResiduoPapelCartao2ActionPerformed
+    private void botaoResiduoMetalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoResiduoMetalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botaoResiduoPapelCartao2ActionPerformed
+    }//GEN-LAST:event_botaoResiduoMetalActionPerformed
 
-    private void botaoResiduoPapelCartao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoResiduoPapelCartao1ActionPerformed
+    private void botaoResiduoPlasticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoResiduoPlasticoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botaoResiduoPapelCartao1ActionPerformed
+    }//GEN-LAST:event_botaoResiduoPlasticoActionPerformed
 
     private void botaoResiduoPapelCartaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoResiduoPapelCartaoActionPerformed
         // TODO add your handling code here:
@@ -537,20 +537,20 @@ public class TelaResiduos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botaoResiduoEletronicos;
+    private javax.swing.JButton botaoResiduoMadeira;
+    private javax.swing.JButton botaoResiduoMetal;
+    private javax.swing.JButton botaoResiduoOrganico;
     private javax.swing.JButton botaoResiduoPapelCartao;
-    private javax.swing.JButton botaoResiduoPapelCartao1;
-    private javax.swing.JButton botaoResiduoPapelCartao10;
-    private javax.swing.JButton botaoResiduoPapelCartao11;
-    private javax.swing.JButton botaoResiduoPapelCartao2;
     private javax.swing.JButton botaoResiduoPapelCartao3;
-    private javax.swing.JButton botaoResiduoPapelCartao4;
-    private javax.swing.JButton botaoResiduoPapelCartao5;
     private javax.swing.JButton botaoResiduoPapelCartao6;
-    private javax.swing.JButton botaoResiduoPapelCartao7;
-    private javax.swing.JButton botaoResiduoPapelCartao8;
     private javax.swing.JButton botaoResiduoPapelCartao9;
+    private javax.swing.JButton botaoResiduoPerigosos;
+    private javax.swing.JButton botaoResiduoPilhasBaterias;
+    private javax.swing.JButton botaoResiduoPlastico;
+    private javax.swing.JButton botaoResiduoTetraPak;
     private javax.swing.JButton botaoResiduoVidro;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> comboResiduos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;

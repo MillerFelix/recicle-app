@@ -175,7 +175,7 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="jComboBox1" min="-2" pref="270" max="-2" attributes="0"/>
+                  <Component id="comboResiduos" min="-2" pref="270" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="272" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -187,7 +187,7 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="labelTitulo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                  <Component id="comboResiduos" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Component id="painelScroll" min="-2" pref="386" max="-2" attributes="0"/>
                   <EmptySpace pref="40" max="32767" attributes="0"/>
@@ -207,7 +207,7 @@
             <Property name="text" type="java.lang.String" value="Res&#xed;duos"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox1">
+        <Component class="javax.swing.JComboBox" name="comboResiduos">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="ff" red="99" type="rgb"/>
@@ -284,24 +284,24 @@
                           <EmptySpace pref="33" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="botaoResiduoPapelCartao10" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="botaoResiduoPerigosos" min="-2" pref="300" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="botaoResiduoPapelCartao11" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="botaoResiduoMadeira" min="-2" pref="300" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <Component id="botaoResiduoPapelCartao7" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="botaoResiduoPilhasBaterias" min="-2" pref="300" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="botaoResiduoPapelCartao8" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="botaoResiduoTetraPak" min="-2" pref="300" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <Component id="botaoResiduoPapelCartao4" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="botaoResiduoOrganico" min="-2" pref="300" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="botaoResiduoPapelCartao5" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="botaoResiduoEletronicos" min="-2" pref="300" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <Component id="botaoResiduoPapelCartao1" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="botaoResiduoPlastico" min="-2" pref="300" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="botaoResiduoPapelCartao2" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="botaoResiduoMetal" min="-2" pref="300" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Component id="botaoResiduoPapelCartao" min="-2" pref="300" max="-2" attributes="0"/>
@@ -323,23 +323,23 @@
                           </Group>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="botaoResiduoPapelCartao1" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
-                              <Component id="botaoResiduoPapelCartao2" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                              <Component id="botaoResiduoPlastico" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                              <Component id="botaoResiduoMetal" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="botaoResiduoPapelCartao4" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
-                              <Component id="botaoResiduoPapelCartao5" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                              <Component id="botaoResiduoOrganico" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                              <Component id="botaoResiduoEletronicos" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="botaoResiduoPapelCartao7" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
-                              <Component id="botaoResiduoPapelCartao8" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                              <Component id="botaoResiduoPilhasBaterias" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                              <Component id="botaoResiduoTetraPak" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="botaoResiduoPapelCartao10" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
-                              <Component id="botaoResiduoPapelCartao11" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                              <Component id="botaoResiduoPerigosos" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                              <Component id="botaoResiduoMadeira" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="338" max="32767" attributes="0"/>
                       </Group>
@@ -403,7 +403,7 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoResiduoPapelCartaoActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="botaoResiduoPapelCartao1">
+                <Component class="javax.swing.JButton" name="botaoResiduoPlastico">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="10" green="10" red="ba" type="rgb"/>
@@ -428,10 +428,10 @@
                     <Property name="opaque" type="boolean" value="true"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoResiduoPapelCartao1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoResiduoPlasticoActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="botaoResiduoPapelCartao2">
+                <Component class="javax.swing.JButton" name="botaoResiduoMetal">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="d" green="ed" red="ba" type="rgb"/>
@@ -456,10 +456,10 @@
                     <Property name="opaque" type="boolean" value="true"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoResiduoPapelCartao2ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoResiduoMetalActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="botaoResiduoPapelCartao4">
+                <Component class="javax.swing.JButton" name="botaoResiduoOrganico">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="20" green="51" red="76" type="rgb"/>
@@ -484,10 +484,10 @@
                     <Property name="opaque" type="boolean" value="true"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoResiduoPapelCartao4ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoResiduoOrganicoActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="botaoResiduoPapelCartao5">
+                <Component class="javax.swing.JButton" name="botaoResiduoEletronicos">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="12" green="53" red="ea" type="rgb"/>
@@ -512,10 +512,10 @@
                     <Property name="opaque" type="boolean" value="true"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoResiduoPapelCartao5ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoResiduoEletronicosActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="botaoResiduoPapelCartao7">
+                <Component class="javax.swing.JButton" name="botaoResiduoPilhasBaterias">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="66" green="66" red="66" type="rgb"/>
@@ -540,10 +540,10 @@
                     <Property name="opaque" type="boolean" value="true"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoResiduoPapelCartao7ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoResiduoPilhasBateriasActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="botaoResiduoPapelCartao8">
+                <Component class="javax.swing.JButton" name="botaoResiduoTetraPak">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="b8" green="86" red="44" type="rgb"/>
@@ -568,10 +568,10 @@
                     <Property name="opaque" type="boolean" value="true"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoResiduoPapelCartao8ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoResiduoTetraPakActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="botaoResiduoPapelCartao10">
+                <Component class="javax.swing.JButton" name="botaoResiduoPerigosos">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="1d" green="1d" red="1e" type="rgb"/>
@@ -594,10 +594,10 @@
                     <Property name="opaque" type="boolean" value="true"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoResiduoPapelCartao10ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoResiduoPerigososActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="botaoResiduoPapelCartao11">
+                <Component class="javax.swing.JButton" name="botaoResiduoMadeira">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="9" green="1e" red="23" type="rgb"/>
@@ -622,7 +622,7 @@
                     <Property name="opaque" type="boolean" value="true"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoResiduoPapelCartao11ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoResiduoMadeiraActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>

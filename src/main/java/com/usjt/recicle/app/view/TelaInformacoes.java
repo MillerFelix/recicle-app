@@ -1,5 +1,6 @@
 package com.usjt.recicle.app.view;
 
+import com.usjt.recicle.app.model.CategoriaResiduo;
 import java.io.IOException;
 import java.net.URL;
 import javax.swing.ImageIcon;
@@ -23,8 +24,8 @@ public class TelaInformacoes extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         labelSaudacao = new javax.swing.JLabel();
         labelSair = new javax.swing.JLabel();
-        labelTitulo1 = new javax.swing.JLabel();
-        labelAnotacoes1 = new javax.swing.JLabel();
+        labelTitulo = new javax.swing.JLabel();
+        labelAnotacoes = new javax.swing.JLabel();
         imagemResiduo = new javax.swing.JLabel();
         textoAnotacao = new javax.swing.JTextField();
         botaoSalvar = new javax.swing.JButton();
@@ -111,13 +112,13 @@ public class TelaInformacoes extends javax.swing.JFrame {
                 .addComponent(labelSair))
         );
 
-        labelTitulo1.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
-        labelTitulo1.setForeground(new java.awt.Color(0, 153, 0));
-        labelTitulo1.setText("Resíduo");
+        labelTitulo.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        labelTitulo.setForeground(new java.awt.Color(0, 153, 0));
+        labelTitulo.setText("Resíduo");
 
-        labelAnotacoes1.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
-        labelAnotacoes1.setForeground(new java.awt.Color(0, 153, 0));
-        labelAnotacoes1.setText("Anotações");
+        labelAnotacoes.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
+        labelAnotacoes.setForeground(new java.awt.Color(0, 153, 0));
+        labelAnotacoes.setText("Anotações");
 
         imagemResiduo.setText("Imagem do Resíduo");
 
@@ -171,12 +172,12 @@ public class TelaInformacoes extends javax.swing.JFrame {
                 .addGap(17, 17, 17)
                 .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                        .addComponent(labelTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(labelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(imagemResiduo)
                         .addGap(97, 97, 97))
                     .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                        .addComponent(labelAnotacoes1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(labelAnotacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(labelDicas, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(108, 108, 108))
@@ -200,13 +201,13 @@ public class TelaInformacoes extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(imagemResiduo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(informacoesResiduo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 178, Short.MAX_VALUE)
                 .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelAnotacoes1)
+                    .addComponent(labelAnotacoes)
                     .addComponent(labelDicas))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -243,6 +244,11 @@ public class TelaInformacoes extends javax.swing.JFrame {
 
     }//GEN-LAST:event_textoAnotacaoActionPerformed
 
+    public void atualizarInformacoes(CategoriaResiduo categoriaResiduo) {
+        labelTitulo.setText("Título: " + categoriaResiduo.getNome());
+        informacoesResiduo.setText("Informações: " + categoriaResiduo.getDescricao());
+    }
+    
     private void configurarImagem() {
         URL imgURL = getClass().getResource("/imagens/icone-reciclagem.png");
         if (imgURL != null) {
@@ -270,11 +276,11 @@ public class TelaInformacoes extends javax.swing.JFrame {
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel labelAnotacoes1;
+    private javax.swing.JLabel labelAnotacoes;
     private javax.swing.JLabel labelDicas;
     private javax.swing.JLabel labelSair;
     private javax.swing.JLabel labelSaudacao;
-    private javax.swing.JLabel labelTitulo1;
+    private javax.swing.JLabel labelTitulo;
     private javax.swing.JList<String> listaAnotacoes;
     private javax.swing.JPanel painelConteudoLogin;
     private javax.swing.JTextField textoAnotacao;

@@ -2,17 +2,17 @@ package com.usjt.recicle.app.model;
 
 import java.time.LocalDateTime;
 
-public class Anotação {
+public class Anotacao {
 
     private Long id;
     private String descricao;
     private CategoriaResiduo categoriaResiduo;
     private LocalDateTime dataCriacao;
 
-    public Anotação() {
+    public Anotacao() {
     }
 
-    public Anotação(String descricao, CategoriaResiduo categoriaResiduo, LocalDateTime dataCriacao) {
+    public Anotacao(String descricao, CategoriaResiduo categoriaResiduo, LocalDateTime dataCriacao) {
         this.descricao = descricao;
         this.categoriaResiduo = categoriaResiduo;
         this.dataCriacao = dataCriacao;
