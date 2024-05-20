@@ -138,7 +138,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        labelTitulo.setFont(new java.awt.Font("Arial Black", 1, 36)); // NOI18N
+        labelTitulo.setFont(new java.awt.Font("Arial Black", 1, 33)); // NOI18N
         labelTitulo.setForeground(new java.awt.Color(0, 153, 0));
         labelTitulo.setText("Recicle");
 
@@ -163,14 +163,14 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addComponent(labelTitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(painelFormularios, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelConteudoLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 806, Short.MAX_VALUE)
+            .addComponent(painelConteudoLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

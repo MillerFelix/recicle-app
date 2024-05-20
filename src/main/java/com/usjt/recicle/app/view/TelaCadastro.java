@@ -147,7 +147,7 @@ public class TelaCadastro extends javax.swing.JFrame {
                 .addGap(43, 43, 43))
         );
 
-        labelTitulo.setFont(new java.awt.Font("Arial Black", 1, 36)); // NOI18N
+        labelTitulo.setFont(new java.awt.Font("Arial Black", 1, 33)); // NOI18N
         labelTitulo.setForeground(new java.awt.Color(0, 153, 0));
         labelTitulo.setText("Cadastre-se");
 
@@ -172,7 +172,7 @@ public class TelaCadastro extends javax.swing.JFrame {
                 .addComponent(labelTitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(painelFormularios, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

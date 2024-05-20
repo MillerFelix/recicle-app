@@ -25,11 +25,13 @@ public class TelaInformacoes extends javax.swing.JFrame {
         labelSair = new javax.swing.JLabel();
         labelTitulo1 = new javax.swing.JLabel();
         labelAnotacoes1 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tabelaAnotacoes = new javax.swing.JTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        listaDicas = new javax.swing.JList<>();
         imagemResiduo = new javax.swing.JLabel();
+        textoAnotacao = new javax.swing.JTextField();
+        botaoSalvar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        listaAnotacoes = new javax.swing.JList<>();
+        dicaResiduo = new javax.swing.JLabel();
+        informacoesResiduo = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
@@ -117,53 +119,46 @@ public class TelaInformacoes extends javax.swing.JFrame {
         labelAnotacoes1.setForeground(new java.awt.Color(0, 153, 0));
         labelAnotacoes1.setText("Anotações");
 
-        tabelaAnotacoes.setAutoCreateRowSorter(true);
-        tabelaAnotacoes.setBackground(new java.awt.Color(153, 255, 153));
-        tabelaAnotacoes.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 6, true));
-        tabelaAnotacoes.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        tabelaAnotacoes.setForeground(new java.awt.Color(0, 153, 0));
-        tabelaAnotacoes.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null},
-                {null},
-                {null},
-                {null},
-                {null},
-                {null},
-                {null}
-            },
-            new String [] {
-                ""
-            }
-        ));
-        tabelaAnotacoes.setToolTipText("Escreva suas anotações");
-        tabelaAnotacoes.setFocusable(false);
-        tabelaAnotacoes.setGridColor(new java.awt.Color(0, 218, 101));
-        tabelaAnotacoes.setOpaque(false);
-        tabelaAnotacoes.setRequestFocusEnabled(false);
-        tabelaAnotacoes.setRowHeight(25);
-        tabelaAnotacoes.setSelectionBackground(new java.awt.Color(153, 255, 153));
-        tabelaAnotacoes.setSelectionForeground(new java.awt.Color(0, 153, 0));
-        tabelaAnotacoes.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        tabelaAnotacoes.getTableHeader().setResizingAllowed(false);
-        tabelaAnotacoes.getTableHeader().setReorderingAllowed(false);
-        jScrollPane3.setViewportView(tabelaAnotacoes);
+        imagemResiduo.setText("Imagem do Resíduo");
 
-        listaDicas.setBackground(new java.awt.Color(153, 255, 153));
-        listaDicas.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 6, true));
-        listaDicas.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        listaDicas.setForeground(new java.awt.Color(0, 153, 0));
-        listaDicas.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Dica1", "Dica 2", "Dica 3", "Dica 4", " " };
+        textoAnotacao.setBackground(new java.awt.Color(153, 255, 153));
+        textoAnotacao.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        textoAnotacao.setForeground(new java.awt.Color(0, 153, 0));
+        textoAnotacao.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textoAnotacao.setToolTipText("Digite o nome de Usuário");
+        textoAnotacao.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 4, true));
+        textoAnotacao.setSelectedTextColor(new java.awt.Color(0, 0, 0));
+        textoAnotacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textoAnotacaoActionPerformed(evt);
+            }
+        });
+
+        botaoSalvar.setBackground(new java.awt.Color(0, 218, 101));
+        botaoSalvar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        botaoSalvar.setForeground(new java.awt.Color(0, 153, 0));
+        botaoSalvar.setText("OK");
+        botaoSalvar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 0), 4, true));
+        botaoSalvar.setContentAreaFilled(false);
+        botaoSalvar.setOpaque(true);
+
+        listaAnotacoes.setBackground(new java.awt.Color(153, 255, 153));
+        listaAnotacoes.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 4, true));
+        listaAnotacoes.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        listaAnotacoes.setForeground(new java.awt.Color(0, 153, 0));
+        listaAnotacoes.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane2.setViewportView(listaDicas);
+        listaAnotacoes.setRequestFocusEnabled(false);
+        listaAnotacoes.setSelectionBackground(new java.awt.Color(0, 218, 101));
+        listaAnotacoes.setSelectionForeground(new java.awt.Color(0, 218, 101));
+        jScrollPane1.setViewportView(listaAnotacoes);
 
-        imagemResiduo.setText("Imagem do Resíduo");
+        dicaResiduo.setText("Dica 1");
+
+        informacoesResiduo.setText("Informações do Resíduo");
 
         javax.swing.GroupLayout painelConteudoLoginLayout = new javax.swing.GroupLayout(painelConteudoLogin);
         painelConteudoLogin.setLayout(painelConteudoLoginLayout);
@@ -176,19 +171,28 @@ public class TelaInformacoes extends javax.swing.JFrame {
                 .addGap(17, 17, 17)
                 .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                        .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelAnotacoes1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelDicas, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(painelConteudoLoginLayout.createSequentialGroup()
                         .addComponent(labelTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(imagemResiduo)
-                        .addGap(97, 97, 97))))
+                        .addGap(97, 97, 97))
+                    .addGroup(painelConteudoLoginLayout.createSequentialGroup()
+                        .addComponent(labelAnotacoes1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(labelDicas, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(108, 108, 108))
+                    .addGroup(painelConteudoLoginLayout.createSequentialGroup()
+                        .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(painelConteudoLoginLayout.createSequentialGroup()
+                                .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(painelConteudoLoginLayout.createSequentialGroup()
+                                        .addComponent(textoAnotacao, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(46, 46, 46)
+                                .addComponent(dicaResiduo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(informacoesResiduo))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         painelConteudoLoginLayout.setVerticalGroup(
             painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -198,15 +202,21 @@ public class TelaInformacoes extends javax.swing.JFrame {
                 .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(imagemResiduo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 234, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(informacoesResiduo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 178, Short.MAX_VALUE)
                 .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelAnotacoes1)
                     .addComponent(labelDicas))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane2)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE))
-                .addGap(12, 12, 12))
+                .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(textoAnotacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dicaResiduo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -229,6 +239,10 @@ public class TelaInformacoes extends javax.swing.JFrame {
         telaLogin.setVisible(true);
     }//GEN-LAST:event_labelSairMouseClicked
 
+    private void textoAnotacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoAnotacaoActionPerformed
+
+    }//GEN-LAST:event_textoAnotacaoActionPerformed
+
     private void configurarImagem() {
         URL imgURL = getClass().getResource("/imagens/icone-reciclagem.png");
         if (imgURL != null) {
@@ -247,20 +261,22 @@ public class TelaInformacoes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botaoSalvar;
+    private javax.swing.JLabel dicaResiduo;
     private javax.swing.JLabel imagemResiduo;
+    private javax.swing.JLabel informacoesResiduo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelAnotacoes1;
     private javax.swing.JLabel labelDicas;
     private javax.swing.JLabel labelSair;
     private javax.swing.JLabel labelSaudacao;
     private javax.swing.JLabel labelTitulo1;
-    private javax.swing.JList<String> listaDicas;
+    private javax.swing.JList<String> listaAnotacoes;
     private javax.swing.JPanel painelConteudoLogin;
-    private javax.swing.JTable tabelaAnotacoes;
+    private javax.swing.JTextField textoAnotacao;
     // End of variables declaration//GEN-END:variables
 }
