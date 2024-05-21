@@ -41,4 +41,8 @@ public class CategoriaResiduo {
     public void setResiduos(List<Residuo> residuos) {
         this.residuos = residuos;
     }
+
+    public List<CategoriaResiduo> buscarTodasCategorias() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
