@@ -6,42 +6,44 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CategoriaResiduoDAO {
 
-    public static void buscarTodasCategorias(CategoriaResiduo categoriaResiduo) {
+    public static List<CategoriaResiduo> buscarTodasCategorias() {
+        List<CategoriaResiduo> categorias = new ArrayList<>();
         String sql = "SELECT * FROM categoria_residuos";
 
         PreparedStatement ps = null;
         Connection connection = null;
+        ResultSet rs = null;
 
         try {
             connection = new ConexaoBD().getConnection();
             ps = connection.prepareStatement(sql);
-            ps.setString(1, categoriaResiduo.getNome());
-            ps.setString(2, categoriaResiduo.getDescricao());
-            ps.execute();
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Long id = rs.getLong("id");
+                String nome = rs.getString("nome");
+                String descricao = rs.getString("descricao");
+                CategoriaResiduo categoriaResiduo = new CategoriaResiduo(id, nome, descricao);
+                categorias.add(categoriaResiduo);
+            }
         } catch (SQLException e) {
-            System.err.println("Erro na descricao : " + e.getMessage());
-            e.printStackTrace();
+            System.err.println("Erro ao buscar categorias: " + e.getMessage());
         } finally {
             try {
-                if (ps != null) {
-                    ps.close();
+                if (rs != null) {
+                    rs.close();
                 }
             } catch (SQLException e) {
-                System.err.println("Erro ao fechar o PreparedStatement: " + e.getMessage());
-                e.printStackTrace();
-            }
-            try {
-                if (connection != null) {
-                    connection.close();
-                }
-            } catch (SQLException e) {
-                System.err.println("Erro ao fechar a Connection: " + e.getMessage());
-                e.printStackTrace();
+                System.err.println("Erro ao fechar o ResultSet: " + e.getMessage());
             }
         }
+
+        return categorias;
     }
 
     public static CategoriaResiduo buscarResiduosPorNome(String nome) {
@@ -52,11 +54,11 @@ public class CategoriaResiduoDAO {
 
         try {
             String sql = "SELECT * FROM categoria_residuos WHERE nome = ?";
-            
+
             ps = connection.prepareStatement(sql);
             ps.setString(1, nome);
             ResultSet rs = ps.executeQuery();
-            
+
             if (rs.next()) {
                 categoriaResiduo = new CategoriaResiduo();
                 categoriaResiduo.setNome(rs.getString("nome"));
@@ -66,11 +68,11 @@ public class CategoriaResiduoDAO {
             rs.close();
             ps.close();
             connection.close();
-            
+
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
         return categoriaResiduo;
     }
 }

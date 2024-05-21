@@ -12,10 +12,19 @@ public class Anotacao {
     public Anotacao() {
     }
 
-    public Anotacao(String descricao, CategoriaResiduo categoriaResiduo, LocalDateTime dataCriacao) {
+    public Anotacao(Long id, String descricao, CategoriaResiduo categoriaResiduo, LocalDateTime dataCriacao) {
+        this.id = id;
         this.descricao = descricao;
         this.categoriaResiduo = categoriaResiduo;
         this.dataCriacao = dataCriacao;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getDescricao() {

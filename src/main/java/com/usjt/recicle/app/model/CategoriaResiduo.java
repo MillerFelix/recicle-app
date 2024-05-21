@@ -1,5 +1,6 @@
 package com.usjt.recicle.app.model;
 
+import com.usjt.recicle.app.dao.CategoriaResiduoDAO;
 import java.util.List;
 
 public class CategoriaResiduo {
@@ -12,10 +13,18 @@ public class CategoriaResiduo {
     public CategoriaResiduo() {
     }
 
-    public CategoriaResiduo(String nome, String descricao, List<Residuo> residuos) {
+    public CategoriaResiduo(Long id, String nome, String descricao) {
+        this.id = id;
         this.nome = nome;
         this.descricao = descricao;
-        this.residuos = residuos;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -38,7 +47,7 @@ public class CategoriaResiduo {
         return residuos;
     }
 
-    public void setResiduos(List<Residuo> residuos) {
-        this.residuos = residuos;
+    public void buscarCategoriasResiduo() {
+        new CategoriaResiduoDAO().buscarTodasCategorias();
     }
 }

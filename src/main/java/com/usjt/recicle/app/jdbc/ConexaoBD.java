@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class ConexaoBD {
 
-    private String url = "jdbc:mysql://localhost:3306/recicle-bd";
+    private String url = "jdbc:mysql://localhost:3306/recicle_bd";
     private String user = "root";
     private String password = "123456";
     private Connection connection = null;

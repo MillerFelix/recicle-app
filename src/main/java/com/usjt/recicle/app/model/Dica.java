@@ -5,15 +5,24 @@ public class Dica {
     private Long id;
     private String titulo;
     private String descricao;
-    private CategoriaResiduo categoriaResiduo;
+    private Long idCategoriaResiduo;
 
     public Dica() {
     }
 
-    public Dica(String titulo, String descricao, CategoriaResiduo categoriaResiduo) {
+    public Dica(Long id, String titulo, String descricao, Long idCategoriaResiduo) {
+        this.id = id;
         this.titulo = titulo;
         this.descricao = descricao;
-        this.categoriaResiduo = categoriaResiduo;
+        this.idCategoriaResiduo = idCategoriaResiduo;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitulo() {
@@ -32,11 +41,11 @@ public class Dica {
         this.descricao = descricao;
     }
 
-    public CategoriaResiduo getCategoriaResiduo() {
-        return categoriaResiduo;
+    public Long getIdCategoriaResiduo() {
+        return idCategoriaResiduo;
     }
 
-    public void setCategoriaResiduo(CategoriaResiduo categoriaResiduo) {
-        this.categoriaResiduo = categoriaResiduo;
+    public void setIdCategoriaResiduo(Long idCategoriaResiduo) {
+        this.idCategoriaResiduo = idCategoriaResiduo;
     }
 }

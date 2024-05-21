@@ -1,19 +1,28 @@
 package com.usjt.recicle.app.model;
 
 public class Residuo {
-    
+
     private Long id;
     private String nome;
     private String descricao;
-    private String categoria;
+    private Long idCategoriaResiduo;
 
     public Residuo() {
     }
-    
-    public Residuo(String nome, String descricao, String categoria) {
+
+    public Residuo(Long id, String nome, String descricao, Long categoria) {
+        this.id = id;
         this.nome = nome;
         this.descricao = descricao;
-        this.categoria = categoria;
+        this.idCategoriaResiduo = idCategoriaResiduo;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -32,11 +41,11 @@ public class Residuo {
         this.descricao = descricao;
     }
 
-    public String getCategoria() {
-        return categoria;
+    public Long getIdCategoriaResiduo() {
+        return idCategoriaResiduo;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setIdCategoriaResiduo(Long idCategoriaResiduo) {
+        this.idCategoriaResiduo = idCategoriaResiduo;
     }
 }
