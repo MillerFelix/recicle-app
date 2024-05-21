@@ -1,13 +1,16 @@
-C:\Users\Miller\Documents\Projeto A3 - Reciclagem\recicle-app\src\main\java\com\usjt\recicle\app\view\TelaInformacoes.java
-C:\Users\Miller\Documents\Projeto A3 - Reciclagem\recicle-app\src\main\java\com\usjt\recicle\app\dao\UsuarioDAO.java
-C:\Users\Miller\Documents\Projeto A3 - Reciclagem\recicle-app\src\main\java\com\usjt\recicle\app\view\TelaResiduos.java
-C:\Users\Miller\Documents\Projeto A3 - Reciclagem\recicle-app\src\main\java\com\usjt\recicle\app\model\Anotação.java
-C:\Users\Miller\Documents\Projeto A3 - Reciclagem\recicle-app\src\main\java\com\usjt\recicle\app\model\Dica.java
-C:\Users\Miller\Documents\Projeto A3 - Reciclagem\recicle-app\src\main\java\com\usjt\recicle\app\view\TelaCadastro.java
-C:\Users\Miller\Documents\Projeto A3 - Reciclagem\recicle-app\src\main\java\com\usjt\recicle\app\model\CategoriaResiduo.java
-C:\Users\Miller\Documents\Projeto A3 - Reciclagem\recicle-app\src\main\java\com\usjt\recicle\app\model\Usuario.java
-C:\Users\Miller\Documents\Projeto A3 - Reciclagem\recicle-app\src\main\java\com\usjt\recicle\app\RecicleApp.java
-C:\Users\Miller\Documents\Projeto A3 - Reciclagem\recicle-app\src\main\java\com\usjt\recicle\app\jdbc\ConexaoBD.java
-C:\Users\Miller\Documents\Projeto A3 - Reciclagem\recicle-app\src\main\java\com\usjt\recicle\app\model\Residuo.java
-C:\Users\Miller\Documents\Projeto A3 - Reciclagem\recicle-app\src\main\java\com\usjt\recicle\app\controller\UsuarioController.java
-C:\Users\Miller\Documents\Projeto A3 - Reciclagem\recicle-app\src\main\java\com\usjt\recicle\app\view\TelaLogin.java
+C:\Users\bruno\Desktop\A 3 2\recicle-app\src\main\java\com\usjt\recicle\app\controller\UsuarioController.java
+C:\Users\bruno\Desktop\A 3 2\recicle-app\src\main\java\com\usjt\recicle\app\jdbc\ConexaoBD.java
+C:\Users\bruno\Desktop\A 3 2\recicle-app\src\main\java\com\usjt\recicle\app\model\Residuo.java
+C:\Users\bruno\Desktop\A 3 2\recicle-app\src\main\java\com\usjt\recicle\app\model\Usuario.java
+C:\Users\bruno\Desktop\A 3 2\recicle-app\src\main\java\com\usjt\recicle\app\model\Anotacao.java
+C:\Users\bruno\Desktop\A 3 2\recicle-app\src\main\java\com\usjt\recicle\app\view\TelaInformacoes.java
+C:\Users\bruno\Desktop\A 3 2\recicle-app\src\main\java\com\usjt\recicle\app\view\TelaLogin.java
+C:\Users\bruno\Desktop\A 3 2\recicle-app\src\main\java\com\usjt\recicle\app\dao\UsuarioDAO.java
+C:\Users\bruno\Desktop\A 3 2\recicle-app\src\main\java\com\usjt\recicle\app\RecicleApp.java
+C:\Users\bruno\Desktop\A 3 2\recicle-app\src\main\java\com\usjt\recicle\app\model\CategoriaResiduo.java
+C:\Users\bruno\Desktop\A 3 2\recicle-app\src\main\java\com\usjt\recicle\app\dao\CategoriaResiduoDAO.java
+C:\Users\bruno\Desktop\A 3 2\recicle-app\src\main\java\com\usjt\recicle\app\dao\AnotacaoDAO.java
+C:\Users\bruno\Desktop\A 3 2\recicle-app\src\main\java\com\usjt\recicle\app\model\Dica.java
+C:\Users\bruno\Desktop\A 3 2\recicle-app\src\main\java\com\usjt\recicle\app\dao\DicaDAO.java
+C:\Users\bruno\Desktop\A 3 2\recicle-app\src\main\java\com\usjt\recicle\app\view\TelaCadastro.java
+C:\Users\bruno\Desktop\A 3 2\recicle-app\src\main\java\com\usjt\recicle\app\view\TelaResiduos.java
