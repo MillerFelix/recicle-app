@@ -17,10 +17,7 @@ public class TelaResiduos extends javax.swing.JFrame {
 
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jLabel1 = new javax.swing.JLabel();
-        botaoResiduoPapelCartao3 = new javax.swing.JButton();
-        botaoResiduoPapelCartao6 = new javax.swing.JButton();
-        botaoResiduoPapelCartao9 = new javax.swing.JButton();
-        painelConteudoLogin = new javax.swing.JPanel();
+        painelConteudo = new javax.swing.JPanel();
         labelTitulo = new javax.swing.JLabel();
         comboResiduos = new javax.swing.JComboBox<>();
         painelScroll = new javax.swing.JScrollPane();
@@ -35,7 +32,7 @@ public class TelaResiduos extends javax.swing.JFrame {
         botaoResiduoTetraPak = new javax.swing.JButton();
         botaoResiduoPerigosos = new javax.swing.JButton();
         botaoResiduoMadeira = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        painelCabecalho = new javax.swing.JPanel();
         labelSaudacao = new javax.swing.JLabel();
         labelSair = new javax.swing.JLabel();
         labelAgenda = new javax.swing.JLabel();
@@ -53,57 +50,12 @@ public class TelaResiduos extends javax.swing.JFrame {
 
         jLabel1.setText("jLabel1");
 
-        botaoResiduoPapelCartao3.setBackground(new java.awt.Color(186, 16, 16));
-        botaoResiduoPapelCartao3.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        botaoResiduoPapelCartao3.setForeground(new java.awt.Color(255, 255, 255));
-        botaoResiduoPapelCartao3.setText("Plástico");
-        botaoResiduoPapelCartao3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 0), 4));
-        botaoResiduoPapelCartao3.setContentAreaFilled(false);
-        botaoResiduoPapelCartao3.setFocusPainted(false);
-        botaoResiduoPapelCartao3.setFocusable(false);
-        botaoResiduoPapelCartao3.setOpaque(true);
-        botaoResiduoPapelCartao3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoResiduoPapelCartao3ActionPerformed(evt);
-            }
-        });
-
-        botaoResiduoPapelCartao6.setBackground(new java.awt.Color(186, 16, 16));
-        botaoResiduoPapelCartao6.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        botaoResiduoPapelCartao6.setForeground(new java.awt.Color(255, 255, 255));
-        botaoResiduoPapelCartao6.setText("Plástico");
-        botaoResiduoPapelCartao6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 0), 4));
-        botaoResiduoPapelCartao6.setContentAreaFilled(false);
-        botaoResiduoPapelCartao6.setFocusPainted(false);
-        botaoResiduoPapelCartao6.setFocusable(false);
-        botaoResiduoPapelCartao6.setOpaque(true);
-        botaoResiduoPapelCartao6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoResiduoPapelCartao6ActionPerformed(evt);
-            }
-        });
-
-        botaoResiduoPapelCartao9.setBackground(new java.awt.Color(186, 16, 16));
-        botaoResiduoPapelCartao9.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        botaoResiduoPapelCartao9.setForeground(new java.awt.Color(255, 255, 255));
-        botaoResiduoPapelCartao9.setText("Plástico");
-        botaoResiduoPapelCartao9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 0), 4));
-        botaoResiduoPapelCartao9.setContentAreaFilled(false);
-        botaoResiduoPapelCartao9.setFocusPainted(false);
-        botaoResiduoPapelCartao9.setFocusable(false);
-        botaoResiduoPapelCartao9.setOpaque(true);
-        botaoResiduoPapelCartao9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoResiduoPapelCartao9ActionPerformed(evt);
-            }
-        });
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        painelConteudoLogin.setBackground(new java.awt.Color(204, 255, 204));
-        painelConteudoLogin.setMaximumSize(new java.awt.Dimension(818, 600));
-        painelConteudoLogin.setPreferredSize(new java.awt.Dimension(818, 600));
+        painelConteudo.setBackground(new java.awt.Color(204, 255, 204));
+        painelConteudo.setMaximumSize(new java.awt.Dimension(818, 600));
+        painelConteudo.setPreferredSize(new java.awt.Dimension(818, 600));
 
         labelTitulo.setFont(new java.awt.Font("Arial Black", 1, 33)); // NOI18N
         labelTitulo.setForeground(new java.awt.Color(0, 153, 0));
@@ -336,13 +288,13 @@ public class TelaResiduos extends javax.swing.JFrame {
 
         painelScroll.setViewportView(painelResiduos);
 
-        jPanel1.setBackground(new java.awt.Color(153, 255, 153));
-        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 8, true));
-        jPanel1.setFocusable(false);
-        jPanel1.setMaximumSize(new java.awt.Dimension(818, 70));
-        jPanel1.setPreferredSize(new java.awt.Dimension(818, 70));
-        jPanel1.setRequestFocusEnabled(false);
-        jPanel1.setVerifyInputWhenFocusTarget(false);
+        painelCabecalho.setBackground(new java.awt.Color(153, 255, 153));
+        painelCabecalho.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 8, true));
+        painelCabecalho.setFocusable(false);
+        painelCabecalho.setMaximumSize(new java.awt.Dimension(818, 70));
+        painelCabecalho.setPreferredSize(new java.awt.Dimension(818, 70));
+        painelCabecalho.setRequestFocusEnabled(false);
+        painelCabecalho.setVerifyInputWhenFocusTarget(false);
 
         labelSaudacao.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         labelSaudacao.setForeground(new java.awt.Color(0, 153, 0));
@@ -374,11 +326,11 @@ public class TelaResiduos extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout painelCabecalhoLayout = new javax.swing.GroupLayout(painelCabecalho);
+        painelCabecalho.setLayout(painelCabecalhoLayout);
+        painelCabecalhoLayout.setHorizontalGroup(
+            painelCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelCabecalhoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(labelSaudacao)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 379, Short.MAX_VALUE)
@@ -387,39 +339,39 @@ public class TelaResiduos extends javax.swing.JFrame {
                 .addComponent(labelSair)
                 .addGap(18, 18, 18))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+        painelCabecalhoLayout.setVerticalGroup(
+            painelCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(labelSaudacao, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
                 .addComponent(labelAgenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(labelSair))
         );
 
-        javax.swing.GroupLayout painelConteudoLoginLayout = new javax.swing.GroupLayout(painelConteudoLogin);
-        painelConteudoLogin.setLayout(painelConteudoLoginLayout);
-        painelConteudoLoginLayout.setHorizontalGroup(
-            painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout painelConteudoLayout = new javax.swing.GroupLayout(painelConteudo);
+        painelConteudo.setLayout(painelConteudoLayout);
+        painelConteudoLayout.setHorizontalGroup(
+            painelConteudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelConteudoLayout.createSequentialGroup()
+                .addComponent(painelCabecalho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(painelConteudoLoginLayout.createSequentialGroup()
+            .addGroup(painelConteudoLayout.createSequentialGroup()
+                .addGroup(painelConteudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelConteudoLayout.createSequentialGroup()
                         .addGap(55, 55, 55)
                         .addComponent(painelScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(painelConteudoLoginLayout.createSequentialGroup()
+                    .addGroup(painelConteudoLayout.createSequentialGroup()
                         .addGap(317, 317, 317)
                         .addComponent(labelTitulo)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelConteudoLoginLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelConteudoLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(comboResiduos, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(272, 272, 272))
         );
-        painelConteudoLoginLayout.setVerticalGroup(
-            painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+        painelConteudoLayout.setVerticalGroup(
+            painelConteudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelConteudoLayout.createSequentialGroup()
+                .addComponent(painelCabecalho, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(labelTitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -433,11 +385,11 @@ public class TelaResiduos extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelConteudoLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(painelConteudo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelConteudoLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(painelConteudo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -465,18 +417,6 @@ public class TelaResiduos extends javax.swing.JFrame {
         TelaLogin telaLogin = new TelaLogin();
         telaLogin.setVisible(true);
     }//GEN-LAST:event_labelSairMouseClicked
-
-    private void botaoResiduoPapelCartao3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoResiduoPapelCartao3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botaoResiduoPapelCartao3ActionPerformed
-
-    private void botaoResiduoPapelCartao6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoResiduoPapelCartao6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botaoResiduoPapelCartao6ActionPerformed
-
-    private void botaoResiduoPapelCartao9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoResiduoPapelCartao9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botaoResiduoPapelCartao9ActionPerformed
 
     private void botaoResiduoMadeiraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoResiduoMadeiraActionPerformed
         // TODO add your handling code here:
@@ -542,9 +482,6 @@ public class TelaResiduos extends javax.swing.JFrame {
     private javax.swing.JButton botaoResiduoMetal;
     private javax.swing.JButton botaoResiduoOrganico;
     private javax.swing.JButton botaoResiduoPapelCartao;
-    private javax.swing.JButton botaoResiduoPapelCartao3;
-    private javax.swing.JButton botaoResiduoPapelCartao6;
-    private javax.swing.JButton botaoResiduoPapelCartao9;
     private javax.swing.JButton botaoResiduoPerigosos;
     private javax.swing.JButton botaoResiduoPilhasBaterias;
     private javax.swing.JButton botaoResiduoPlastico;
@@ -553,12 +490,12 @@ public class TelaResiduos extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> comboResiduos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLayeredPane jLayeredPane1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelAgenda;
     private javax.swing.JLabel labelSair;
     private javax.swing.JLabel labelSaudacao;
     private javax.swing.JLabel labelTitulo;
-    private javax.swing.JPanel painelConteudoLogin;
+    private javax.swing.JPanel painelCabecalho;
+    private javax.swing.JPanel painelConteudo;
     private javax.swing.JPanel painelResiduos;
     private javax.swing.JScrollPane painelScroll;
     // End of variables declaration//GEN-END:variables

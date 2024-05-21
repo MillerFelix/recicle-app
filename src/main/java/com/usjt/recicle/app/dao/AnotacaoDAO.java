@@ -6,25 +6,22 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-
 public class AnotacaoDAO {
 
- public void salvar (Anotacao anotacao) { 
-  String sql = "INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)";
-  
+    public void salvar(Anotacao anotacao) {
+        String sql = "INSERT INTO anotacoes (descricao, categoria_residuos) VALUES (?, ?)";
+
         PreparedStatement ps = null;
         Connection connection = null;
-        
+
         try {
             connection = new ConexaoBD().getConnection();
-             ps = connection.prepareStatement(sql);
+            ps = connection.prepareStatement(sql);
             ps.setString(1, anotacao.getDescricao());
             ps.setObject(2, anotacao.getCategoriaResiduo());
             ps.execute();
-        }
-        
-        catch (SQLException e) {
-            System.err.println("Erro na descricao : " + e.getMessage());
+        } catch (SQLException e) {
+            System.err.println("Erro na descrição : " + e.getMessage());
             e.printStackTrace();
         } finally {
             try {
@@ -45,8 +42,4 @@ public class AnotacaoDAO {
             }
         }
     }
- 
-     
- 
- 
- }
+}
