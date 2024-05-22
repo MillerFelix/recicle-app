@@ -11,7 +11,7 @@ import java.util.List;
 
 public class CategoriaResiduoDAO {
 
-    public static List<CategoriaResiduo> buscarTodasCategorias() {
+    public static List<CategoriaResiduo> buscarTodasCategoriasResiduo() {
         List<CategoriaResiduo> categorias = new ArrayList<>();
         String sql = "SELECT * FROM categoria_residuos";
 
@@ -46,24 +46,25 @@ public class CategoriaResiduoDAO {
         return categorias;
     }
 
-    public static CategoriaResiduo buscarResiduosPorNome(String nome) {
-
+    public static CategoriaResiduo buscarResiduosPorId(Long id) {
         PreparedStatement ps = null;
         Connection connection = null;
         CategoriaResiduo categoriaResiduo = null;
 
         try {
-            String sql = "SELECT * FROM categoria_residuos WHERE nome = ?";
+            String sql = "SELECT * FROM categoria_residuos WHERE id = ?";
+
+            connection = new ConexaoBD().getConnection();
 
             ps = connection.prepareStatement(sql);
-            ps.setString(1, nome);
+            ps.setLong(1, id);
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
                 categoriaResiduo = new CategoriaResiduo();
+                categoriaResiduo.setId(rs.getLong("id"));
                 categoriaResiduo.setNome(rs.getString("nome"));
-                categoriaResiduo.setDescricao(rs.getString("descrição"));
-//                categoriaResiduo.setDicas(rs.getString("dicas"));
+                categoriaResiduo.setDescricao(rs.getString("descricao"));
             }
             rs.close();
             ps.close();

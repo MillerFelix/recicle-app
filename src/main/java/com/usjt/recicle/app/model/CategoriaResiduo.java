@@ -47,7 +47,13 @@ public class CategoriaResiduo {
         return residuos;
     }
 
-    public void buscarCategoriasResiduo() {
-        new CategoriaResiduoDAO().buscarTodasCategorias();
+    public List<CategoriaResiduo> buscarTodasCategoriasResiduo() {
+        List<CategoriaResiduo> listaCategorias = new CategoriaResiduoDAO().buscarTodasCategoriasResiduo();
+        return listaCategorias;
+    }
+    
+    public CategoriaResiduo buscarCategoriasPorId(Long id) {
+        CategoriaResiduo categoriaResiduo = new CategoriaResiduoDAO().buscarResiduosPorId(id);
+        return categoriaResiduo;
     }
 }

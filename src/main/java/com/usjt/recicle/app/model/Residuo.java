@@ -1,5 +1,8 @@
 package com.usjt.recicle.app.model;
 
+import com.usjt.recicle.app.dao.ResiduoDAO;
+import java.util.List;
+
 public class Residuo {
 
     private Long id;
@@ -47,5 +50,10 @@ public class Residuo {
 
     public void setIdCategoriaResiduo(Long idCategoriaResiduo) {
         this.idCategoriaResiduo = idCategoriaResiduo;
+    }
+    
+        public List<Residuo> buscarTodosResiduos() {
+        List<Residuo> listaResiduos = new ResiduoDAO().buscarTodosResiduos();
+        return listaResiduos;
     }
 }
