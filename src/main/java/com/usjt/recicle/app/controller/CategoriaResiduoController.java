@@ -12,4 +12,10 @@ public class CategoriaResiduoController {
         listaCategorias = categoriaResiduo.buscarTodasCategoriasResiduo();
         return listaCategorias;
     }
+
+    public CategoriaResiduo buscarResiduosPorId(Long id) {
+        CategoriaResiduo categoriaResiduo = new CategoriaResiduo();
+        categoriaResiduo = categoriaResiduo.buscarResiduosPorId(id);
+        return categoriaResiduo;
+    }
 }

@@ -51,8 +51,8 @@ public class Residuo {
     public void setIdCategoriaResiduo(Long idCategoriaResiduo) {
         this.idCategoriaResiduo = idCategoriaResiduo;
     }
-    
-        public List<Residuo> buscarTodosResiduos() {
+
+    public List<Residuo> buscarTodosResiduos() {
         List<Residuo> listaResiduos = new ResiduoDAO().buscarTodosResiduos();
         return listaResiduos;
     }

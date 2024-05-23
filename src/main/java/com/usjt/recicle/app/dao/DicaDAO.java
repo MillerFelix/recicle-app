@@ -46,4 +46,45 @@ public class DicaDAO {
 
         return dicas;
     }
+
+    public static Dica buscarDicasCategoriaResiduo(Long id) {
+        Dica dica = null;
+        String sql = "SELECT * FROM dicas WHERE id = ?";
+
+        PreparedStatement ps = null;
+        Connection connection = null;
+        ResultSet rs = null;
+
+        try {
+            connection = new ConexaoBD().getConnection();
+            ps = connection.prepareStatement(sql);
+            ps.setLong(1, id);
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                String titulo = rs.getString("titulo");
+                String descricao = rs.getString("descricao");
+                Long idCategoriaResiduo = rs.getLong("categoria_residuos_id");
+                dica = new Dica(id, titulo, descricao, idCategoriaResiduo);
+            }
+        } catch (SQLException e) {
+            System.err.println("Erro ao buscar dica: " + e.getMessage());
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                System.err.println("Erro ao fechar recursos: " + e.getMessage());
+            }
+        }
+
+        return dica;
+    }
 }

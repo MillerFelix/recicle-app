@@ -206,9 +206,10 @@ public class TelaCadastro extends javax.swing.JFrame {
             UsuarioController usuarioController = new UsuarioController();
             boolean sucesso = usuarioController.cadastrarUsuario(nome, email, senha);
             if (sucesso) {
-                JOptionPane.showMessageDialog(null, "Cadastro realizado com Sucesso!");
+                JOptionPane.showMessageDialog(null, "Cadastro realizado com Sucesso!", "Sucesso", javax.swing.JOptionPane.INFORMATION_MESSAGE);
             } else {
-                JOptionPane.showMessageDialog(null, "Os campos não foram preenchidos corretamente...");
+                JOptionPane.showMessageDialog(this, "Os campos não foram preenchidos corretamente...", "Erro", javax.swing.JOptionPane.ERROR_MESSAGE);
+
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro: " + e);

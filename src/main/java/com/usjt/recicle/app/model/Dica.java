@@ -56,4 +56,9 @@ public class Dica {
         List<Dica> listaDicas = new DicaDAO().buscarTodasDicas();
         return listaDicas;
     }
+    
+    public Dica buscarDicasCategoriaResiduo(Long id) {
+        Dica dica = new DicaDAO().buscarDicasCategoriaResiduo(id);
+        return dica;
+    }
 }

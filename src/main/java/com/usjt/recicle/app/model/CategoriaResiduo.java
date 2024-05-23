@@ -7,16 +7,18 @@ public class CategoriaResiduo {
 
     private Long id;
     private String nome;
-    private String descricao;
+    private String informacao01;
+    private String informacao02;
     private List<Residuo> residuos;
 
     public CategoriaResiduo() {
     }
 
-    public CategoriaResiduo(Long id, String nome, String descricao) {
+    public CategoriaResiduo(Long id, String nome, String informacao01, String informacao02) {
         this.id = id;
         this.nome = nome;
-        this.descricao = descricao;
+        this.informacao01 = informacao01;
+        this.informacao02 = informacao02;
     }
 
     public Long getId() {
@@ -35,12 +37,20 @@ public class CategoriaResiduo {
         this.nome = nome;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getInformacao01() {
+        return informacao01;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setInformacao01(String informacao01) {
+        this.informacao01 = informacao01;
+    }
+
+    public String getInformacao02() {
+        return informacao02;
+    }
+
+    public void setInformacao02(String informacao02) {
+        this.informacao02 = informacao02;
     }
 
     public List<Residuo> getResiduos() {
@@ -52,7 +62,7 @@ public class CategoriaResiduo {
         return listaCategorias;
     }
     
-    public CategoriaResiduo buscarCategoriasPorId(Long id) {
+    public CategoriaResiduo buscarResiduosPorId(Long id) {
         CategoriaResiduo categoriaResiduo = new CategoriaResiduoDAO().buscarResiduosPorId(id);
         return categoriaResiduo;
     }

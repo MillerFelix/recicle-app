@@ -27,8 +27,9 @@ public class CategoriaResiduoDAO {
             while (rs.next()) {
                 Long id = rs.getLong("id");
                 String nome = rs.getString("nome");
-                String descricao = rs.getString("descricao");
-                CategoriaResiduo categoriaResiduo = new CategoriaResiduo(id, nome, descricao);
+                String informacao01 = rs.getString("informacao01");
+                String informacao02 = rs.getString("informacao02");
+                CategoriaResiduo categoriaResiduo = new CategoriaResiduo(id, nome, informacao01, informacao02);
                 categorias.add(categoriaResiduo);
             }
         } catch (SQLException e) {
@@ -64,7 +65,9 @@ public class CategoriaResiduoDAO {
                 categoriaResiduo = new CategoriaResiduo();
                 categoriaResiduo.setId(rs.getLong("id"));
                 categoriaResiduo.setNome(rs.getString("nome"));
-                categoriaResiduo.setDescricao(rs.getString("descricao"));
+                categoriaResiduo.setInformacao01(rs.getString("informacao01"));
+                categoriaResiduo.setInformacao02(rs.getString("informacao02"));
+
             }
             rs.close();
             ps.close();
