@@ -8,8 +8,14 @@ public class Usuario {
     private String nome;
     private String email;
     private String senha;
+    private static Usuario usuarioAtual;
 
     public Usuario() {
+    }
+
+    public Usuario(String email, String senha) {
+        this.email = email;
+        this.senha = senha;
     }
 
     public Usuario(Long id, String nome, String email, String senha) {
@@ -51,7 +57,28 @@ public class Usuario {
         this.senha = senha;
     }
 
+    public static Usuario getUsuarioAtual() {
+        return usuarioAtual;
+    }
+
+    public static void setUsuarioAtual(Usuario usuario) {
+        usuarioAtual = usuario;
+    }
+
+    public static void encerrarSessao() {
+        usuarioAtual = null;
+    }
+
     public void cadastrarUsuario(Usuario usuario) {
         new UsuarioDAO().cadastrarUsuario(usuario);
+    }
+
+    public boolean validarCredenciais(String email, String senha) {
+        Usuario usuario = new UsuarioDAO().validarCredenciais(email, senha);
+        if (usuario != null) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

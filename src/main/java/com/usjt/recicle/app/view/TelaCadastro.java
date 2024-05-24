@@ -8,9 +8,12 @@ import javax.swing.JOptionPane;
 
 public class TelaCadastro extends javax.swing.JFrame {
 
+    private static TelaCadastro instanciaAtual;
+
     public TelaCadastro() {
         initComponents();
         configurarImagem();
+        instanciaAtual = this;
     }
 
     @SuppressWarnings("unchecked")
@@ -91,7 +94,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         textoEmail.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         textoEmail.setForeground(new java.awt.Color(0, 153, 0));
         textoEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        textoEmail.setToolTipText("Digite o nome de Usuário");
+        textoEmail.setToolTipText("Digite seu Email");
         textoEmail.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 4, true));
         textoEmail.setSelectedTextColor(new java.awt.Color(0, 0, 0));
         textoEmail.addActionListener(new java.awt.event.ActionListener() {
@@ -194,6 +197,13 @@ public class TelaCadastro extends javax.swing.JFrame {
 
     }//GEN-LAST:event_textoNomeUsuarioActionPerformed
 
+    public static void fecharInstanciaAtual() {
+        if (instanciaAtual != null) {
+            instanciaAtual.dispose();
+            instanciaAtual = null;
+        }
+    }
+
     private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
         String nome = textoNomeUsuario.getText();
         String email = textoEmail.getText();
@@ -207,14 +217,20 @@ public class TelaCadastro extends javax.swing.JFrame {
             boolean sucesso = usuarioController.cadastrarUsuario(nome, email, senha);
             if (sucesso) {
                 JOptionPane.showMessageDialog(null, "Cadastro realizado com Sucesso!", "Sucesso", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                fecharInstanciaAtual();
             } else {
                 JOptionPane.showMessageDialog(this, "Os campos não foram preenchidos corretamente...", "Erro", javax.swing.JOptionPane.ERROR_MESSAGE);
-
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro: " + e);
         }
     }//GEN-LAST:event_botaoSalvarActionPerformed
+
+    @Override
+    public void dispose() {
+        super.dispose();
+        instanciaAtual = null;
+    }
 
     private void textoEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoEmailActionPerformed
 

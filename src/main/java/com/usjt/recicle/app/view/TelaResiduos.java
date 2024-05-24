@@ -4,15 +4,19 @@ import com.usjt.recicle.app.controller.CategoriaResiduoController;
 import com.usjt.recicle.app.controller.DicaController;
 import com.usjt.recicle.app.model.CategoriaResiduo;
 import com.usjt.recicle.app.model.Dica;
+import com.usjt.recicle.app.model.Usuario;
 import java.io.IOException;
 import java.net.URL;
 import javax.swing.ImageIcon;
 
 public class TelaResiduos extends javax.swing.JFrame {
 
+    private static TelaResiduos instanciaAtual;
+
     public TelaResiduos() {
         initComponents();
         configurarImagem();
+        instanciaAtual = this;
     }
 
     @SuppressWarnings("unchecked")
@@ -383,9 +387,33 @@ public class TelaResiduos extends javax.swing.JFrame {
         }
     }
 
+    private void exibirSaudacao() {
+        Usuario usuarioAtual = Usuario.getUsuarioAtual();
+        if (usuarioAtual != null) {
+            String nomeUsuario = usuarioAtual.getNome();
+            String saudacao = "Olá, " + nomeUsuario + "!";
+            labelSaudacao.setText(saudacao);
+        }
+    }
+
+    public static void fecharInstanciaAtual() {
+        if (instanciaAtual != null) {
+            instanciaAtual.dispose();
+            instanciaAtual = null;
+        }
+    }
+
     private void labelSairMouseClicked(java.awt.event.MouseEvent evt) {
+        Usuario.encerrarSessao();
         TelaLogin telaLogin = new TelaLogin();
         telaLogin.setVisible(true);
+        fecharInstanciaAtual();
+    }
+
+    @Override
+    public void dispose() {
+        super.dispose();
+        instanciaAtual = null;
     }
 
     private void botaoResiduoMadeiraActionPerformed(java.awt.event.ActionEvent evt) {

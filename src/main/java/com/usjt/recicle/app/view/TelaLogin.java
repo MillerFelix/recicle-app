@@ -1,7 +1,10 @@
 package com.usjt.recicle.app.view;
 
+import com.usjt.recicle.app.controller.UsuarioController;
+import com.usjt.recicle.app.model.Usuario;
 import java.net.URL;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class TelaLogin extends javax.swing.JFrame {
 
@@ -29,6 +32,8 @@ public class TelaLogin extends javax.swing.JFrame {
         setResizable(false);
 
         painelConteudoLogin.setBackground(new java.awt.Color(204, 255, 204));
+        painelConteudoLogin.setMaximumSize(new java.awt.Dimension(818, 600));
+        painelConteudoLogin.setPreferredSize(new java.awt.Dimension(818, 600));
 
         painelFormularios.setBackground(new java.awt.Color(204, 255, 204));
         painelFormularios.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 8, true));
@@ -38,7 +43,7 @@ public class TelaLogin extends javax.swing.JFrame {
         textoEmail.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         textoEmail.setForeground(new java.awt.Color(0, 153, 0));
         textoEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        textoEmail.setToolTipText("Digite o nome de Usuário");
+        textoEmail.setToolTipText("Digite seu Email cadastrado");
         textoEmail.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 4, true));
         textoEmail.setSelectedTextColor(new java.awt.Color(0, 0, 0));
         textoEmail.addActionListener(new java.awt.event.ActionListener() {
@@ -147,14 +152,14 @@ public class TelaLogin extends javax.swing.JFrame {
         painelConteudoLoginLayout.setHorizontalGroup(
             painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                .addContainerGap(173, Short.MAX_VALUE)
+                .addContainerGap(172, Short.MAX_VALUE)
                 .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelConteudoLoginLayout.createSequentialGroup()
-                        .addComponent(labelTitulo)
-                        .addGap(317, 317, 317))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelConteudoLoginLayout.createSequentialGroup()
                         .addComponent(painelFormularios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(153, 153, 153))))
+                        .addGap(166, 166, 166))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelConteudoLoginLayout.createSequentialGroup()
+                        .addComponent(labelTitulo)
+                        .addGap(334, 334, 334))))
         );
         painelConteudoLoginLayout.setVerticalGroup(
             painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,8 +197,22 @@ public class TelaLogin extends javax.swing.JFrame {
 
     private void botaoEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEntrarActionPerformed
         TelaResiduos telaResiduos = new TelaResiduos();
-        telaResiduos.setVisible(true);
+        String email = textoEmail.getText();
+        String senha = new String(textoSenha.getPassword());
+
+        if (validarCredenciais(email, senha)) {
+            Usuario.setUsuarioAtual(new Usuario(email, senha));
+            telaResiduos.setVisible(true);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Credenciadas erradas, verificar email e senha...", "Erro", javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_botaoEntrarActionPerformed
+
+    public boolean validarCredenciais(String email, String senha) {
+        UsuarioController usuarioController = new UsuarioController();
+        return usuarioController.validarCredenciais(email, senha);
+    }
 
     private void configurarImagem() {
         URL imgURL = getClass().getResource("/imagens/logo-recicle.png");

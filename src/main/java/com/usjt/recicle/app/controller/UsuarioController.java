@@ -12,4 +12,10 @@ public class UsuarioController {
         }
         return false;
     }
+
+    public boolean validarCredenciais(String email, String senha) {
+        Usuario usuario = new Usuario();
+        usuario.validarCredenciais(email, senha);
+        return usuario.validarCredenciais(email, senha);
+    }
 }

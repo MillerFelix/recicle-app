@@ -9,7 +9,6 @@ public class CategoriaResiduo {
     private String nome;
     private String informacao01;
     private String informacao02;
-    private List<Residuo> residuos;
 
     public CategoriaResiduo() {
     }
@@ -51,10 +50,6 @@ public class CategoriaResiduo {
 
     public void setInformacao02(String informacao02) {
         this.informacao02 = informacao02;
-    }
-
-    public List<Residuo> getResiduos() {
-        return residuos;
     }
 
     public List<CategoriaResiduo> buscarTodasCategoriasResiduo() {

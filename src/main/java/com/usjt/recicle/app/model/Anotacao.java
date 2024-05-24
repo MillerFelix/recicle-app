@@ -1,22 +1,18 @@
 package com.usjt.recicle.app.model;
 
-import java.time.LocalDateTime;
-
 public class Anotacao {
 
     private Long id;
     private String descricao;
-    private CategoriaResiduo categoriaResiduo;
-    private LocalDateTime dataCriacao;
+    private Long idCategoriaResiduo;
 
     public Anotacao() {
     }
 
-    public Anotacao(Long id, String descricao, CategoriaResiduo categoriaResiduo, LocalDateTime dataCriacao) {
+    public Anotacao(Long id, String descricao, Long idCategoriaResiduo) {
         this.id = id;
         this.descricao = descricao;
-        this.categoriaResiduo = categoriaResiduo;
-        this.dataCriacao = dataCriacao;
+        this.idCategoriaResiduo = idCategoriaResiduo;
     }
 
     public Long getId() {
@@ -35,19 +31,11 @@ public class Anotacao {
         this.descricao = descricao;
     }
 
-    public CategoriaResiduo getCategoriaResiduo() {
-        return categoriaResiduo;
+    public Long getIdCategoriaResiduo() {
+        return idCategoriaResiduo;
     }
 
-    public void setCategoriaResiduo(CategoriaResiduo categoriaResiduo) {
-        this.categoriaResiduo = categoriaResiduo;
-    }
-
-    public LocalDateTime getDataCriacao() {
-        return dataCriacao;
-    }
-
-    public void setDataCriacao(LocalDateTime dataCriacao) {
-        this.dataCriacao = dataCriacao;
+    public void setIdCategoriaResiduo(Long idCategoriaResiduo) {
+        this.idCategoriaResiduo = idCategoriaResiduo;
     }
 }
