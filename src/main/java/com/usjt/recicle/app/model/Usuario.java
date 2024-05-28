@@ -76,6 +76,7 @@ public class Usuario {
     public boolean validarCredenciais(String email, String senha) {
         Usuario usuario = new UsuarioDAO().validarCredenciais(email, senha);
         if (usuario != null) {
+            Usuario.setUsuarioAtual(usuario);
             return true;
         } else {
             return false;

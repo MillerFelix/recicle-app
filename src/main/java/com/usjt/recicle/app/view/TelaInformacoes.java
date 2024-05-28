@@ -26,8 +26,8 @@ public class TelaInformacoes extends javax.swing.JFrame {
         painelConteudoLogin = new javax.swing.JPanel();
         labelDicas = new javax.swing.JLabel();
         painelCabecalho = new javax.swing.JPanel();
-        labelSaudacao = new javax.swing.JLabel();
         labelSair = new javax.swing.JLabel();
+        labelVoltar = new javax.swing.JLabel();
         labelTitulo = new javax.swing.JLabel();
         labelAnotacoes = new javax.swing.JLabel();
         imagemResiduo = new javax.swing.JLabel();
@@ -83,11 +83,6 @@ public class TelaInformacoes extends javax.swing.JFrame {
         painelCabecalho.setRequestFocusEnabled(false);
         painelCabecalho.setVerifyInputWhenFocusTarget(false);
 
-        labelSaudacao.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        labelSaudacao.setForeground(new java.awt.Color(0, 153, 0));
-        labelSaudacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone-reciclagem.png"))); // NOI18N
-        labelSaudacao.setText("Olá");
-
         labelSair.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
         labelSair.setForeground(new java.awt.Color(0, 153, 0));
         labelSair.setText("Sair");
@@ -100,22 +95,31 @@ public class TelaInformacoes extends javax.swing.JFrame {
             }
         });
 
+        labelVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone-voltar.png"))); // NOI18N
+        labelVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelVoltarMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout painelCabecalhoLayout = new javax.swing.GroupLayout(painelCabecalho);
         painelCabecalho.setLayout(painelCabecalhoLayout);
         painelCabecalhoLayout.setHorizontalGroup(
             painelCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelCabecalhoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(labelSaudacao)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 684, Short.MAX_VALUE)
+                .addComponent(labelVoltar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 729, Short.MAX_VALUE)
                 .addComponent(labelSair)
-                .addGap(18, 18, 18))
+                .addGap(14, 14, 14))
         );
         painelCabecalhoLayout.setVerticalGroup(
             painelCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(labelSaudacao, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-                .addComponent(labelSair))
+            .addComponent(labelVoltar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(painelCabecalhoLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(labelSair)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         labelTitulo.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
@@ -187,12 +191,8 @@ public class TelaInformacoes extends javax.swing.JFrame {
         painelConteudoLoginLayout.setHorizontalGroup(
             painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                .addComponent(painelCabecalho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(painelConteudoLoginLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(labelTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,32 +203,35 @@ public class TelaInformacoes extends javax.swing.JFrame {
                         .addComponent(labelAnotacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(labelInformacao02, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(labelInformacao01, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(labelDicas, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelDica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(labelTituloDica, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelConteudoLoginLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(imagemResiduo)
-                        .addGap(105, 105, 105))))
+                .addGap(32, 32, 32)
+                .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(labelDicas, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelDica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelTituloDica, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(painelConteudoLoginLayout.createSequentialGroup()
+                .addComponent(painelCabecalho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(painelConteudoLoginLayout.createSequentialGroup()
+                .addGap(344, 344, 344)
+                .addComponent(labelTitulo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(imagemResiduo)
+                .addGap(66, 66, 66))
         );
         painelConteudoLoginLayout.setVerticalGroup(
             painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelConteudoLoginLayout.createSequentialGroup()
                 .addComponent(painelCabecalho, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(4, 4, 4)
                 .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(imagemResiduo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(23, 23, 23)
                 .addComponent(labelInformacao01, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(labelInformacao02, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelAnotacoes)
                     .addComponent(labelDicas))
@@ -288,6 +291,10 @@ public class TelaInformacoes extends javax.swing.JFrame {
 
     }//GEN-LAST:event_textoAnotacaoActionPerformed
 
+    private void labelVoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelVoltarMouseClicked
+        fecharInstanciaAtual();
+    }//GEN-LAST:event_labelVoltarMouseClicked
+
     public void filtrarResiduo(String nomeResiduo, String informacao01, String informacao02, Dica dica) {
         labelTitulo.setText(nomeResiduo);
         String html = "<html><body style='width: %1spx'>%1s</body></html>";
@@ -306,7 +313,7 @@ public class TelaInformacoes extends javax.swing.JFrame {
     private void configurarImagem() {
         URL imgURL = getClass().getResource("/imagens/icone-reciclagem.png");
         if (imgURL != null) {
-            labelSaudacao.setIcon(new ImageIcon(imgURL));
+            imagemResiduo.setIcon(new ImageIcon(imgURL));
         } else {
             System.err.println("Não foi possível encontrar o arquivo de imagem.");
         }
@@ -333,9 +340,9 @@ public class TelaInformacoes extends javax.swing.JFrame {
     private javax.swing.JLabel labelInformacao01;
     private javax.swing.JLabel labelInformacao02;
     private javax.swing.JLabel labelSair;
-    private javax.swing.JLabel labelSaudacao;
     private javax.swing.JLabel labelTitulo;
     private javax.swing.JLabel labelTituloDica;
+    private javax.swing.JLabel labelVoltar;
     private javax.swing.JList<String> listaAnotacoes;
     private javax.swing.JPanel painelCabecalho;
     private javax.swing.JPanel painelConteudoLogin;

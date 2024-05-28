@@ -1,7 +1,6 @@
 com\usjt\recicle\app\dao\DicaDAO.class
 com\usjt\recicle\app\view\TelaLogin$4.class
 com\usjt\recicle\app\view\TelaResiduos$9.class
-com\usjt\recicle\app\view\TelaResiduos$13.class
 com\usjt\recicle\app\view\TelaInformacoes$2.class
 com\usjt\recicle\app\view\TelaCadastro$3.class
 com\usjt\recicle\app\view\TelaResiduos$6.class
@@ -9,6 +8,7 @@ com\usjt\recicle\app\view\TelaLogin$3.class
 com\usjt\recicle\app\jdbc\ConexaoBD.class
 com\usjt\recicle\app\view\TelaResiduos$5.class
 com\usjt\recicle\app\view\TelaCadastro$5.class
+com\usjt\recicle\app\view\TelaInformacoes$5.class
 com\usjt\recicle\app\model\Dica.class
 com\usjt\recicle\app\view\TelaResiduos$8.class
 com\usjt\recicle\app\model\Residuo.class

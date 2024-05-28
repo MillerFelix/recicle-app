@@ -196,16 +196,16 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoCadastrarActionPerformed
 
     private void botaoEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEntrarActionPerformed
-        TelaResiduos telaResiduos = new TelaResiduos();
         String email = textoEmail.getText();
         String senha = new String(textoSenha.getPassword());
 
         if (validarCredenciais(email, senha)) {
-            Usuario.setUsuarioAtual(new Usuario(email, senha));
+            Usuario usuarioAtual = Usuario.getUsuarioAtual();
+            TelaResiduos telaResiduos = new TelaResiduos(usuarioAtual);
             telaResiduos.setVisible(true);
             this.dispose();
         } else {
-            JOptionPane.showMessageDialog(this, "Credenciadas erradas, verificar email e senha...", "Erro", javax.swing.JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Credenciais erradas, verifique email e senha...", "Erro", javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_botaoEntrarActionPerformed
 

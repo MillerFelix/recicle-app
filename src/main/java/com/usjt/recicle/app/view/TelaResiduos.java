@@ -12,11 +12,14 @@ import javax.swing.ImageIcon;
 public class TelaResiduos extends javax.swing.JFrame {
 
     private static TelaResiduos instanciaAtual;
+    private Usuario usuarioAtual;
 
-    public TelaResiduos() {
+    public TelaResiduos(Usuario usuario) {
         initComponents();
         configurarImagem();
+        this.usuarioAtual = usuario;
         instanciaAtual = this;
+        exibirSaudacao();
     }
 
     @SuppressWarnings("unchecked")
@@ -388,7 +391,6 @@ public class TelaResiduos extends javax.swing.JFrame {
     }
 
     private void exibirSaudacao() {
-        Usuario usuarioAtual = Usuario.getUsuarioAtual();
         if (usuarioAtual != null) {
             String nomeUsuario = usuarioAtual.getNome();
             String saudacao = "Olá, " + nomeUsuario + "!";
@@ -625,13 +627,13 @@ public class TelaResiduos extends javax.swing.JFrame {
         }
     }
 
-    public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TelaResiduos().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new TelaResiduos().setVisible(true);
+//            }
+//        });
+//    }
 
     private javax.swing.JButton botaoResiduoEletronicos;
     private javax.swing.JButton botaoResiduoMadeira;
