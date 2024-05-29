@@ -8,6 +8,7 @@ public class Anotacao {
     private Long id;
     private String descricao;
     private Long idCategoriaResiduo;
+    private Long idUsuario;
 
     public Anotacao() {
     }
@@ -16,10 +17,11 @@ public class Anotacao {
         this.descricao = descricao;
     }
 
-    public Anotacao(Long id, String descricao, Long idCategoriaResiduo) {
+    public Anotacao(Long id, String descricao, Long idCategoriaResiduo, Long idUsuario) {
         this.id = id;
         this.descricao = descricao;
         this.idCategoriaResiduo = idCategoriaResiduo;
+        this.idUsuario = idUsuario;
     }
 
     public Long getId() {
@@ -46,8 +48,16 @@ public class Anotacao {
         this.idCategoriaResiduo = idCategoriaResiduo;
     }
 
-    public List<Anotacao> buscarAnotacoesCategoriaResiduo(Long id) {
-        List<Anotacao> listaAnotacoes = new AnotacaoDAO().buscarAnotacoesCategoriaResiduo(id);
+    public Long getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(Long idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    public List<Anotacao> buscarAnotacoesCategoriaResiduo(Long idCategoriaResiduo, Long idUsuario) {
+        List<Anotacao> listaAnotacoes = new AnotacaoDAO().buscarAnotacoesCategoriaResiduo(idCategoriaResiduo, idUsuario);
         return listaAnotacoes;
     }
 
@@ -60,6 +70,6 @@ public class Anotacao {
     }
 
     public void excluir(Anotacao anotacao) {
-        new AnotacaoDAO().salvar(anotacao);
+        new AnotacaoDAO().excluir(anotacao);
     }
 }

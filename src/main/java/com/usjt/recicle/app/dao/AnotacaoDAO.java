@@ -12,7 +12,7 @@ import java.util.List;
 public class AnotacaoDAO {
 
     public void salvar(Anotacao anotacao) {
-        String sql = "INSERT INTO anotacoes (descricao, categoria_residuos_id) VALUES (?, ?)";
+        String sql = "INSERT INTO anotacoes (descricao, categoria_residuos_id, usuario_id) VALUES (?, ?, ?)";
 
         PreparedStatement ps = null;
         Connection connection = null;
@@ -22,6 +22,7 @@ public class AnotacaoDAO {
             ps = connection.prepareStatement(sql);
             ps.setString(1, anotacao.getDescricao());
             ps.setLong(2, anotacao.getIdCategoriaResiduo());
+            ps.setLong(3, anotacao.getIdUsuario());
             ps.execute();
         } catch (SQLException e) {
             System.err.println("Erro na descrição : " + e.getMessage());
@@ -46,9 +47,9 @@ public class AnotacaoDAO {
         }
     }
 
-    public static List<Anotacao> buscarAnotacoesCategoriaResiduo(Long categoriaResiduoId) {
+    public static List<Anotacao> buscarAnotacoesCategoriaResiduo(Long categoriaResiduoId, Long idUsuario) {
         List<Anotacao> anotacoes = new ArrayList<>();
-        String sql = "SELECT * FROM anotacoes WHERE categoria_residuos_id = ?";
+        String sql = "SELECT * FROM anotacoes WHERE categoria_residuos_id = ? AND usuario_id = ?";
 
         PreparedStatement ps = null;
         Connection connection = null;
@@ -58,13 +59,15 @@ public class AnotacaoDAO {
             connection = new ConexaoBD().getConnection();
             ps = connection.prepareStatement(sql);
             ps.setLong(1, categoriaResiduoId);
+            ps.setLong(2, idUsuario);
             rs = ps.executeQuery();
 
             while (rs.next()) {
                 Long id = rs.getLong("id");
                 String descricao = rs.getString("descricao");
                 Long idCategoriaResiduo = rs.getLong("categoria_residuos_id");
-                Anotacao anotacao = new Anotacao(id, descricao, idCategoriaResiduo);
+                Long usuario = rs.getLong("usuario_id");
+                Anotacao anotacao = new Anotacao(id, descricao, idCategoriaResiduo, usuario);
                 anotacoes.add(anotacao);
             }
         } catch (SQLException e) {

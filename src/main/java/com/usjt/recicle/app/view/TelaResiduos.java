@@ -425,7 +425,7 @@ public class TelaResiduos extends javax.swing.JFrame {
         Dica dica = dicaController.buscarDicasCategoriaResiduo(id);
 
         if (categoriaResiduo != null) {
-            TelaInformacoes telaInformacoes = new TelaInformacoes(id);
+            TelaInformacoes telaInformacoes = new TelaInformacoes(id, usuarioAtual.getId());
 
             String caminhoImagem = "/imagens/imagem-madeira.png";
             telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);
@@ -446,7 +446,7 @@ public class TelaResiduos extends javax.swing.JFrame {
         Dica dica = dicaController.buscarDicasCategoriaResiduo(id);
 
         if (categoriaResiduo != null) {
-            TelaInformacoes telaInformacoes = new TelaInformacoes(id);
+            TelaInformacoes telaInformacoes = new TelaInformacoes(id, usuarioAtual.getId());
 
             String caminhoImagem = "/imagens/imagem-perigosos.png";
             telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);
@@ -467,7 +467,7 @@ public class TelaResiduos extends javax.swing.JFrame {
         Dica dica = dicaController.buscarDicasCategoriaResiduo(id);
 
         if (categoriaResiduo != null) {
-            TelaInformacoes telaInformacoes = new TelaInformacoes(id);
+            TelaInformacoes telaInformacoes = new TelaInformacoes(id, usuarioAtual.getId());
 
             String caminhoImagem = "/imagens/imagem-tetrapak.png";
             telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);
@@ -488,7 +488,7 @@ public class TelaResiduos extends javax.swing.JFrame {
         Dica dica = dicaController.buscarDicasCategoriaResiduo(id);
 
         if (categoriaResiduo != null) {
-            TelaInformacoes telaInformacoes = new TelaInformacoes(id);
+            TelaInformacoes telaInformacoes = new TelaInformacoes(id, usuarioAtual.getId());
 
             String caminhoImagem = "/imagens/imagem-baterias.png";
             telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);
@@ -509,7 +509,7 @@ public class TelaResiduos extends javax.swing.JFrame {
         Dica dica = dicaController.buscarDicasCategoriaResiduo(id);
 
         if (categoriaResiduo != null) {
-            TelaInformacoes telaInformacoes = new TelaInformacoes(id);
+            TelaInformacoes telaInformacoes = new TelaInformacoes(id, usuarioAtual.getId());
 
             String caminhoImagem = "/imagens/imagem-eletronicos.png";
             telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);
@@ -530,7 +530,7 @@ public class TelaResiduos extends javax.swing.JFrame {
         Dica dica = dicaController.buscarDicasCategoriaResiduo(id);
 
         if (categoriaResiduo != null) {
-            TelaInformacoes telaInformacoes = new TelaInformacoes(id);
+            TelaInformacoes telaInformacoes = new TelaInformacoes(id, usuarioAtual.getId());
 
             String caminhoImagem = "/imagens/imagem-organico.png";
             telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);
@@ -551,7 +551,7 @@ public class TelaResiduos extends javax.swing.JFrame {
         Dica dica = dicaController.buscarDicasCategoriaResiduo(id);
 
         if (categoriaResiduo != null) {
-            TelaInformacoes telaInformacoes = new TelaInformacoes(id);
+            TelaInformacoes telaInformacoes = new TelaInformacoes(id, usuarioAtual.getId());
 
             String caminhoImagem = "/imagens/imagem-metal.png";
             telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);
@@ -572,7 +572,7 @@ public class TelaResiduos extends javax.swing.JFrame {
         Dica dica = dicaController.buscarDicasCategoriaResiduo(id);
 
         if (categoriaResiduo != null) {
-            TelaInformacoes telaInformacoes = new TelaInformacoes(id);
+            TelaInformacoes telaInformacoes = new TelaInformacoes(id, usuarioAtual.getId());
 
             String caminhoImagem = "/imagens/imagem-plastico.png";
             telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);
@@ -593,7 +593,7 @@ public class TelaResiduos extends javax.swing.JFrame {
         Dica dica = dicaController.buscarDicasCategoriaResiduo(id);
 
         if (categoriaResiduo != null) {
-            TelaInformacoes telaInformacoes = new TelaInformacoes(id);
+            TelaInformacoes telaInformacoes = new TelaInformacoes(id, usuarioAtual.getId());
 
             String caminhoImagem = "/imagens/imagem-vidro.png";
             telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);
@@ -614,7 +614,7 @@ public class TelaResiduos extends javax.swing.JFrame {
         Dica dica = dicaController.buscarDicasCategoriaResiduo(id);
 
         if (categoriaResiduo != null) {
-            TelaInformacoes telaInformacoes = new TelaInformacoes(id);
+            TelaInformacoes telaInformacoes = new TelaInformacoes(id, usuarioAtual.getId());
 
             String caminhoImagem = "/imagens/imagem-papel.png"; 
             telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);

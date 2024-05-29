@@ -63,6 +63,7 @@ public class UsuarioDAO {
 
             if (rs.next()) {
                 usuario = new Usuario();
+                usuario.setId(rs.getLong("id"));
                 usuario.setNome(rs.getString("nome"));
                 usuario.setEmail(rs.getString("email"));
             }

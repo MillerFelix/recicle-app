@@ -17,10 +17,12 @@ public class TelaInformacoes extends javax.swing.JFrame {
 
     private static TelaInformacoes instanciaAtual;
     private Long id;
+    private Long usuarioAtual;
     private JList<String> listaAnotacoes;
 
-    public TelaInformacoes(long id) {
+    public TelaInformacoes(long id, Long idUsuario) {
         this.id = id;
+        this.usuarioAtual = idUsuario;
         initComponents();
         configurarImagem();
         instanciaAtual = this;
@@ -351,9 +353,10 @@ public class TelaInformacoes extends javax.swing.JFrame {
     private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
         String anotacao = textoAnotacao.getText();
         Long idCategoriaResiduo = id;
+        Long idUsuario = usuarioAtual;
         try {
             AnotacaoController anotacaoController = new AnotacaoController();
-            boolean sucesso = anotacaoController.salvar(anotacao, idCategoriaResiduo);
+            boolean sucesso = anotacaoController.salvar(anotacao, idCategoriaResiduo, idUsuario);
             if (sucesso) {
                 JOptionPane.showMessageDialog(null, "Anotação salva com Sucesso!", "Sucesso", javax.swing.JOptionPane.INFORMATION_MESSAGE);
                 fecharInstanciaAtual();
@@ -369,13 +372,13 @@ public class TelaInformacoes extends javax.swing.JFrame {
 
     }//GEN-LAST:event_listaAnotacoesValueChanged
 
-    private List<Anotacao> buscarAnotacoesCategoriaResiduo(Long id) {
+    private List<Anotacao> buscarAnotacoesCategoriaResiduo(Long id, Long idUsuario) {
         AnotacaoController anotacaoController = new AnotacaoController();
-        return anotacaoController.buscarAnotacoesCategoriaResiduo(id);
+        return anotacaoController.buscarAnotacoesCategoriaResiduo(id, idUsuario);
     }
 
     public void preencherListaAnotacoes(Long id) {
-        List<Anotacao> anotacoes = buscarAnotacoesCategoriaResiduo(id);
+        List<Anotacao> anotacoes = buscarAnotacoesCategoriaResiduo(id, usuarioAtual);
 
         List<String> descricoes = new ArrayList<>();
         for (Anotacao anotacao : anotacoes) {
