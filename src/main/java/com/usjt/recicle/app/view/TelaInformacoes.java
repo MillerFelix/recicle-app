@@ -1,19 +1,30 @@
 package com.usjt.recicle.app.view;
 
+import com.usjt.recicle.app.controller.AnotacaoController;
+import com.usjt.recicle.app.model.Anotacao;
 import com.usjt.recicle.app.model.Dica;
 import com.usjt.recicle.app.model.Usuario;
 import java.awt.Color;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
 
 public class TelaInformacoes extends javax.swing.JFrame {
 
     private static TelaInformacoes instanciaAtual;
+    private Long id;
+    private JList<String> listaAnotacoes;
 
-    public TelaInformacoes() {
+    public TelaInformacoes(long id) {
+        this.id = id;
         initComponents();
         configurarImagem();
         instanciaAtual = this;
+        preencherListaAnotacoes(id);
     }
 
     @SuppressWarnings("unchecked")
@@ -69,8 +80,12 @@ public class TelaInformacoes extends javax.swing.JFrame {
         setResizable(false);
 
         painelConteudoLogin.setBackground(new java.awt.Color(204, 255, 204));
+        painelConteudoLogin.setDoubleBuffered(false);
         painelConteudoLogin.setMaximumSize(new java.awt.Dimension(850, 600));
+        painelConteudoLogin.setMinimumSize(new java.awt.Dimension(850, 600));
         painelConteudoLogin.setPreferredSize(new java.awt.Dimension(850, 600));
+        painelConteudoLogin.setRequestFocusEnabled(false);
+        painelConteudoLogin.setVerifyInputWhenFocusTarget(false);
 
         labelDicas.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
         labelDicas.setForeground(new java.awt.Color(0, 153, 0));
@@ -80,9 +95,11 @@ public class TelaInformacoes extends javax.swing.JFrame {
 
         painelCabecalho.setBackground(new java.awt.Color(153, 255, 153));
         painelCabecalho.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 8, true));
+        painelCabecalho.setDoubleBuffered(false);
         painelCabecalho.setFocusable(false);
-        painelCabecalho.setMaximumSize(new java.awt.Dimension(818, 70));
-        painelCabecalho.setPreferredSize(new java.awt.Dimension(818, 70));
+        painelCabecalho.setMaximumSize(new java.awt.Dimension(850, 60));
+        painelCabecalho.setMinimumSize(new java.awt.Dimension(850, 60));
+        painelCabecalho.setPreferredSize(new java.awt.Dimension(850, 60));
         painelCabecalho.setRequestFocusEnabled(false);
         painelCabecalho.setVerifyInputWhenFocusTarget(false);
 
@@ -172,6 +189,11 @@ public class TelaInformacoes extends javax.swing.JFrame {
         listaAnotacoes.setRequestFocusEnabled(false);
         listaAnotacoes.setSelectionBackground(new java.awt.Color(0, 218, 101));
         listaAnotacoes.setSelectionForeground(new java.awt.Color(0, 218, 101));
+        listaAnotacoes.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listaAnotacoesValueChanged(evt);
+            }
+        });
         jScrollPane1.setViewportView(listaAnotacoes);
 
         labelDica.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -187,7 +209,9 @@ public class TelaInformacoes extends javax.swing.JFrame {
 
         labelInformacao01.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         labelInformacao01.setForeground(new java.awt.Color(51, 51, 51));
+        labelInformacao01.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         labelInformacao01.setText("Informações do Resíduo");
+        labelInformacao01.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
         labelTituloDica.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         labelTituloDica.setText("Titulo da Dica");
@@ -201,71 +225,73 @@ public class TelaInformacoes extends javax.swing.JFrame {
         painelConteudoLogin.setLayout(painelConteudoLoginLayout);
         painelConteudoLoginLayout.setHorizontalGroup(
             painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(labelInformacao02, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelConteudoLoginLayout.createSequentialGroup()
                 .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                                .addGap(182, 182, 182)
-                                .addComponent(labelAnotacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                                .addComponent(textoAnotacao, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                                .addGap(27, 27, 27)
-                                .addComponent(labelImagemResiduo))
-                            .addComponent(labelListaResiduos)
-                            .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                                .addGap(8, 8, 8)
-                                .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(labelDicas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(labelTituloDica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, painelConteudoLoginLayout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(labelDica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(labelDica, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, painelConteudoLoginLayout.createSequentialGroup()
                         .addContainerGap()
+                        .addComponent(labelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 774, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(painelConteudoLoginLayout.createSequentialGroup()
                         .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                                .addComponent(labelInformacao01, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(17, 17, 17)
+                                .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(painelConteudoLoginLayout.createSequentialGroup()
+                                        .addGap(182, 182, 182)
+                                        .addComponent(labelAnotacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(painelConteudoLoginLayout.createSequentialGroup()
+                                        .addComponent(textoAnotacao, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelConteudoLoginLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(labelInformacao01, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(labelInformacao02, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(85, 85, 85)))
+                        .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                                .addComponent(labelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 834, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                                .addComponent(labelImagemResiduo)
+                                .addGap(242, 242, 242))
+                            .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(painelConteudoLoginLayout.createSequentialGroup()
+                                    .addComponent(labelListaResiduos, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(40, 40, 40))
+                                .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelDicas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(labelTituloDica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                 .addGap(10, 10, 10))
-            .addComponent(painelCabecalho, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(painelConteudoLoginLayout.createSequentialGroup()
+                .addComponent(painelCabecalho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         painelConteudoLoginLayout.setVerticalGroup(
             painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                .addComponent(painelCabecalho, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(painelCabecalho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(labelTitulo)
+                .addGap(12, 12, 12)
+                .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelInformacao01, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelImagemResiduo))
                 .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(labelInformacao01, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(labelImagemResiduo)))
-                .addGap(16, 16, 16)
-                .addComponent(labelListaResiduos)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelInformacao02, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
-                .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelAnotacoes)
-                    .addComponent(labelDicas))
+                        .addGap(38, 38, 38)
+                        .addComponent(labelInformacao02, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelConteudoLoginLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                        .addComponent(labelListaResiduos, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)))
+                .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelDicas, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(labelAnotacoes))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textoAnotacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -323,8 +349,45 @@ public class TelaInformacoes extends javax.swing.JFrame {
     }//GEN-LAST:event_labelVoltarMouseClicked
 
     private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
-        // TODO add your handling code here:
+        String anotacao = textoAnotacao.getText();
+        Long idCategoriaResiduo = id;
+        try {
+            AnotacaoController anotacaoController = new AnotacaoController();
+            boolean sucesso = anotacaoController.salvar(anotacao, idCategoriaResiduo);
+            if (sucesso) {
+                JOptionPane.showMessageDialog(null, "Anotação salva com Sucesso!", "Sucesso", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                fecharInstanciaAtual();
+            } else {
+                JOptionPane.showMessageDialog(this, "O campo para anotação deve ser preenchido...", "Erro", javax.swing.JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro: " + e);
+        }
     }//GEN-LAST:event_botaoSalvarActionPerformed
+
+    private void listaAnotacoesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaAnotacoesValueChanged
+
+    }//GEN-LAST:event_listaAnotacoesValueChanged
+
+    private List<Anotacao> buscarAnotacoesCategoriaResiduo(Long id) {
+        AnotacaoController anotacaoController = new AnotacaoController();
+        return anotacaoController.buscarAnotacoesCategoriaResiduo(id);
+    }
+
+    public void preencherListaAnotacoes(Long id) {
+        List<Anotacao> anotacoes = buscarAnotacoesCategoriaResiduo(id);
+
+        List<String> descricoes = new ArrayList<>();
+        for (Anotacao anotacao : anotacoes) {
+            descricoes.add(anotacao.getDescricao());
+        }
+
+        DefaultListModel<String> listModel = new DefaultListModel<>();
+        for (String descricao : descricoes) {
+            listModel.addElement(descricao);
+        }
+        listaAnotacoes.setModel(listModel);
+    }
 
     public void filtrarResiduo(String nomeResiduo, String informacao01, String informacao02, Dica dica, String caminhoImagem) {
         labelTitulo.setText(nomeResiduo);
@@ -333,7 +396,7 @@ public class TelaInformacoes extends javax.swing.JFrame {
 
         String formattedInformacao01 = formatTextForHtml(informacao01, 70);
         String formattedInformacao02 = formatTextForHtml(informacao02, 70);
-        String formattedDicaDescricao = formatTextForHtml(dica.getDescricao(), 60); 
+        String formattedDicaDescricao = formatTextForHtml(dica.getDescricao(), 60);
 
         labelInformacao01.setText(String.format(htmlTemplate, labelInformacao01.getWidth(), formattedInformacao01));
         labelInformacao02.setText(String.format(htmlTemplate, labelInformacao02.getWidth(), formattedInformacao02));
@@ -383,14 +446,6 @@ public class TelaInformacoes extends javax.swing.JFrame {
         }
     }
 
-    public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TelaInformacoes().setVisible(true);
-            }
-        });
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoSalvar;
     private javax.swing.JLabel jLabel1;
@@ -408,7 +463,7 @@ public class TelaInformacoes extends javax.swing.JFrame {
     private javax.swing.JLabel labelTitulo;
     private javax.swing.JLabel labelTituloDica;
     private javax.swing.JLabel labelVoltar;
-    private javax.swing.JList<String> listaAnotacoes;
+    private DefaultListModel<Anotacao> listaAnotacoesModel;
     private javax.swing.JPanel painelCabecalho;
     private javax.swing.JPanel painelConteudoLogin;
     private javax.swing.JTextField textoAnotacao;
