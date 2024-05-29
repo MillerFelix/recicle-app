@@ -14,7 +14,6 @@ public class TelaResiduos extends javax.swing.JFrame {
     private static TelaResiduos instanciaAtual;
     private Usuario usuarioAtual;
 
-
     public TelaResiduos(Usuario usuario) {
         initComponents();
         configurarImagem();
@@ -49,8 +48,8 @@ public class TelaResiduos extends javax.swing.JFrame {
         setResizable(false);
 
         painelConteudo.setBackground(new java.awt.Color(204, 255, 204));
-        painelConteudo.setMaximumSize(new java.awt.Dimension(818, 600));
-        painelConteudo.setPreferredSize(new java.awt.Dimension(818, 600));
+        painelConteudo.setMaximumSize(new java.awt.Dimension(850, 600));
+        painelConteudo.setPreferredSize(new java.awt.Dimension(850, 600));
 
         labelTitulo.setFont(new java.awt.Font("Arial Black", 1, 33)); // NOI18N
         labelTitulo.setForeground(new java.awt.Color(0, 153, 0));
@@ -59,8 +58,8 @@ public class TelaResiduos extends javax.swing.JFrame {
         painelCabecalho.setBackground(new java.awt.Color(153, 255, 153));
         painelCabecalho.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 8, true));
         painelCabecalho.setFocusable(false);
-        painelCabecalho.setMaximumSize(new java.awt.Dimension(818, 70));
-        painelCabecalho.setPreferredSize(new java.awt.Dimension(818, 70));
+        painelCabecalho.setMaximumSize(new java.awt.Dimension(818, 60));
+        painelCabecalho.setPreferredSize(new java.awt.Dimension(850, 60));
         painelCabecalho.setRequestFocusEnabled(false);
         painelCabecalho.setVerifyInputWhenFocusTarget(false);
 
@@ -88,15 +87,14 @@ public class TelaResiduos extends javax.swing.JFrame {
             .addGroup(painelCabecalhoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(labelSaudacao)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 728, Short.MAX_VALUE)
                 .addComponent(labelSair)
                 .addContainerGap())
         );
         painelCabecalhoLayout.setVerticalGroup(
             painelCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(labelSaudacao, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-                .addComponent(labelSair))
+            .addComponent(labelSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(labelSaudacao, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
         );
 
         painelResiduos.setBackground(new java.awt.Color(153, 255, 153));
@@ -263,7 +261,7 @@ public class TelaResiduos extends javax.swing.JFrame {
                 .addGroup(painelResiduosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelResiduosLayout.createSequentialGroup()
                         .addComponent(botaoResiduoPlastico, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                         .addComponent(botaoResiduoMetal, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelResiduosLayout.createSequentialGroup()
                         .addComponent(botaoResiduoOrganico, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -326,32 +324,33 @@ public class TelaResiduos extends javax.swing.JFrame {
         painelConteudo.setLayout(painelConteudoLayout);
         painelConteudoLayout.setHorizontalGroup(
             painelConteudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelCabecalho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(painelConteudoLayout.createSequentialGroup()
+                .addComponent(painelCabecalho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(painelConteudoLayout.createSequentialGroup()
                 .addGap(75, 75, 75)
                 .addComponent(painelResiduos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelConteudoLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(labelTitulo)
+                .addGap(328, 328, 328))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelConteudoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(painelConteudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelConteudoLayout.createSequentialGroup()
-                        .addComponent(labelTitulo)
-                        .addGap(313, 313, 313))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelConteudoLayout.createSequentialGroup()
-                        .addComponent(labelAgenda, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(232, 232, 232))))
+                .addComponent(labelAgenda, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(251, 251, 251))
         );
         painelConteudoLayout.setVerticalGroup(
             painelConteudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelConteudoLayout.createSequentialGroup()
-                .addComponent(painelCabecalho, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(painelCabecalho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelTitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelAgenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22)
                 .addComponent(painelResiduos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -428,7 +427,8 @@ public class TelaResiduos extends javax.swing.JFrame {
         if (categoriaResiduo != null) {
             TelaInformacoes telaInformacoes = new TelaInformacoes();
 
-            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica);
+            String caminhoImagem = "/imagens/imagem-madeira.png";
+            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);
             telaInformacoes.setCorResiduo(35, 30, 9);
 
             telaInformacoes.setVisible(true);
@@ -448,7 +448,8 @@ public class TelaResiduos extends javax.swing.JFrame {
         if (categoriaResiduo != null) {
             TelaInformacoes telaInformacoes = new TelaInformacoes();
 
-            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica);
+            String caminhoImagem = "/imagens/imagem-perigosos.png";
+            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);
             telaInformacoes.setCorResiduo(30, 29, 29);
 
             telaInformacoes.setVisible(true);
@@ -468,7 +469,8 @@ public class TelaResiduos extends javax.swing.JFrame {
         if (categoriaResiduo != null) {
             TelaInformacoes telaInformacoes = new TelaInformacoes();
 
-            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica);
+            String caminhoImagem = "/imagens/imagem-tetrapak.png";
+            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);
             telaInformacoes.setCorResiduo(68, 134, 184);
 
             telaInformacoes.setVisible(true);
@@ -488,7 +490,8 @@ public class TelaResiduos extends javax.swing.JFrame {
         if (categoriaResiduo != null) {
             TelaInformacoes telaInformacoes = new TelaInformacoes();
 
-            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica);
+            String caminhoImagem = "/imagens/imagem-baterias.png";
+            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);
             telaInformacoes.setCorResiduo(102, 102, 102);
 
             telaInformacoes.setVisible(true);
@@ -508,7 +511,8 @@ public class TelaResiduos extends javax.swing.JFrame {
         if (categoriaResiduo != null) {
             TelaInformacoes telaInformacoes = new TelaInformacoes();
 
-            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica);
+            String caminhoImagem = "/imagens/imagem-eletronicos.png";
+            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);
             telaInformacoes.setCorResiduo(234, 83, 18);
 
             telaInformacoes.setVisible(true);
@@ -528,7 +532,8 @@ public class TelaResiduos extends javax.swing.JFrame {
         if (categoriaResiduo != null) {
             TelaInformacoes telaInformacoes = new TelaInformacoes();
 
-            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica);
+            String caminhoImagem = "/imagens/imagem-organico.png";
+            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);
             telaInformacoes.setCorResiduo(118, 81, 32);
 
             telaInformacoes.setVisible(true);
@@ -548,7 +553,8 @@ public class TelaResiduos extends javax.swing.JFrame {
         if (categoriaResiduo != null) {
             TelaInformacoes telaInformacoes = new TelaInformacoes();
 
-            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica);
+            String caminhoImagem = "/imagens/imagem-metal.png";
+            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);
             telaInformacoes.setCorResiduo(186, 237, 13);
 
             telaInformacoes.setVisible(true);
@@ -568,7 +574,8 @@ public class TelaResiduos extends javax.swing.JFrame {
         if (categoriaResiduo != null) {
             TelaInformacoes telaInformacoes = new TelaInformacoes();
 
-            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica);
+            String caminhoImagem = "/imagens/imagem-plastico.png";
+            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);
             telaInformacoes.setCorResiduo(186, 16, 16);
 
             telaInformacoes.setVisible(true);
@@ -588,7 +595,8 @@ public class TelaResiduos extends javax.swing.JFrame {
         if (categoriaResiduo != null) {
             TelaInformacoes telaInformacoes = new TelaInformacoes();
 
-            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica);
+            String caminhoImagem = "/imagens/imagem-vidro.png";
+            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);
             telaInformacoes.setCorResiduo(0, 219, 24);
 
             telaInformacoes.setVisible(true);
@@ -608,7 +616,8 @@ public class TelaResiduos extends javax.swing.JFrame {
         if (categoriaResiduo != null) {
             TelaInformacoes telaInformacoes = new TelaInformacoes();
 
-            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica);
+            String caminhoImagem = "/imagens/imagem-papel.png"; 
+            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);
             telaInformacoes.setCorResiduo(0, 46, 218);
 
             telaInformacoes.setVisible(true);

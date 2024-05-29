@@ -30,7 +30,7 @@ public class TelaInformacoes extends javax.swing.JFrame {
         labelVoltar = new javax.swing.JLabel();
         labelTitulo = new javax.swing.JLabel();
         labelAnotacoes = new javax.swing.JLabel();
-        imagemResiduo = new javax.swing.JLabel();
+        labelImagemResiduo = new javax.swing.JLabel();
         textoAnotacao = new javax.swing.JTextField();
         botaoSalvar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -39,6 +39,7 @@ public class TelaInformacoes extends javax.swing.JFrame {
         labelInformacao02 = new javax.swing.JLabel();
         labelInformacao01 = new javax.swing.JLabel();
         labelTituloDica = new javax.swing.JLabel();
+        labelListaResiduos = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
@@ -68,12 +69,14 @@ public class TelaInformacoes extends javax.swing.JFrame {
         setResizable(false);
 
         painelConteudoLogin.setBackground(new java.awt.Color(204, 255, 204));
-        painelConteudoLogin.setMaximumSize(new java.awt.Dimension(818, 600));
-        painelConteudoLogin.setPreferredSize(new java.awt.Dimension(818, 600));
+        painelConteudoLogin.setMaximumSize(new java.awt.Dimension(850, 600));
+        painelConteudoLogin.setPreferredSize(new java.awt.Dimension(850, 600));
 
         labelDicas.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
         labelDicas.setForeground(new java.awt.Color(0, 153, 0));
+        labelDicas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         labelDicas.setText("Dicas");
+        labelDicas.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
         painelCabecalho.setBackground(new java.awt.Color(153, 255, 153));
         painelCabecalho.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 8, true));
@@ -109,29 +112,31 @@ public class TelaInformacoes extends javax.swing.JFrame {
             .addGroup(painelCabecalhoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(labelVoltar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 737, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 769, Short.MAX_VALUE)
                 .addComponent(labelSair)
                 .addContainerGap())
         );
         painelCabecalhoLayout.setVerticalGroup(
             painelCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(labelVoltar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelCabecalhoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(labelSair)
-                .addGap(14, 14, 14))
+            .addComponent(labelVoltar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(painelCabecalhoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelSair, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         labelTitulo.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
         labelTitulo.setForeground(new java.awt.Color(0, 153, 0));
         labelTitulo.setText("Resíduo");
+        labelTitulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         labelAnotacoes.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
         labelAnotacoes.setForeground(new java.awt.Color(0, 153, 0));
         labelAnotacoes.setText("Anotações");
+        labelAnotacoes.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
-        imagemResiduo.setForeground(new java.awt.Color(51, 51, 51));
-        imagemResiduo.setText("Imagem do Resíduo");
+        labelImagemResiduo.setForeground(new java.awt.Color(51, 51, 51));
+        labelImagemResiduo.setText("Imagem do Resíduo");
 
         textoAnotacao.setBackground(new java.awt.Color(153, 255, 153));
         textoAnotacao.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
@@ -153,16 +158,17 @@ public class TelaInformacoes extends javax.swing.JFrame {
         botaoSalvar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 0), 4, true));
         botaoSalvar.setContentAreaFilled(false);
         botaoSalvar.setOpaque(true);
+        botaoSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoSalvarActionPerformed(evt);
+            }
+        });
 
         listaAnotacoes.setBackground(new java.awt.Color(153, 255, 153));
         listaAnotacoes.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 4, true));
         listaAnotacoes.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         listaAnotacoes.setForeground(new java.awt.Color(0, 153, 0));
-        listaAnotacoes.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        listaAnotacoes.setFocusable(false);
         listaAnotacoes.setRequestFocusEnabled(false);
         listaAnotacoes.setSelectionBackground(new java.awt.Color(0, 218, 101));
         listaAnotacoes.setSelectionForeground(new java.awt.Color(0, 218, 101));
@@ -185,69 +191,90 @@ public class TelaInformacoes extends javax.swing.JFrame {
 
         labelTituloDica.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         labelTituloDica.setText("Titulo da Dica");
+        labelTituloDica.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        labelTituloDica.setVerifyInputWhenFocusTarget(false);
+
+        labelListaResiduos.setForeground(new java.awt.Color(51, 51, 51));
+        labelListaResiduos.setText("Lista de Residuos");
 
         javax.swing.GroupLayout painelConteudoLoginLayout = new javax.swing.GroupLayout(painelConteudoLogin);
         painelConteudoLogin.setLayout(painelConteudoLoginLayout);
         painelConteudoLoginLayout.setHorizontalGroup(
             painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                                .addComponent(textoAnotacao, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addComponent(labelAnotacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(labelInformacao02, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(labelInformacao01, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(32, 32, 32)
-                .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(labelDicas, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelDica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(labelTituloDica, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(labelInformacao02, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                .addComponent(painelCabecalho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                .addGap(344, 344, 344)
-                .addComponent(labelTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(imagemResiduo)
-                .addGap(66, 66, 66))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelConteudoLoginLayout.createSequentialGroup()
+                .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(painelConteudoLoginLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(painelConteudoLoginLayout.createSequentialGroup()
+                                .addGap(182, 182, 182)
+                                .addComponent(labelAnotacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(painelConteudoLoginLayout.createSequentialGroup()
+                                .addComponent(textoAnotacao, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(painelConteudoLoginLayout.createSequentialGroup()
+                                .addGap(27, 27, 27)
+                                .addComponent(labelImagemResiduo))
+                            .addComponent(labelListaResiduos)
+                            .addGroup(painelConteudoLoginLayout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelDicas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(labelTituloDica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, painelConteudoLoginLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(labelDica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, painelConteudoLoginLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(painelConteudoLoginLayout.createSequentialGroup()
+                                .addComponent(labelInformacao01, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(painelConteudoLoginLayout.createSequentialGroup()
+                                .addComponent(labelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 834, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addGap(10, 10, 10))
+            .addComponent(painelCabecalho, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         painelConteudoLoginLayout.setVerticalGroup(
             painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                .addComponent(painelCabecalho, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(imagemResiduo))
-                .addGap(23, 23, 23)
-                .addComponent(labelInformacao01, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(labelInformacao02, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addComponent(painelCabecalho, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(labelTitulo)
+                .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelConteudoLoginLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(labelInformacao01, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(painelConteudoLoginLayout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(labelImagemResiduo)))
+                .addGap(16, 16, 16)
+                .addComponent(labelListaResiduos)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelInformacao02, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelAnotacoes)
                     .addComponent(labelDicas))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textoAnotacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelTituloDica))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(textoAnotacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(labelTituloDica)
-                        .addGap(26, 26, 26)
-                        .addComponent(labelDica, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelDica, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14))
         );
 
@@ -255,7 +282,7 @@ public class TelaInformacoes extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelConteudoLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(painelConteudoLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -295,13 +322,50 @@ public class TelaInformacoes extends javax.swing.JFrame {
         fecharInstanciaAtual();
     }//GEN-LAST:event_labelVoltarMouseClicked
 
-    public void filtrarResiduo(String nomeResiduo, String informacao01, String informacao02, Dica dica) {
+    private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoSalvarActionPerformed
+
+    public void filtrarResiduo(String nomeResiduo, String informacao01, String informacao02, Dica dica, String caminhoImagem) {
         labelTitulo.setText(nomeResiduo);
-        String html = "<html><body style='width: %1spx'>%1s</body></html>";
-        labelInformacao01.setText(String.format(html, labelInformacao01.getWidth(), informacao01));
-        labelInformacao02.setText(String.format(html, labelInformacao02.getWidth(), informacao02));
+
+        String htmlTemplate = "<html><body style='width: %1spx'>%2s</body></html>";
+
+        String formattedInformacao01 = formatTextForHtml(informacao01, 70);
+        String formattedInformacao02 = formatTextForHtml(informacao02, 70);
+        String formattedDicaDescricao = formatTextForHtml(dica.getDescricao(), 60); 
+
+        labelInformacao01.setText(String.format(htmlTemplate, labelInformacao01.getWidth(), formattedInformacao01));
+        labelInformacao02.setText(String.format(htmlTemplate, labelInformacao02.getWidth(), formattedInformacao02));
         labelTituloDica.setText(dica.getTitulo());
-        labelDica.setText(String.format(html, labelDica.getWidth(), dica.getDescricao()));
+        labelDica.setText(String.format(htmlTemplate, labelDica.getWidth(), formattedDicaDescricao));
+
+        java.net.URL imgURL = getClass().getResource(caminhoImagem);
+        if (imgURL != null) {
+            System.out.println("Carregando imagem de: " + imgURL);
+            ImageIcon imagemResiduo = new ImageIcon(imgURL);
+            labelImagemResiduo.setIcon(imagemResiduo);
+            labelImagemResiduo.setText("");
+        } else {
+            System.err.println("Erro ao carregar a imagem: " + caminhoImagem);
+        }
+    }
+
+    private String formatTextForHtml(String text, int lineLength) {
+        StringBuilder formattedText = new StringBuilder();
+        String[] words = text.split(" ");
+        int currentLineLength = 0;
+
+        for (String word : words) {
+            if (currentLineLength + word.length() > lineLength) {
+                formattedText.append("<br>");
+                currentLineLength = 0;
+            }
+            formattedText.append(word).append(" ");
+            currentLineLength += word.length() + 1;
+        }
+
+        return formattedText.toString().trim();
     }
 
     public void setCorResiduo(int r, int g, int b) {
@@ -313,7 +377,7 @@ public class TelaInformacoes extends javax.swing.JFrame {
     private void configurarImagem() {
         URL imgURL = getClass().getResource("/imagens/icone-reciclagem.png");
         if (imgURL != null) {
-            imagemResiduo.setIcon(new ImageIcon(imgURL));
+            labelImagemResiduo.setIcon(new ImageIcon(imgURL));
         } else {
             System.err.println("Não foi possível encontrar o arquivo de imagem.");
         }
@@ -329,7 +393,6 @@ public class TelaInformacoes extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoSalvar;
-    private javax.swing.JLabel imagemResiduo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JLayeredPane jLayeredPane2;
@@ -337,8 +400,10 @@ public class TelaInformacoes extends javax.swing.JFrame {
     private javax.swing.JLabel labelAnotacoes;
     private javax.swing.JLabel labelDica;
     private javax.swing.JLabel labelDicas;
+    private javax.swing.JLabel labelImagemResiduo;
     private javax.swing.JLabel labelInformacao01;
     private javax.swing.JLabel labelInformacao02;
+    private javax.swing.JLabel labelListaResiduos;
     private javax.swing.JLabel labelSair;
     private javax.swing.JLabel labelTitulo;
     private javax.swing.JLabel labelTituloDica;
