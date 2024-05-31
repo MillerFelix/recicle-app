@@ -28,9 +28,8 @@ public class ResiduoDAO {
             while (rs.next()) {
                 Long id = rs.getLong("id");
                 String nome = rs.getString("nome");
-                String descricao = rs.getString("descricao");
                 Long idCategoriaResiduo = rs.getLong("categoria_residuos_id");
-                Residuo residuo = new Residuo(id, nome, descricao, idCategoriaResiduo);
+                Residuo residuo = new Residuo(id, nome, idCategoriaResiduo);
                 residuos.add(residuo);
             }
         } catch (SQLException e) {

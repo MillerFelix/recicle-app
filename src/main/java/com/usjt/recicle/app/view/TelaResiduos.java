@@ -501,7 +501,7 @@ public class TelaResiduos extends javax.swing.JFrame {
         if (categoriaResiduo != null) {
             TelaInformacoes telaInformacoes = new TelaInformacoes(id, usuarioAtual.getId());
 
-            String caminhoImagem = "/imagens/imagem-baterias.png";
+            String caminhoImagem = "/imagens/imagem-bateria.png";
             telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem, residuos);
             telaInformacoes.setCorResiduo(102, 102, 102);
 

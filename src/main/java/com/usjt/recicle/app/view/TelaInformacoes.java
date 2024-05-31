@@ -1,6 +1,7 @@
 package com.usjt.recicle.app.view;
 
 import com.usjt.recicle.app.controller.AnotacaoController;
+import com.usjt.recicle.app.controller.ResiduoController;
 import com.usjt.recicle.app.model.Anotacao;
 import com.usjt.recicle.app.model.Dica;
 import com.usjt.recicle.app.model.Residuo;
@@ -28,6 +29,7 @@ public class TelaInformacoes extends javax.swing.JFrame {
         configurarImagem();
         instanciaAtual = this;
         preencherListaAnotacoes(id);
+        preencherListaResiduos(id);
     }
 
     @SuppressWarnings("unchecked")
@@ -160,7 +162,9 @@ public class TelaInformacoes extends javax.swing.JFrame {
         labelImagemResiduo.setForeground(new java.awt.Color(51, 51, 51));
         labelImagemResiduo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelImagemResiduo.setText("Imagem do Resíduo");
+        labelImagemResiduo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         labelImagemResiduo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        labelImagemResiduo.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
         textoAnotacao.setBackground(new java.awt.Color(153, 255, 153));
         textoAnotacao.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
@@ -229,15 +233,14 @@ public class TelaInformacoes extends javax.swing.JFrame {
         labelTituloDica.setVerifyInputWhenFocusTarget(false);
 
         listaResiduos.setBackground(new java.awt.Color(204, 255, 204));
-        listaResiduos.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 8, true));
-        listaResiduos.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        listaResiduos.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 4, true));
+        listaResiduos.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         listaResiduos.setForeground(new java.awt.Color(0, 153, 0));
         listaResiduos.setAutoscrolls(false);
-        listaResiduos.setEnabled(false);
         listaResiduos.setFocusable(false);
         listaResiduos.setRequestFocusEnabled(false);
-        listaResiduos.setSelectionBackground(new java.awt.Color(0, 218, 101));
-        listaResiduos.setSelectionForeground(new java.awt.Color(0, 218, 101));
+        listaResiduos.setSelectionBackground(new java.awt.Color(204, 255, 204));
+        listaResiduos.setSelectionForeground(new java.awt.Color(204, 255, 204));
         listaResiduos.setVerifyInputWhenFocusTarget(false);
         listaResiduos.setVisibleRowCount(6);
         listaResiduos.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
@@ -279,23 +282,11 @@ public class TelaInformacoes extends javax.swing.JFrame {
             painelConteudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelConteudoLayout.createSequentialGroup()
                 .addComponent(painelCabecalho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(painelConteudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelImagemResiduo)
-                    .addComponent(labelTitulo))
                 .addGroup(painelConteudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelConteudoLayout.createSequentialGroup()
-                        .addGap(108, 108, 108)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addComponent(labelDicas)
-                        .addGap(12, 12, 12)
-                        .addComponent(labelTituloDica)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(labelDica, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 29, Short.MAX_VALUE))
-                    .addGroup(painelConteudoLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(labelTitulo)
+                        .addGap(20, 20, 20)
                         .addComponent(labelInformacao01, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(labelInformacao02, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -306,8 +297,20 @@ public class TelaInformacoes extends javax.swing.JFrame {
                             .addComponent(textoAnotacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(45, 45, 45))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30))
+                    .addGroup(painelConteudoLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(labelImagemResiduo, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addComponent(labelDicas)
+                        .addGap(12, 12, 12)
+                        .addComponent(labelTituloDica)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(labelDica, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 66, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -384,6 +387,11 @@ public class TelaInformacoes extends javax.swing.JFrame {
         AnotacaoController anotacaoController = new AnotacaoController();
         return anotacaoController.buscarAnotacoesCategoriaResiduo(id, idUsuario);
     }
+    
+    private List<Residuo> buscarResiduosCategoria(Long id) {
+        ResiduoController residuoController = new ResiduoController();
+        return residuoController.buscarResiduosPorCategoriaId(id);
+    }
 
     public void preencherListaAnotacoes(Long id) {
         List<Anotacao> anotacoes = buscarAnotacoesCategoriaResiduo(id, usuarioAtual);
@@ -398,6 +406,21 @@ public class TelaInformacoes extends javax.swing.JFrame {
             listModel.addElement(descricao);
         }
         listaAnotacoes.setModel(listModel);
+    }
+    
+      public void preencherListaResiduos(Long id) {
+        List<Residuo> residuos = buscarResiduosCategoria(id);
+
+        List<String> nomesResiduos = new ArrayList<>();
+        for (Residuo residuo : residuos) {
+            nomesResiduos.add(residuo.getNome());
+        }
+
+        DefaultListModel<String> listModel = new DefaultListModel<>();
+        for (String nome : nomesResiduos) {
+            listModel.addElement(nome);
+        }
+        listaResiduos.setModel(listModel);
     }
 
     public void filtrarResiduo(String nomeResiduo, String informacao01, String informacao02, Dica dica, String caminhoImagem, List<Residuo> residuos) {
@@ -446,6 +469,7 @@ public class TelaInformacoes extends javax.swing.JFrame {
         Color corResiduo = new Color(r, g, b);
         labelTitulo.setForeground(corResiduo);
         labelTituloDica.setForeground(corResiduo);
+        listaResiduos.setForeground(corResiduo);
     }
 
     private void configurarImagem() {
@@ -474,7 +498,6 @@ public class TelaInformacoes extends javax.swing.JFrame {
     private javax.swing.JLabel labelTitulo;
     private javax.swing.JLabel labelTituloDica;
     private javax.swing.JLabel labelVoltar;
-    // private javax.swing.JList<String> listaAnotacoes;
     private javax.swing.JList<String> listaResiduos;
     private javax.swing.JPanel painelCabecalho;
     private javax.swing.JPanel painelConteudo;

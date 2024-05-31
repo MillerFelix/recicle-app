@@ -7,16 +7,14 @@ public class Residuo {
 
     private Long id;
     private String nome;
-    private String descricao;
     private Long idCategoriaResiduo;
 
     public Residuo() {
     }
 
-    public Residuo(Long id, String nome, String descricao, Long categoria) {
+    public Residuo(Long id, String nome, Long categoria) {
         this.id = id;
         this.nome = nome;
-        this.descricao = descricao;
         this.idCategoriaResiduo = idCategoriaResiduo;
     }
 
@@ -34,14 +32,6 @@ public class Residuo {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
     }
 
     public Long getIdCategoriaResiduo() {
