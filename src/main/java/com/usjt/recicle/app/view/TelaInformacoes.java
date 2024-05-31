@@ -57,6 +57,7 @@ public class TelaInformacoes extends javax.swing.JFrame {
         labelTituloDica = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         listaResiduos = new javax.swing.JList<>();
+        labelExemplosResiduos = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
@@ -250,6 +251,13 @@ public class TelaInformacoes extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(listaResiduos);
 
+        labelExemplosResiduos.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        labelExemplosResiduos.setForeground(new java.awt.Color(0, 153, 0));
+        labelExemplosResiduos.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelExemplosResiduos.setText("Exemplos de Resídos:");
+        labelExemplosResiduos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        labelExemplosResiduos.setVerifyInputWhenFocusTarget(false);
+
         javax.swing.GroupLayout painelConteudoLayout = new javax.swing.GroupLayout(painelConteudo);
         painelConteudo.setLayout(painelConteudoLayout);
         painelConteudoLayout.setHorizontalGroup(
@@ -267,12 +275,14 @@ public class TelaInformacoes extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(painelConteudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(labelDicas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(labelTituloDica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(labelDica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(labelImagemResiduo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGroup(painelConteudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelConteudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(labelDicas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(labelTituloDica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(labelDica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(labelImagemResiduo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(labelExemplosResiduos))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(painelConteudoLayout.createSequentialGroup()
                 .addComponent(painelCabecalho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -302,9 +312,11 @@ public class TelaInformacoes extends javax.swing.JFrame {
                     .addGroup(painelConteudoLayout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addComponent(labelImagemResiduo, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
+                        .addGap(2, 2, 2)
+                        .addComponent(labelExemplosResiduos)
+                        .addGap(2, 2, 2)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
                         .addComponent(labelDicas)
                         .addGap(12, 12, 12)
                         .addComponent(labelTituloDica)
@@ -491,6 +503,7 @@ public class TelaInformacoes extends javax.swing.JFrame {
     private javax.swing.JLabel labelAnotacoes;
     private javax.swing.JLabel labelDica;
     private javax.swing.JLabel labelDicas;
+    private javax.swing.JLabel labelExemplosResiduos;
     private javax.swing.JLabel labelImagemResiduo;
     private javax.swing.JLabel labelInformacao01;
     private javax.swing.JLabel labelInformacao02;
