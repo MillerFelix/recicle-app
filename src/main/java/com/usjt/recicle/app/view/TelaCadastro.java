@@ -3,12 +3,22 @@ package com.usjt.recicle.app.view;
 import com.usjt.recicle.app.controller.UsuarioController;
 import java.net.URL;
 import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class TelaCadastro extends javax.swing.JFrame {
 
     private static TelaCadastro instanciaAtual;
+    private static final String EMAIL_REGEX = "^[A-Za-z0-9+_.-]+@(.+)$";
+    private static final Pattern EMAIL_PATTERN = Pattern.compile(EMAIL_REGEX);
+    private static final String[] PERMITTED_DOMAINS = {
+        "gmail.com", "hotmail.com", "yahoo.com", "outlook.com",
+        "live.com", "aol.com", "icloud.com", "mail.com",
+        "zoho.com", "yandex.com", "protonmail.com", "gmx.com",
+        "me.com"
+    };
 
     public TelaCadastro() {
         initComponents();
@@ -206,6 +216,25 @@ public class TelaCadastro extends javax.swing.JFrame {
         }
     }
 
+    public static boolean validarDominioEmail(String email) {
+        if (email == null) {
+            return false;
+        }
+
+        Matcher matcher = EMAIL_PATTERN.matcher(email);
+        if (!matcher.matches()) {
+            return false;
+        }
+
+        String domain = matcher.group(1);
+        for (String permittedDomain : PERMITTED_DOMAINS) {
+            if (permittedDomain.equalsIgnoreCase(domain)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private void botaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarActionPerformed
         String nome = textoNomeUsuario.getText();
         String email = textoEmail.getText();
@@ -214,17 +243,27 @@ public class TelaCadastro extends javax.swing.JFrame {
 
         Arrays.fill(senhaCharArray, '0');
 
+        if (nome.trim().isEmpty() || email.trim().isEmpty() || senha.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Todos os campos devem ser preenchidos.", "Erro", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (!validarDominioEmail(email)) {
+            JOptionPane.showMessageDialog(this, "Por favor, insira um domínio de email válido (ex: @gmail.com, @hotmail.com)...", "Erro", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
         try {
             UsuarioController usuarioController = new UsuarioController();
             boolean sucesso = usuarioController.cadastrarUsuario(nome, email, senha);
             if (sucesso) {
-                JOptionPane.showMessageDialog(null, "Cadastro realizado com Sucesso!", "Sucesso", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Cadastro realizado com Sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
                 fecharInstanciaAtual();
             } else {
-                JOptionPane.showMessageDialog(this, "Os campos não foram preenchidos corretamente...", "Erro", javax.swing.JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "O email já está cadastrado.", "Erro", JOptionPane.ERROR_MESSAGE);
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro: " + e);
+            JOptionPane.showMessageDialog(this, "Erro: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_botaoSalvarActionPerformed
 

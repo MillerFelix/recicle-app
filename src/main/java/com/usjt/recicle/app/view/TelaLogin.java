@@ -198,7 +198,7 @@ public class TelaLogin extends javax.swing.JFrame {
     private void botaoEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEntrarActionPerformed
         String email = textoEmail.getText();
         String senha = new String(textoSenha.getPassword());
-
+        
         if (validarCredenciais(email, senha)) {
             Usuario usuarioAtual = Usuario.getUsuarioAtual();
             TelaResiduos telaResiduos = new TelaResiduos(usuarioAtual);

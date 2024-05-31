@@ -73,6 +73,15 @@ public class Usuario {
         new UsuarioDAO().cadastrarUsuario(usuario);
     }
 
+    public boolean verificarEmail(String email) {
+        boolean emailExistente = new UsuarioDAO().verificarEmail(email);
+        if (emailExistente) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public boolean validarCredenciais(String email, String senha) {
         Usuario usuario = new UsuarioDAO().validarCredenciais(email, senha);
         if (usuario != null) {

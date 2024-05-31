@@ -44,8 +44,8 @@ public class UsuarioDAO {
             }
         }
     }
-    
-     public Usuario validarCredenciais(String email, String senha) {
+
+    public Usuario validarCredenciais(String email, String senha) {
         String sql = "SELECT * FROM usuarios WHERE email = ? AND senha = ?";
 
         PreparedStatement ps = null;
@@ -99,54 +99,52 @@ public class UsuarioDAO {
         return usuario;
     }
 
-//    public boolean validarCredenciais(String email, String senha) {
-//        String sql = "SELECT COUNT(*) FROM usuarios WHERE email = ? AND senha = ?";
-//
-//        PreparedStatement ps = null;
-//        Connection connection = null;
-//        ResultSet rs = null;
-//
-//        try {
-//            connection = new ConexaoBD().getConnection();
-//            ps = connection.prepareStatement(sql);
-//            ps.setString(1, email);
-//            ps.setString(2, senha);
-//
-//            rs = ps.executeQuery();
-//
-//            if (rs.next()) {
-//                int count = rs.getInt(1);
-//                return count > 0;
-//            }
-//        } catch (SQLException e) {
-//            System.err.println("Erro ao verificar usuário: " + e.getMessage());
-//            e.printStackTrace();
-//        } finally {
-//            try {
-//                if (rs != null) {
-//                    rs.close();
-//                }
-//            } catch (SQLException e) {
-//                System.err.println("Erro ao fechar o ResultSet: " + e.getMessage());
-//                e.printStackTrace();
-//            }
-//            try {
-//                if (ps != null) {
-//                    ps.close();
-//                }
-//            } catch (SQLException e) {
-//                System.err.println("Erro ao fechar o PreparedStatement: " + e.getMessage());
-//                e.printStackTrace();
-//            }
-//            try {
-//                if (connection != null) {
-//                    connection.close();
-//                }
-//            } catch (SQLException e) {
-//                System.err.println("Erro ao fechar a Connection: " + e.getMessage());
-//                e.printStackTrace();
-//            }
-//        }
-//        return false;
-//    }
+    public boolean verificarEmail(String email) {
+        String sql = "SELECT * FROM usuarios WHERE email = ?";
+
+        PreparedStatement ps = null;
+        Connection connection = null;
+        ResultSet rs = null;
+
+        try {
+            connection = new ConexaoBD().getConnection();
+            ps = connection.prepareStatement(sql);
+            ps.setString(1, email);
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                int count = rs.getInt(1);
+                return count > 0;
+            }
+        } catch (SQLException e) {
+            System.err.println("Erro ao verificar email de usuário: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+            } catch (SQLException e) {
+                System.err.println("Erro ao fechar o ResultSet: " + e.getMessage());
+                e.printStackTrace();
+            }
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+            } catch (SQLException e) {
+                System.err.println("Erro ao fechar o PreparedStatement: " + e.getMessage());
+                e.printStackTrace();
+            }
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                System.err.println("Erro ao fechar a Connection: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
 }
