@@ -295,6 +295,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="99" red="0" type="rgb"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Selecione um res&#xed;duo"/>
             <Property name="requestFocusEnabled" type="boolean" value="false"/>
           </Properties>
 
@@ -662,6 +663,7 @@
               <Image iconType="3" name="/imagens/icone-agenda.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Clique aqui, para agendar os dias de reciclar!"/>
+            <Property name="toolTipText" type="java.lang.String" value="Agende sua reciclagem"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[17, 17]"/>
             </Property>

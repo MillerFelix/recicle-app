@@ -7,7 +7,6 @@ import com.usjt.recicle.app.model.Dica;
 import com.usjt.recicle.app.model.Residuo;
 import com.usjt.recicle.app.model.Usuario;
 import java.awt.Color;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultListModel;
@@ -21,12 +20,14 @@ public class TelaInformacoes extends javax.swing.JFrame {
     private Long id;
     private Long usuarioAtual;
     private JList<String> listaAnotacoes;
+    private List<Anotacao> anotacoes = new ArrayList<>();
+
+    ;
 
     public TelaInformacoes(long id, Long idUsuario) {
         this.id = id;
         this.usuarioAtual = idUsuario;
         initComponents();
-        configurarImagem();
         instanciaAtual = this;
         preencherListaAnotacoes(id);
         preencherListaResiduos(id);
@@ -123,6 +124,7 @@ public class TelaInformacoes extends javax.swing.JFrame {
         });
 
         labelVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone-voltar.png"))); // NOI18N
+        labelVoltar.setToolTipText("Voltar");
         labelVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 labelVoltarMouseClicked(evt);
@@ -171,7 +173,7 @@ public class TelaInformacoes extends javax.swing.JFrame {
         textoAnotacao.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         textoAnotacao.setForeground(new java.awt.Color(0, 153, 0));
         textoAnotacao.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        textoAnotacao.setToolTipText("Digite o nome de Usuário");
+        textoAnotacao.setToolTipText("Escreva sua anotação");
         textoAnotacao.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 4, true));
         textoAnotacao.setSelectedTextColor(new java.awt.Color(0, 0, 0));
         textoAnotacao.addActionListener(new java.awt.event.ActionListener() {
@@ -197,10 +199,11 @@ public class TelaInformacoes extends javax.swing.JFrame {
         listaAnotacoes.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 4, true));
         listaAnotacoes.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         listaAnotacoes.setForeground(new java.awt.Color(0, 153, 0));
+        listaAnotacoes.setToolTipText("Selecione para editar ou excluir");
         listaAnotacoes.setFocusable(false);
         listaAnotacoes.setRequestFocusEnabled(false);
-        listaAnotacoes.setSelectionBackground(new java.awt.Color(0, 218, 101));
-        listaAnotacoes.setSelectionForeground(new java.awt.Color(0, 218, 101));
+        listaAnotacoes.setSelectionBackground(new java.awt.Color(204, 255, 204));
+        listaAnotacoes.setSelectionForeground(new java.awt.Color(204, 255, 204));
         listaAnotacoes.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
                 listaAnotacoesValueChanged(evt);
@@ -244,11 +247,6 @@ public class TelaInformacoes extends javax.swing.JFrame {
         listaResiduos.setSelectionForeground(new java.awt.Color(204, 255, 204));
         listaResiduos.setVerifyInputWhenFocusTarget(false);
         listaResiduos.setVisibleRowCount(6);
-        listaResiduos.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
-            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-                listaResiduosValueChanged(evt);
-            }
-        });
         jScrollPane2.setViewportView(listaResiduos);
 
         labelExemplosResiduos.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -378,7 +376,8 @@ public class TelaInformacoes extends javax.swing.JFrame {
             boolean sucesso = anotacaoController.salvar(anotacao, idCategoriaResiduo, idUsuario);
             if (sucesso) {
                 JOptionPane.showMessageDialog(null, "Anotação salva com Sucesso!", "Sucesso", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-                fecharInstanciaAtual();
+                textoAnotacao.setText("");
+                preencherListaAnotacoes(id);
             } else {
                 JOptionPane.showMessageDialog(this, "O campo para anotação deve ser preenchido...", "Erro", javax.swing.JOptionPane.ERROR_MESSAGE);
             }
@@ -388,39 +387,88 @@ public class TelaInformacoes extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoSalvarActionPerformed
 
     private void listaAnotacoesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaAnotacoesValueChanged
-
+        if (!evt.getValueIsAdjusting()) {
+            Anotacao anotacaoSelecionada = selecionarAnotacao();
+            if (anotacaoSelecionada != null) {
+                mostrarOpcaoEditarExcluir(anotacaoSelecionada);
+            }
+        }
     }//GEN-LAST:event_listaAnotacoesValueChanged
 
-    private void listaResiduosValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaResiduosValueChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_listaResiduosValueChanged
+    private void editarAnotacao(Anotacao anotacao) {
+        String novaDescricao = JOptionPane.showInputDialog(null, "Digite a nova descrição:", anotacao.getDescricao());
+        if (novaDescricao != null && !novaDescricao.trim().isEmpty()) {
+            AnotacaoController anotacaoController = new AnotacaoController();
+            anotacao.setDescricao(novaDescricao);
+            anotacaoController.editar(anotacao);
+            preencherListaAnotacoes(id);
+        }
+    }
+
+    private void excluirAnotacao(Anotacao anotacao) {
+        Object[] options = {"Sim", "Não"};
+        int confirm = JOptionPane.showOptionDialog(null,
+                "Tem certeza que deseja excluir esta anotação?",
+                "Confirmar exclusão",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                options,
+                options[0]);
+        if (confirm == JOptionPane.YES_OPTION) {
+            AnotacaoController anotacaoController = new AnotacaoController();
+            anotacaoController.excluir(anotacao);
+            preencherListaAnotacoes(id); 
+        }
+    }
+
+    private Anotacao selecionarAnotacao() {
+        int selectedIndex = listaAnotacoes.getSelectedIndex();
+        if (selectedIndex != -1 && anotacoes != null && !anotacoes.isEmpty()) {
+            return anotacoes.get(selectedIndex);
+        }
+        return null;
+    }
+
+    private void mostrarOpcaoEditarExcluir(Anotacao anotacao) {
+        String[] options = {"Editar", "Excluir"};
+        int opcao = JOptionPane.showOptionDialog(null,
+                "Deseja editar ou excluir a anotação?",
+                "Escolha uma opção",
+                JOptionPane.DEFAULT_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                options,
+                options[0]);
+
+        if (opcao == 0) {
+            editarAnotacao(anotacao);
+        } else if (opcao == 1) {
+            excluirAnotacao(anotacao);
+        }
+    }
 
     private List<Anotacao> buscarAnotacoesCategoriaResiduo(Long id, Long idUsuario) {
         AnotacaoController anotacaoController = new AnotacaoController();
         return anotacaoController.buscarAnotacoesCategoriaResiduo(id, idUsuario);
     }
-    
+
     private List<Residuo> buscarResiduosCategoria(Long id) {
         ResiduoController residuoController = new ResiduoController();
         return residuoController.buscarResiduosPorCategoriaId(id);
     }
 
     public void preencherListaAnotacoes(Long id) {
-        List<Anotacao> anotacoes = buscarAnotacoesCategoriaResiduo(id, usuarioAtual);
-
-        List<String> descricoes = new ArrayList<>();
-        for (Anotacao anotacao : anotacoes) {
-            descricoes.add(anotacao.getDescricao());
-        }
+        anotacoes = buscarAnotacoesCategoriaResiduo(id, usuarioAtual);
 
         DefaultListModel<String> listModel = new DefaultListModel<>();
-        for (String descricao : descricoes) {
-            listModel.addElement(descricao);
+        for (Anotacao anotacao : anotacoes) {
+            listModel.addElement(anotacao.getDescricao());
         }
         listaAnotacoes.setModel(listModel);
     }
-    
-      public void preencherListaResiduos(Long id) {
+
+    public void preencherListaResiduos(Long id) {
         List<Residuo> residuos = buscarResiduosCategoria(id);
 
         List<String> nomesResiduos = new ArrayList<>();
@@ -482,15 +530,8 @@ public class TelaInformacoes extends javax.swing.JFrame {
         labelTitulo.setForeground(corResiduo);
         labelTituloDica.setForeground(corResiduo);
         listaResiduos.setForeground(corResiduo);
-    }
-
-    private void configurarImagem() {
-        URL imgURL = getClass().getResource("/imagens/icone-reciclagem.png");
-        if (imgURL != null) {
-            labelImagemResiduo.setIcon(new ImageIcon(imgURL));
-        } else {
-            System.err.println("Não foi possível encontrar o arquivo de imagem.");
-        }
+        listaAnotacoes.setForeground(corResiduo);
+        textoAnotacao.setForeground(corResiduo);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

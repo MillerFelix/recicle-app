@@ -103,6 +103,7 @@ public class TelaResiduos extends javax.swing.JFrame {
         painelResiduos.setBackground(new java.awt.Color(153, 255, 153));
         painelResiduos.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 8, true));
         painelResiduos.setForeground(new java.awt.Color(0, 153, 0));
+        painelResiduos.setToolTipText("Selecione um resíduo");
         painelResiduos.setRequestFocusEnabled(false);
 
         botaoResiduoPapelCartao.setBackground(new java.awt.Color(0, 46, 218));
@@ -314,6 +315,7 @@ public class TelaResiduos extends javax.swing.JFrame {
         labelAgenda.setForeground(new java.awt.Color(0, 153, 0));
         labelAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone-agenda.png"))); // NOI18N
         labelAgenda.setText("Clique aqui, para agendar os dias de reciclar!");
+        labelAgenda.setToolTipText("Agende sua reciclagem");
         labelAgenda.setMaximumSize(new java.awt.Dimension(17, 17));
         labelAgenda.setMinimumSize(new java.awt.Dimension(17, 17));
         labelAgenda.setPreferredSize(new java.awt.Dimension(17, 17));

@@ -47,7 +47,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         textoNomeUsuario.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         textoNomeUsuario.setForeground(new java.awt.Color(0, 153, 0));
         textoNomeUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        textoNomeUsuario.setToolTipText("Digite o nome de Usuário");
+        textoNomeUsuario.setToolTipText("Digite o nome de usuário");
         textoNomeUsuario.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 4, true));
         textoNomeUsuario.setSelectedTextColor(new java.awt.Color(0, 0, 0));
         textoNomeUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -78,7 +78,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         textoSenha.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         textoSenha.setForeground(new java.awt.Color(0, 153, 0));
         textoSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        textoSenha.setToolTipText("Digite a Senha");
+        textoSenha.setToolTipText("Digite a senha");
         textoSenha.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 4, true));
         textoSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,7 +96,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         textoEmail.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         textoEmail.setForeground(new java.awt.Color(0, 153, 0));
         textoEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        textoEmail.setToolTipText("Digite seu Email");
+        textoEmail.setToolTipText("Digite seu email");
         textoEmail.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 4, true));
         textoEmail.setSelectedTextColor(new java.awt.Color(0, 0, 0));
         textoEmail.addActionListener(new java.awt.event.ActionListener() {

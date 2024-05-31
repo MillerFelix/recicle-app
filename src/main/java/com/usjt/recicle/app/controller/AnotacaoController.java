@@ -25,21 +25,21 @@ public class AnotacaoController {
         return listaAnotacoes;
     }
 
-//    public boolean editar(Anotacao novaAnotacao) {
-//        if (novaAnotacao.getId() != null && novaAnotacao.getDescricao() != null) {
-//            Anotacao anotacao = new Anotacao(novaAnotacao.getDescricao());
-//            anotacao.editar(novaAnotacao);
-//            return true;
-//        }
-//        return false;
-//    }
-//
-//    public boolean excluir(Anotacao anotacaoExcluida) {
-//        if (anotacaoExcluida != null) {
-//            Anotacao anotacao = new Anotacao(anotacaoExcluida.getDescricao());
-//            anotacao.excluir(anotacaoExcluida);
-//            return true;
-//        }
-//        return false;
-//    }
+    public boolean editar(Anotacao novaAnotacao) {
+        if (novaAnotacao.getId() != null && novaAnotacao.getDescricao() != null) {
+            Anotacao anotacao = new Anotacao(novaAnotacao.getDescricao());
+            anotacao.editar(novaAnotacao);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean excluir(Anotacao anotacaoExcluida) {
+        if (anotacaoExcluida != null) {
+            Anotacao anotacao = new Anotacao(anotacaoExcluida.getDescricao());
+            anotacao.excluir(anotacaoExcluida);
+            return true;
+        }
+        return false;
+    }
 }

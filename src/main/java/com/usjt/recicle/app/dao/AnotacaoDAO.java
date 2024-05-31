@@ -91,13 +91,14 @@ public class AnotacaoDAO {
     }
 
     public void editar(Anotacao anotacao) {
-        String sql = "UPDATE anotacoes SET descricao = ?, WHERE id = ?";
+        String sql = "UPDATE anotacoes SET descricao = ? WHERE categoria_residuos_id = ? AND id = ?";
 
         PreparedStatement ps = null;
         Connection connection = null;
         ResultSet rs = null;
 
         try {
+            connection = new ConexaoBD().getConnection();
             ps = connection.prepareStatement(sql);
             ps.setString(1, anotacao.getDescricao());
             ps.setLong(2, anotacao.getIdCategoriaResiduo());
@@ -125,7 +126,7 @@ public class AnotacaoDAO {
     }
 
     public void excluir(Anotacao anotacao) {
-        String sql = "DELETE FROM anotacoes WHERE id = ?";
+        String sql = "DELETE FROM anotacoes WHERE categoria_residuos_id = ? AND descricao = ?";
 
         PreparedStatement ps = null;
         Connection connection = null;
@@ -134,8 +135,8 @@ public class AnotacaoDAO {
         try {
             connection = new ConexaoBD().getConnection();
             ps = connection.prepareStatement(sql);
-            ps.setString(1, anotacao.getDescricao());
-            ps.setLong(2, anotacao.getIdCategoriaResiduo());
+            ps.setLong(1, anotacao.getIdCategoriaResiduo());
+            ps.setString(2, anotacao.getDescricao());
             int rowsAffected = ps.executeUpdate();
             if (rowsAffected > 0) {
                 System.out.println("Anotação excluída com sucesso.");

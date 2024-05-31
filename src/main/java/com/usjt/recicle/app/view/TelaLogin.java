@@ -43,7 +43,7 @@ public class TelaLogin extends javax.swing.JFrame {
         textoEmail.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         textoEmail.setForeground(new java.awt.Color(0, 153, 0));
         textoEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        textoEmail.setToolTipText("Digite seu Email cadastrado");
+        textoEmail.setToolTipText("Digite seu email cadastrado");
         textoEmail.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 4, true));
         textoEmail.setSelectedTextColor(new java.awt.Color(0, 0, 0));
         textoEmail.addActionListener(new java.awt.event.ActionListener() {
@@ -73,7 +73,7 @@ public class TelaLogin extends javax.swing.JFrame {
         textoSenha.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         textoSenha.setForeground(new java.awt.Color(0, 153, 0));
         textoSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        textoSenha.setToolTipText("Digite a Senha");
+        textoSenha.setToolTipText("Digite a senha");
         textoSenha.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 4, true));
 
         LabelEmail.setForeground(new java.awt.Color(0, 153, 0));
