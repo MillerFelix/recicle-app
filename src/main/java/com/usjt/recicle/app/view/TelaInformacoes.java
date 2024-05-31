@@ -3,6 +3,7 @@ package com.usjt.recicle.app.view;
 import com.usjt.recicle.app.controller.AnotacaoController;
 import com.usjt.recicle.app.model.Anotacao;
 import com.usjt.recicle.app.model.Dica;
+import com.usjt.recicle.app.model.Residuo;
 import com.usjt.recicle.app.model.Usuario;
 import java.awt.Color;
 import java.net.URL;
@@ -36,7 +37,7 @@ public class TelaInformacoes extends javax.swing.JFrame {
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jLabel1 = new javax.swing.JLabel();
         jLayeredPane2 = new javax.swing.JLayeredPane();
-        painelConteudoLogin = new javax.swing.JPanel();
+        painelConteudo = new javax.swing.JPanel();
         labelDicas = new javax.swing.JLabel();
         painelCabecalho = new javax.swing.JPanel();
         labelSair = new javax.swing.JLabel();
@@ -52,7 +53,8 @@ public class TelaInformacoes extends javax.swing.JFrame {
         labelInformacao02 = new javax.swing.JLabel();
         labelInformacao01 = new javax.swing.JLabel();
         labelTituloDica = new javax.swing.JLabel();
-        labelListaResiduos = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        listaResiduos = new javax.swing.JList<>();
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
@@ -81,17 +83,17 @@ public class TelaInformacoes extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        painelConteudoLogin.setBackground(new java.awt.Color(204, 255, 204));
-        painelConteudoLogin.setDoubleBuffered(false);
-        painelConteudoLogin.setMaximumSize(new java.awt.Dimension(850, 600));
-        painelConteudoLogin.setMinimumSize(new java.awt.Dimension(850, 600));
-        painelConteudoLogin.setPreferredSize(new java.awt.Dimension(850, 600));
-        painelConteudoLogin.setRequestFocusEnabled(false);
-        painelConteudoLogin.setVerifyInputWhenFocusTarget(false);
+        painelConteudo.setBackground(new java.awt.Color(204, 255, 204));
+        painelConteudo.setDoubleBuffered(false);
+        painelConteudo.setMaximumSize(new java.awt.Dimension(850, 600));
+        painelConteudo.setMinimumSize(new java.awt.Dimension(850, 600));
+        painelConteudo.setPreferredSize(new java.awt.Dimension(850, 600));
+        painelConteudo.setRequestFocusEnabled(false);
+        painelConteudo.setVerifyInputWhenFocusTarget(false);
 
         labelDicas.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
         labelDicas.setForeground(new java.awt.Color(0, 153, 0));
-        labelDicas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labelDicas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelDicas.setText("Dicas");
         labelDicas.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
@@ -151,11 +153,14 @@ public class TelaInformacoes extends javax.swing.JFrame {
 
         labelAnotacoes.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
         labelAnotacoes.setForeground(new java.awt.Color(0, 153, 0));
+        labelAnotacoes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelAnotacoes.setText("Anotações");
         labelAnotacoes.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
         labelImagemResiduo.setForeground(new java.awt.Color(51, 51, 51));
+        labelImagemResiduo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelImagemResiduo.setText("Imagem do Resíduo");
+        labelImagemResiduo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         textoAnotacao.setBackground(new java.awt.Color(153, 255, 153));
         textoAnotacao.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
@@ -197,6 +202,7 @@ public class TelaInformacoes extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(listaAnotacoes);
+        listaAnotacoes.getAccessibleContext().setAccessibleDescription("");
 
         labelDica.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         labelDica.setForeground(new java.awt.Color(51, 51, 51));
@@ -213,108 +219,106 @@ public class TelaInformacoes extends javax.swing.JFrame {
         labelInformacao01.setForeground(new java.awt.Color(51, 51, 51));
         labelInformacao01.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         labelInformacao01.setText("Informações do Resíduo");
+        labelInformacao01.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         labelInformacao01.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
         labelTituloDica.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        labelTituloDica.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelTituloDica.setText("Titulo da Dica");
         labelTituloDica.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
         labelTituloDica.setVerifyInputWhenFocusTarget(false);
 
-        labelListaResiduos.setForeground(new java.awt.Color(51, 51, 51));
-        labelListaResiduos.setText("Lista de Residuos");
+        listaResiduos.setBackground(new java.awt.Color(204, 255, 204));
+        listaResiduos.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 218, 101), 8, true));
+        listaResiduos.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        listaResiduos.setForeground(new java.awt.Color(0, 153, 0));
+        listaResiduos.setAutoscrolls(false);
+        listaResiduos.setEnabled(false);
+        listaResiduos.setFocusable(false);
+        listaResiduos.setRequestFocusEnabled(false);
+        listaResiduos.setSelectionBackground(new java.awt.Color(0, 218, 101));
+        listaResiduos.setSelectionForeground(new java.awt.Color(0, 218, 101));
+        listaResiduos.setVerifyInputWhenFocusTarget(false);
+        listaResiduos.setVisibleRowCount(6);
+        listaResiduos.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listaResiduosValueChanged(evt);
+            }
+        });
+        jScrollPane2.setViewportView(listaResiduos);
 
-        javax.swing.GroupLayout painelConteudoLoginLayout = new javax.swing.GroupLayout(painelConteudoLogin);
-        painelConteudoLogin.setLayout(painelConteudoLoginLayout);
-        painelConteudoLoginLayout.setHorizontalGroup(
-            painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelConteudoLoginLayout.createSequentialGroup()
-                .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, painelConteudoLoginLayout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(labelDica, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, painelConteudoLoginLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(labelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 774, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                        .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                                .addGap(17, 17, 17)
-                                .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                                        .addGap(182, 182, 182)
-                                        .addComponent(labelAnotacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                                        .addComponent(textoAnotacao, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelConteudoLoginLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(labelInformacao01, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(labelInformacao02, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(85, 85, 85)))
-                        .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                                .addComponent(labelImagemResiduo)
-                                .addGap(242, 242, 242))
-                            .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                                    .addComponent(labelListaResiduos, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40))
-                                .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(labelDicas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(labelTituloDica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
-                .addGap(10, 10, 10))
-            .addGroup(painelConteudoLoginLayout.createSequentialGroup()
+        javax.swing.GroupLayout painelConteudoLayout = new javax.swing.GroupLayout(painelConteudo);
+        painelConteudo.setLayout(painelConteudoLayout);
+        painelConteudoLayout.setHorizontalGroup(
+            painelConteudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelConteudoLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(painelConteudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelInformacao01, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 454, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelInformacao02, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelAnotacoes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(painelConteudoLayout.createSequentialGroup()
+                        .addComponent(textoAnotacao, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(painelConteudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(labelDicas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelTituloDica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelDica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelImagemResiduo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(painelConteudoLayout.createSequentialGroup()
                 .addComponent(painelCabecalho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
-        painelConteudoLoginLayout.setVerticalGroup(
-            painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelConteudoLoginLayout.createSequentialGroup()
+        painelConteudoLayout.setVerticalGroup(
+            painelConteudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelConteudoLayout.createSequentialGroup()
                 .addComponent(painelCabecalho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(labelTitulo)
-                .addGap(12, 12, 12)
-                .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelInformacao01, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelImagemResiduo))
-                .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(labelInformacao02, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelConteudoLoginLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                        .addComponent(labelListaResiduos, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)))
-                .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelDicas, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(labelAnotacoes))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textoAnotacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelTituloDica))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelDica, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14))
+                .addGroup(painelConteudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelImagemResiduo)
+                    .addComponent(labelTitulo))
+                .addGroup(painelConteudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelConteudoLayout.createSequentialGroup()
+                        .addGap(108, 108, 108)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addComponent(labelDicas)
+                        .addGap(12, 12, 12)
+                        .addComponent(labelTituloDica)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(labelDica, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 29, Short.MAX_VALUE))
+                    .addGroup(painelConteudoLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(labelInformacao01, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(labelInformacao02, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(labelAnotacoes)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(painelConteudoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(textoAnotacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(45, 45, 45))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelConteudoLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(painelConteudo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelConteudoLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(painelConteudo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -372,6 +376,10 @@ public class TelaInformacoes extends javax.swing.JFrame {
 
     }//GEN-LAST:event_listaAnotacoesValueChanged
 
+    private void listaResiduosValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaResiduosValueChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_listaResiduosValueChanged
+
     private List<Anotacao> buscarAnotacoesCategoriaResiduo(Long id, Long idUsuario) {
         AnotacaoController anotacaoController = new AnotacaoController();
         return anotacaoController.buscarAnotacoesCategoriaResiduo(id, idUsuario);
@@ -392,7 +400,7 @@ public class TelaInformacoes extends javax.swing.JFrame {
         listaAnotacoes.setModel(listModel);
     }
 
-    public void filtrarResiduo(String nomeResiduo, String informacao01, String informacao02, Dica dica, String caminhoImagem) {
+    public void filtrarResiduo(String nomeResiduo, String informacao01, String informacao02, Dica dica, String caminhoImagem, List<Residuo> residuos) {
         labelTitulo.setText(nomeResiduo);
 
         String htmlTemplate = "<html><body style='width: %1spx'>%2s</body></html>";
@@ -455,20 +463,21 @@ public class TelaInformacoes extends javax.swing.JFrame {
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel labelAnotacoes;
     private javax.swing.JLabel labelDica;
     private javax.swing.JLabel labelDicas;
     private javax.swing.JLabel labelImagemResiduo;
     private javax.swing.JLabel labelInformacao01;
     private javax.swing.JLabel labelInformacao02;
-    private javax.swing.JLabel labelListaResiduos;
     private javax.swing.JLabel labelSair;
     private javax.swing.JLabel labelTitulo;
     private javax.swing.JLabel labelTituloDica;
     private javax.swing.JLabel labelVoltar;
-    private DefaultListModel<Anotacao> listaAnotacoesModel;
+    // private javax.swing.JList<String> listaAnotacoes;
+    private javax.swing.JList<String> listaResiduos;
     private javax.swing.JPanel painelCabecalho;
-    private javax.swing.JPanel painelConteudoLogin;
+    private javax.swing.JPanel painelConteudo;
     private javax.swing.JTextField textoAnotacao;
     // End of variables declaration//GEN-END:variables
 }

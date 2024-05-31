@@ -11,9 +11,9 @@ import java.util.List;
 
 public class ResiduoDAO {
 
-    public static List<Residuo> buscarTodosResiduos() {
+    public static List<Residuo> buscarResiduosPorCategoriaId(Long categoriaId) {
         List<Residuo> residuos = new ArrayList<>();
-        String sql = "SELECT * FROM residuos";
+        String sql = "SELECT * FROM residuos WHERE categoria_residuos_id = ?";
 
         PreparedStatement ps = null;
         Connection connection = null;
@@ -22,6 +22,7 @@ public class ResiduoDAO {
         try {
             connection = new ConexaoBD().getConnection();
             ps = connection.prepareStatement(sql);
+            ps.setLong(1, categoriaId);
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -33,14 +34,20 @@ public class ResiduoDAO {
                 residuos.add(residuo);
             }
         } catch (SQLException e) {
-            System.err.println("Erro ao buscar categorias: " + e.getMessage());
+            System.err.println("Erro ao buscar resíduos: " + e.getMessage());
         } finally {
             try {
                 if (rs != null) {
                     rs.close();
                 }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
             } catch (SQLException e) {
-                System.err.println("Erro ao fechar o ResultSet: " + e.getMessage());
+                System.err.println("Erro ao fechar recursos: " + e.getMessage());
             }
         }
 

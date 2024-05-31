@@ -6,10 +6,10 @@ import java.util.List;
 
 public class ResiduoController {
 
-    public List<Residuo> buscarTodosResiduos() {
+    public List<Residuo> buscarResiduosPorCategoriaId(Long categoriaId) {
         List<Residuo> listaResiduo = new ArrayList<>();
         Residuo residuo = new Residuo();
-        listaResiduo = residuo.buscarTodosResiduos();
+        listaResiduo = residuo.buscarResiduosPorCategoriaId(categoriaId);
         return listaResiduo;
     }
 }

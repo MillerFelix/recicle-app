@@ -2,11 +2,14 @@ package com.usjt.recicle.app.view;
 
 import com.usjt.recicle.app.controller.CategoriaResiduoController;
 import com.usjt.recicle.app.controller.DicaController;
+import com.usjt.recicle.app.controller.ResiduoController;
 import com.usjt.recicle.app.model.CategoriaResiduo;
 import com.usjt.recicle.app.model.Dica;
+import com.usjt.recicle.app.model.Residuo;
 import com.usjt.recicle.app.model.Usuario;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import javax.swing.ImageIcon;
 
 public class TelaResiduos extends javax.swing.JFrame {
@@ -420,15 +423,17 @@ public class TelaResiduos extends javax.swing.JFrame {
         long id = 10;
         CategoriaResiduoController controllerCategoriaResiduo = new CategoriaResiduoController();
         DicaController dicaController = new DicaController();
+        ResiduoController residuoController = new ResiduoController();
 
         CategoriaResiduo categoriaResiduo = controllerCategoriaResiduo.buscarResiduosPorId(id);
         Dica dica = dicaController.buscarDicasCategoriaResiduo(id);
+        List<Residuo> residuos = residuoController.buscarResiduosPorCategoriaId(id);
 
         if (categoriaResiduo != null) {
             TelaInformacoes telaInformacoes = new TelaInformacoes(id, usuarioAtual.getId());
 
             String caminhoImagem = "/imagens/imagem-madeira.png";
-            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);
+            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem, residuos);
             telaInformacoes.setCorResiduo(35, 30, 9);
 
             telaInformacoes.setVisible(true);
@@ -441,15 +446,17 @@ public class TelaResiduos extends javax.swing.JFrame {
         long id = 9;
         CategoriaResiduoController controllerCategoriaResiduo = new CategoriaResiduoController();
         DicaController dicaController = new DicaController();
+        ResiduoController residuoController = new ResiduoController();
 
         CategoriaResiduo categoriaResiduo = controllerCategoriaResiduo.buscarResiduosPorId(id);
         Dica dica = dicaController.buscarDicasCategoriaResiduo(id);
+        List<Residuo> residuos = residuoController.buscarResiduosPorCategoriaId(id);
 
         if (categoriaResiduo != null) {
             TelaInformacoes telaInformacoes = new TelaInformacoes(id, usuarioAtual.getId());
 
             String caminhoImagem = "/imagens/imagem-perigosos.png";
-            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);
+            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem, residuos);
             telaInformacoes.setCorResiduo(30, 29, 29);
 
             telaInformacoes.setVisible(true);
@@ -462,15 +469,17 @@ public class TelaResiduos extends javax.swing.JFrame {
         long id = 8;
         CategoriaResiduoController controllerCategoriaResiduo = new CategoriaResiduoController();
         DicaController dicaController = new DicaController();
+        ResiduoController residuoController = new ResiduoController();
 
         CategoriaResiduo categoriaResiduo = controllerCategoriaResiduo.buscarResiduosPorId(id);
         Dica dica = dicaController.buscarDicasCategoriaResiduo(id);
+        List<Residuo> residuos = residuoController.buscarResiduosPorCategoriaId(id);
 
         if (categoriaResiduo != null) {
             TelaInformacoes telaInformacoes = new TelaInformacoes(id, usuarioAtual.getId());
 
             String caminhoImagem = "/imagens/imagem-tetrapak.png";
-            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);
+            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem, residuos);
             telaInformacoes.setCorResiduo(68, 134, 184);
 
             telaInformacoes.setVisible(true);
@@ -483,15 +492,17 @@ public class TelaResiduos extends javax.swing.JFrame {
         long id = 7;
         CategoriaResiduoController controllerCategoriaResiduo = new CategoriaResiduoController();
         DicaController dicaController = new DicaController();
+        ResiduoController residuoController = new ResiduoController();
 
         CategoriaResiduo categoriaResiduo = controllerCategoriaResiduo.buscarResiduosPorId(id);
         Dica dica = dicaController.buscarDicasCategoriaResiduo(id);
+        List<Residuo> residuos = residuoController.buscarResiduosPorCategoriaId(id);
 
         if (categoriaResiduo != null) {
             TelaInformacoes telaInformacoes = new TelaInformacoes(id, usuarioAtual.getId());
 
             String caminhoImagem = "/imagens/imagem-baterias.png";
-            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);
+            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem, residuos);
             telaInformacoes.setCorResiduo(102, 102, 102);
 
             telaInformacoes.setVisible(true);
@@ -504,15 +515,17 @@ public class TelaResiduos extends javax.swing.JFrame {
         long id = 6;
         CategoriaResiduoController controllerCategoriaResiduo = new CategoriaResiduoController();
         DicaController dicaController = new DicaController();
+        ResiduoController residuoController = new ResiduoController();
 
         CategoriaResiduo categoriaResiduo = controllerCategoriaResiduo.buscarResiduosPorId(id);
         Dica dica = dicaController.buscarDicasCategoriaResiduo(id);
+        List<Residuo> residuos = residuoController.buscarResiduosPorCategoriaId(id);
 
         if (categoriaResiduo != null) {
             TelaInformacoes telaInformacoes = new TelaInformacoes(id, usuarioAtual.getId());
 
             String caminhoImagem = "/imagens/imagem-eletronicos.png";
-            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);
+            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem, residuos);
             telaInformacoes.setCorResiduo(234, 83, 18);
 
             telaInformacoes.setVisible(true);
@@ -525,15 +538,17 @@ public class TelaResiduos extends javax.swing.JFrame {
         long id = 5;
         CategoriaResiduoController controllerCategoriaResiduo = new CategoriaResiduoController();
         DicaController dicaController = new DicaController();
+        ResiduoController residuoController = new ResiduoController();
 
         CategoriaResiduo categoriaResiduo = controllerCategoriaResiduo.buscarResiduosPorId(id);
         Dica dica = dicaController.buscarDicasCategoriaResiduo(id);
+        List<Residuo> residuos = residuoController.buscarResiduosPorCategoriaId(id);
 
         if (categoriaResiduo != null) {
             TelaInformacoes telaInformacoes = new TelaInformacoes(id, usuarioAtual.getId());
 
             String caminhoImagem = "/imagens/imagem-organico.png";
-            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);
+            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem, residuos);
             telaInformacoes.setCorResiduo(118, 81, 32);
 
             telaInformacoes.setVisible(true);
@@ -546,15 +561,17 @@ public class TelaResiduos extends javax.swing.JFrame {
         long id = 4;
         CategoriaResiduoController controllerCategoriaResiduo = new CategoriaResiduoController();
         DicaController dicaController = new DicaController();
+        ResiduoController residuoController = new ResiduoController();
 
         CategoriaResiduo categoriaResiduo = controllerCategoriaResiduo.buscarResiduosPorId(id);
         Dica dica = dicaController.buscarDicasCategoriaResiduo(id);
+        List<Residuo> residuos = residuoController.buscarResiduosPorCategoriaId(id);
 
         if (categoriaResiduo != null) {
             TelaInformacoes telaInformacoes = new TelaInformacoes(id, usuarioAtual.getId());
 
             String caminhoImagem = "/imagens/imagem-metal.png";
-            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);
+            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem, residuos);
             telaInformacoes.setCorResiduo(186, 237, 13);
 
             telaInformacoes.setVisible(true);
@@ -567,15 +584,17 @@ public class TelaResiduos extends javax.swing.JFrame {
         long id = 3;
         CategoriaResiduoController controllerCategoriaResiduo = new CategoriaResiduoController();
         DicaController dicaController = new DicaController();
+        ResiduoController residuoController = new ResiduoController();
 
         CategoriaResiduo categoriaResiduo = controllerCategoriaResiduo.buscarResiduosPorId(id);
         Dica dica = dicaController.buscarDicasCategoriaResiduo(id);
+        List<Residuo> residuos = residuoController.buscarResiduosPorCategoriaId(id);
 
         if (categoriaResiduo != null) {
             TelaInformacoes telaInformacoes = new TelaInformacoes(id, usuarioAtual.getId());
 
             String caminhoImagem = "/imagens/imagem-plastico.png";
-            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);
+            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem, residuos);
             telaInformacoes.setCorResiduo(186, 16, 16);
 
             telaInformacoes.setVisible(true);
@@ -588,15 +607,17 @@ public class TelaResiduos extends javax.swing.JFrame {
         long id = 2;
         CategoriaResiduoController controllerCategoriaResiduo = new CategoriaResiduoController();
         DicaController dicaController = new DicaController();
+        ResiduoController residuoController = new ResiduoController();
 
         CategoriaResiduo categoriaResiduo = controllerCategoriaResiduo.buscarResiduosPorId(id);
         Dica dica = dicaController.buscarDicasCategoriaResiduo(id);
+        List<Residuo> residuos = residuoController.buscarResiduosPorCategoriaId(id);
 
         if (categoriaResiduo != null) {
             TelaInformacoes telaInformacoes = new TelaInformacoes(id, usuarioAtual.getId());
 
             String caminhoImagem = "/imagens/imagem-vidro.png";
-            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);
+            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem, residuos);
             telaInformacoes.setCorResiduo(0, 219, 24);
 
             telaInformacoes.setVisible(true);
@@ -609,15 +630,17 @@ public class TelaResiduos extends javax.swing.JFrame {
         long id = 1;
         CategoriaResiduoController controllerCategoriaResiduo = new CategoriaResiduoController();
         DicaController dicaController = new DicaController();
+        ResiduoController residuoController = new ResiduoController();
 
         CategoriaResiduo categoriaResiduo = controllerCategoriaResiduo.buscarResiduosPorId(id);
         Dica dica = dicaController.buscarDicasCategoriaResiduo(id);
+        List<Residuo> residuos = residuoController.buscarResiduosPorCategoriaId(id);
 
         if (categoriaResiduo != null) {
             TelaInformacoes telaInformacoes = new TelaInformacoes(id, usuarioAtual.getId());
 
-            String caminhoImagem = "/imagens/imagem-papel.png"; 
-            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem);
+            String caminhoImagem = "/imagens/imagem-papel.png";
+            telaInformacoes.filtrarResiduo(categoriaResiduo.getNome(), categoriaResiduo.getInformacao01(), categoriaResiduo.getInformacao02(), dica, caminhoImagem, residuos);
             telaInformacoes.setCorResiduo(0, 46, 218);
 
             telaInformacoes.setVisible(true);

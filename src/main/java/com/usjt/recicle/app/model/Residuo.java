@@ -52,8 +52,8 @@ public class Residuo {
         this.idCategoriaResiduo = idCategoriaResiduo;
     }
 
-    public List<Residuo> buscarTodosResiduos() {
-        List<Residuo> listaResiduos = new ResiduoDAO().buscarTodosResiduos();
+    public List<Residuo> buscarResiduosPorCategoriaId(Long categoriaId) {
+        List<Residuo> listaResiduos = new ResiduoDAO().buscarResiduosPorCategoriaId(categoriaId);
         return listaResiduos;
     }
 }
