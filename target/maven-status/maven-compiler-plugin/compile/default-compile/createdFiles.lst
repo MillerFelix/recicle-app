@@ -1,6 +1,7 @@
 com\usjt\recicle\app\dao\DicaDAO.class
 com\usjt\recicle\app\view\TelaLogin$4.class
 com\usjt\recicle\app\view\TelaResiduos$9.class
+com\usjt\recicle\app\view\TelaCadastro$6.class
 com\usjt\recicle\app\view\TelaInformacoes$2.class
 com\usjt\recicle\app\view\TelaCadastro$3.class
 com\usjt\recicle\app\view\TelaResiduos$6.class
@@ -16,12 +17,14 @@ com\usjt\recicle\app\dao\AnotacaoDAO.class
 com\usjt\recicle\app\view\TelaInformacoes.class
 com\usjt\recicle\app\RecicleApp.class
 com\usjt\recicle\app\view\TelaCadastro$2.class
+com\usjt\recicle\app\controller\DicaController.class
 com\usjt\recicle\app\model\Anotacao.class
 com\usjt\recicle\app\view\TelaResiduos$2.class
 com\usjt\recicle\app\view\TelaResiduos$11.class
 com\usjt\recicle\app\view\TelaResiduos$4.class
 com\usjt\recicle\app\view\TelaCadastro$4.class
 com\usjt\recicle\app\view\TelaInformacoes$1.class
+com\usjt\recicle\app\controller\CategoriaResiduoController.class
 com\usjt\recicle\app\view\TelaCadastro.class
 com\usjt\recicle\app\controller\UsuarioController.class
 com\usjt\recicle\app\view\TelaResiduos$1.class
@@ -30,6 +33,7 @@ com\usjt\recicle\app\view\TelaCadastro$1.class
 com\usjt\recicle\app\view\TelaInformacoes$4.class
 com\usjt\recicle\app\controller\AnotacaoController.class
 com\usjt\recicle\app\view\TelaLogin$2.class
+com\usjt\recicle\app\controller\ResiduoController.class
 com\usjt\recicle\app\dao\ResiduoDAO.class
 com\usjt\recicle\app\view\TelaResiduos$12.class
 com\usjt\recicle\app\model\Usuario.class

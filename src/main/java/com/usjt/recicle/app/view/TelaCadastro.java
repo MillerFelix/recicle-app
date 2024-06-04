@@ -1,6 +1,7 @@
 package com.usjt.recicle.app.view;
 
 import com.usjt.recicle.app.controller.UsuarioController;
+import static com.usjt.recicle.app.view.TelaInformacoes.fecharInstanciaAtual;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.regex.Matcher;
@@ -40,7 +41,8 @@ public class TelaCadastro extends javax.swing.JFrame {
         labelSenha = new javax.swing.JLabel();
         textoEmail = new javax.swing.JTextField();
         LabelEmail = new javax.swing.JLabel();
-        labelTitulo = new javax.swing.JLabel();
+        labelVoltar = new javax.swing.JLabel();
+        labelTitulo1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -162,9 +164,18 @@ public class TelaCadastro extends javax.swing.JFrame {
                 .addGap(43, 43, 43))
         );
 
-        labelTitulo.setFont(new java.awt.Font("Arial Black", 1, 33)); // NOI18N
-        labelTitulo.setForeground(new java.awt.Color(0, 153, 0));
-        labelTitulo.setText("Cadastre-se");
+        labelVoltar.setFont(new java.awt.Font("Arial Black", 1, 33)); // NOI18N
+        labelVoltar.setForeground(new java.awt.Color(0, 153, 0));
+        labelVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone-voltar.png"))); // NOI18N
+        labelVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelVoltarMouseClicked(evt);
+            }
+        });
+
+        labelTitulo1.setFont(new java.awt.Font("Arial Black", 1, 33)); // NOI18N
+        labelTitulo1.setForeground(new java.awt.Color(0, 153, 0));
+        labelTitulo1.setText("Cadastre-se");
 
         javax.swing.GroupLayout painelConteudoLoginLayout = new javax.swing.GroupLayout(painelConteudoLogin);
         painelConteudoLogin.setLayout(painelConteudoLoginLayout);
@@ -176,18 +187,28 @@ public class TelaCadastro extends javax.swing.JFrame {
                         .addGap(184, 184, 184)
                         .addComponent(painelFormularios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                        .addGap(307, 307, 307)
-                        .addComponent(labelTitulo)))
+                        .addContainerGap()
+                        .addComponent(labelVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(186, Short.MAX_VALUE))
+            .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelConteudoLoginLayout.createSequentialGroup()
+                    .addContainerGap(317, Short.MAX_VALUE)
+                    .addComponent(labelTitulo1)
+                    .addGap(304, 304, 304)))
         );
         painelConteudoLoginLayout.setVerticalGroup(
             painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelConteudoLoginLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(labelTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addContainerGap()
+                .addComponent(labelVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
                 .addComponent(painelFormularios, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(30, Short.MAX_VALUE))
+            .addGroup(painelConteudoLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(painelConteudoLoginLayout.createSequentialGroup()
+                    .addGap(30, 30, 30)
+                    .addComponent(labelTitulo1)
+                    .addContainerGap(522, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -281,6 +302,10 @@ public class TelaCadastro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textoSenhaActionPerformed
 
+    private void labelVoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelVoltarMouseClicked
+        fecharInstanciaAtual();
+    }//GEN-LAST:event_labelVoltarMouseClicked
+
     private void configurarImagem() {
         URL imgURL = getClass().getResource("/imagens/logo-recicle.png");
         if (imgURL != null) {
@@ -304,7 +329,8 @@ public class TelaCadastro extends javax.swing.JFrame {
     private javax.swing.JButton botaoSalvar;
     private javax.swing.JLabel labelImagem;
     private javax.swing.JLabel labelSenha;
-    private javax.swing.JLabel labelTitulo;
+    private javax.swing.JLabel labelTitulo1;
+    private javax.swing.JLabel labelVoltar;
     private javax.swing.JPanel painelConteudoLogin;
     private javax.swing.JPanel painelFormularios;
     private javax.swing.JTextField textoEmail;
