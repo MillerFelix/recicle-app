@@ -1,7 +1,6 @@
 package com.usjt.recicle.app.view;
 
 import com.usjt.recicle.app.controller.UsuarioController;
-import static com.usjt.recicle.app.view.TelaInformacoes.fecharInstanciaAtual;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.regex.Matcher;
